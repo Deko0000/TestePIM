@@ -52,6 +52,7 @@ namespace TestePIM
             }
         }
 
+        # region Cadastros
         private void btnCadastros_Click(object sender, EventArgs e)
         {
             mostraSubMenu(panelCadastrosSubMenu);
@@ -63,16 +64,27 @@ namespace TestePIM
             escondeSubMenu();
         }
 
-        private void btnCadastroUsuarios_Click(object sender, EventArgs e)
+        private void btnCadastroCliente_Click(object sender, EventArgs e)
+        {
+            abreMenuForm(new CadastroClientes());
+            escondeSubMenu();
+        }
+        private void btnCadastroFuncionario_Click(object sender, EventArgs e)
         {
             escondeSubMenu();
         }
 
-        private void btnUsuario_Click(object sender, EventArgs e)
+        private void btnUsuCadastrados_Click(object sender, EventArgs e)
         {
             escondeSubMenu();
         }
+        private void btnFunCadastrados_Click(object sender, EventArgs e)
+        {
+            escondeSubMenu();
+        }
+        #endregion
 
+        #region Livros
         private void btnLivros_Click(object sender, EventArgs e)
         {
             mostraSubMenu(panelLivrosSubMenu);
@@ -87,7 +99,9 @@ namespace TestePIM
         {
             escondeSubMenu();
         }
+        #endregion
 
+        #region Emprestimos
         private void btnEmprestimos_Click(object sender, EventArgs e)
         {
             mostraSubMenu(panelEmpSubMenu);
@@ -107,7 +121,9 @@ namespace TestePIM
         {
             escondeSubMenu();
         }
+        #endregion
 
+        #region Relatorios
         private void btnRelatorios_Click(object sender, EventArgs e)
         {
             mostraSubMenu(panelRelatSubMenu);
@@ -127,6 +143,7 @@ namespace TestePIM
         {
             escondeSubMenu();
         }
+        #endregion
 
         private Form ativaForm = null;
         private void abreMenuForm(Form menuForm)
@@ -141,6 +158,24 @@ namespace TestePIM
             panelMenuForm.Tag = menuForm;
             menuForm.BringToFront();
             menuForm.Show();
+        }        
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+                "Você realmente deseja sair?",
+                "Confirmação de saída",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (resultado == DialogResult.Yes)
+            {
+                Login login = new Login();
+                login.Show();
+                this.Hide();
+            }
+            
         }
     }
 }
