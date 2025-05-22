@@ -85,6 +85,7 @@
             this.pbxCapa.Location = new System.Drawing.Point(329, 124);
             this.pbxCapa.Name = "pbxCapa";
             this.pbxCapa.Size = new System.Drawing.Size(162, 237);
+            this.pbxCapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxCapa.TabIndex = 2;
             this.pbxCapa.TabStop = false;
             // 
@@ -401,6 +402,7 @@
             this.Controls.Add(this.btnPegaImagem);
             this.Name = "CadastroLivros";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pbxCapa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDownQuant)).EndInit();
             this.ResumeLayout(false);

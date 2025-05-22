@@ -8,6 +8,8 @@ namespace TestePIM
 {
     public class Cliente
     {
+        
+
         public int Id { get; private set; }
         public string Nome { get; set; }
         public string Email { get; set; }
@@ -17,13 +19,21 @@ namespace TestePIM
         public string Endereco { get; set; }
 
         public Cliente(string nome, string email, string cpf, DateTime dataNasc, string ra, string endereco)
-        {
+        {           
+
             Nome = nome;
             Email = email;
             CPF = cpf;
             DataNasc = dataNasc;
             RA = ra;
-            Endereco = endereco;
+            Endereco = endereco;            
+            
+            
+        }
+        public void DefinirIdentificacao()
+        {
+
+            Id = GerarIdentificacao.GerarIDCliente();
         }
 
     }

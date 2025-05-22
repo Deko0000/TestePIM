@@ -55,7 +55,7 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
-            this.btnLimpar.Location = new System.Drawing.Point(168, 461);
+            this.btnLimpar.Location = new System.Drawing.Point(169, 461);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(139, 40);
             this.btnLimpar.TabIndex = 34;
@@ -80,7 +80,7 @@
             // 
             this.lblISBN.AutoSize = true;
             this.lblISBN.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblISBN.Location = new System.Drawing.Point(15, 308);
+            this.lblISBN.Location = new System.Drawing.Point(16, 235);
             this.lblISBN.Name = "lblISBN";
             this.lblISBN.Size = new System.Drawing.Size(39, 20);
             this.lblISBN.TabIndex = 29;
@@ -90,7 +90,7 @@
             // 
             this.txbCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbCPF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCPF.Location = new System.Drawing.Point(20, 332);
+            this.txbCPF.Location = new System.Drawing.Point(21, 259);
             this.txbCPF.Name = "txbCPF";
             this.txbCPF.Size = new System.Drawing.Size(287, 29);
             this.txbCPF.TabIndex = 28;
@@ -99,7 +99,7 @@
             // 
             this.lblAutor.AutoSize = true;
             this.lblAutor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAutor.Location = new System.Drawing.Point(15, 235);
+            this.lblAutor.Location = new System.Drawing.Point(329, 235);
             this.lblAutor.Name = "lblAutor";
             this.lblAutor.Size = new System.Drawing.Size(57, 20);
             this.lblAutor.TabIndex = 27;
@@ -109,7 +109,7 @@
             // 
             this.txbEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbEmail.Location = new System.Drawing.Point(20, 260);
+            this.txbEmail.Location = new System.Drawing.Point(334, 260);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(287, 29);
             this.txbEmail.TabIndex = 26;
@@ -147,7 +147,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(329, 308);
+            this.label1.Location = new System.Drawing.Point(329, 166);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 20);
             this.label1.TabIndex = 40;
@@ -157,7 +157,7 @@
             // 
             this.txbEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbEndereco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbEndereco.Location = new System.Drawing.Point(334, 332);
+            this.txbEndereco.Location = new System.Drawing.Point(334, 190);
             this.txbEndereco.Name = "txbEndereco";
             this.txbEndereco.Size = new System.Drawing.Size(287, 29);
             this.txbEndereco.TabIndex = 39;
@@ -166,7 +166,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(329, 235);
+            this.label2.Location = new System.Drawing.Point(330, 306);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 20);
             this.label2.TabIndex = 38;
@@ -176,7 +176,7 @@
             // 
             this.txbRA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbRA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbRA.Location = new System.Drawing.Point(334, 260);
+            this.txbRA.Location = new System.Drawing.Point(335, 331);
             this.txbRA.Name = "txbRA";
             this.txbRA.Size = new System.Drawing.Size(287, 29);
             this.txbRA.TabIndex = 37;
@@ -185,7 +185,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(329, 165);
+            this.label3.Location = new System.Drawing.Point(16, 308);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 20);
             this.label3.TabIndex = 36;
@@ -199,7 +199,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(333, 461);
+            this.btnCadastrar.Location = new System.Drawing.Point(335, 461);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(139, 40);
             this.btnCadastrar.TabIndex = 41;
@@ -212,10 +212,11 @@
             this.dtpDataNasc.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataNasc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpDataNasc.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDataNasc.Location = new System.Drawing.Point(334, 189);
+            this.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataNasc.Location = new System.Drawing.Point(21, 332);
             this.dtpDataNasc.MaxDate = new System.DateTime(2025, 5, 30, 0, 0, 0, 0);
             this.dtpDataNasc.Name = "dtpDataNasc";
-            this.dtpDataNasc.Size = new System.Drawing.Size(287, 27);
+            this.dtpDataNasc.Size = new System.Drawing.Size(150, 27);
             this.dtpDataNasc.TabIndex = 42;
             // 
             // CadastroClientes

@@ -16,6 +16,11 @@ namespace TestePIM
         {
             InitializeComponent();
             customizeDesing();
+            btnCadastroFuncionario.Visible = false;
+            btnFunCadastrados.Visible = false;
+            btnGerenciaRelat.Visible = false;
+            panelCadastrosSubMenu.Size = new Size(204, 128);
+            panelRelatSubMenu.Size = new Size(204, 86);
         }
 
         private void customizeDesing()
@@ -51,6 +56,17 @@ namespace TestePIM
                 subMenu.Visible = false;
             }
         }
+        public void Menu_Load(object sender, EventArgs e)
+        {
+            if (VerificaAdm.IsAdmin) // 👈 usa a classe de controle
+            {
+                panelCadastrosSubMenu.Size = new Size(204, 208);
+                panelRelatSubMenu.Size = new Size(204, 126);
+                btnCadastroFuncionario.Visible = true;
+                btnFunCadastrados.Visible = true;
+                btnGerenciaRelat.Visible = true;
+            }
+        }
 
         # region Cadastros
         private void btnCadastros_Click(object sender, EventArgs e)
@@ -71,6 +87,7 @@ namespace TestePIM
         }
         private void btnCadastroFuncionario_Click(object sender, EventArgs e)
         {
+            abreMenuForm(new CadastroFuncionario());
             escondeSubMenu();
         }
 

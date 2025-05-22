@@ -45,6 +45,7 @@
             this.lblBV = new System.Windows.Forms.Label();
             this.btnLogar = new System.Windows.Forms.Button();
             this.txbEmail = new System.Windows.Forms.TextBox();
+            this.cbxMostraSenha = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panelLoginForm.SuspendLayout();
             this.SuspendLayout();
@@ -148,6 +149,7 @@
             // panelLoginForm
             // 
             this.panelLoginForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.panelLoginForm.Controls.Add(this.cbxMostraSenha);
             this.panelLoginForm.Controls.Add(this.lklEsqueciSenha);
             this.panelLoginForm.Controls.Add(this.lblSenha);
             this.panelLoginForm.Controls.Add(this.txbSenha);
@@ -193,6 +195,7 @@
             this.txbSenha.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSenha.Location = new System.Drawing.Point(32, 282);
             this.txbSenha.Name = "txbSenha";
+            this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(263, 33);
             this.txbSenha.TabIndex = 4;
             // 
@@ -239,6 +242,16 @@
             this.txbEmail.Size = new System.Drawing.Size(263, 33);
             this.txbEmail.TabIndex = 1;
             // 
+            // cbxMostraSenha
+            // 
+            this.cbxMostraSenha.AutoSize = true;
+            this.cbxMostraSenha.Location = new System.Drawing.Point(302, 293);
+            this.cbxMostraSenha.Name = "cbxMostraSenha";
+            this.cbxMostraSenha.Size = new System.Drawing.Size(15, 14);
+            this.cbxMostraSenha.TabIndex = 6;
+            this.cbxMostraSenha.UseVisualStyleBackColor = true;
+            this.cbxMostraSenha.CheckedChanged += new System.EventHandler(this.cbxMostraSenha_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,6 +261,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Login";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelLoginForm.ResumeLayout(false);
@@ -274,5 +288,6 @@
         private System.Windows.Forms.Label lblGer;
         private System.Windows.Forms.Label lblOrg;
         private System.Windows.Forms.Button btnCadastro;
+        private System.Windows.Forms.CheckBox cbxMostraSenha;
     }
 }

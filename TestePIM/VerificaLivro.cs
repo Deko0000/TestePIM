@@ -41,6 +41,11 @@ namespace TestePIM
                     MessageBox.Show("Quantidade inválida. Máximo permitido: 50.");
                     return false;
                 }
+                if (Listas.Livros.Any(u => u.ISBN == livro.ISBN))
+                {
+                    MessageBox.Show("Já existe um livro com esse ISBN.");
+                    return false;
+                }
 
                 return true;
             }

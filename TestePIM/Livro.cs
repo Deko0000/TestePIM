@@ -8,6 +8,7 @@ namespace TestePIM
 {
     public class Livro
     {
+      
         public int Id { get; private set; }
         public string Titulo { get; set; }
         public string Autor { get; set; }
@@ -20,6 +21,7 @@ namespace TestePIM
         public Livro(string titulo, string autor, string isbn, 
             string anoPubli, int quantidade, string genero, string sinopse)
         {
+           
             Titulo = titulo;
             Autor = autor;
             ISBN = isbn;
@@ -27,6 +29,12 @@ namespace TestePIM
             Quantidade = quantidade;
             Genero = genero;
             Sinopse = sinopse;
+            
+        }
+        public void DefinirIdentificacao()
+        {
+            
+            Id = GerarIdentificacao.GerarIDLivro();           
         }
 
     }

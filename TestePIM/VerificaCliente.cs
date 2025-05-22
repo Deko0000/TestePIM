@@ -10,7 +10,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace TestePIM
 {
-    public class VerificaCliente    {
+    public class VerificaCliente   
+    {
         
             public bool Validar(Cliente cliente)
             {
@@ -44,13 +45,18 @@ namespace TestePIM
                     return false;
                 }
 
-            if (Listas.Clientes.Any(u => u.Email == cliente.Email))
+                if (Listas.Clientes.Any(u => u.Email == cliente.Email))
                 {
                     MessageBox.Show("Já existe um cliente com esse e-mail.");
                     return false;
                 }
+                if (Listas.Clientes.Any(u => u.CPF == cliente.CPF))
+                {
+                    MessageBox.Show("Já existe um cliente com esse CPF.");
+                    return false;
+                }
 
-                return true;
+            return true;
             }
         }
 

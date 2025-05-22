@@ -12,9 +12,28 @@ namespace TestePIM
 {
     public partial class Login : Form
     {
+        public string emailAdmin = "admin@admin.com";
+        public string senhaAdmin = "1234";
         public Login()
         {
             InitializeComponent();
+        }
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txbSenha.PasswordChar = '*'; // Ocultar senha inicialmente
+        }
+        private void cbxMostraSenha_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (txbSenha.PasswordChar == '*')
+            {
+                txbSenha.PasswordChar = '\0'; // Mostra a senha                
+            }
+            else
+            {
+                txbSenha.PasswordChar = '*'; // Oculta a senha
+
+            }
         }
         private Form ativaForm = null;
         private void abreLoginForm(Form menuForm)
@@ -38,9 +57,39 @@ namespace TestePIM
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            menu.Show();
-            this.Hide();
+            string usuario = txbEmail.Text;
+            string senha = txbSenha.Text;
+
+            // Verifica se é o Admin
+            if (usuario == emailAdmin && senha == senhaAdmin)
+            {
+                VerificaAdm.Logar(usuario, true); 
+                MessageBox.Show("Login bem-sucedido! Bem-vindo, administrador.");
+                Menu menu = new Menu();
+                menu.Show();
+                this.Hide();
+                return;
+            }
+
+            // Verifica se é um Funcionário
+            var funcionario = Listas.Funcionarios
+            .FirstOrDefault(f => f.Email == usuario && f.Senha == senha);
+
+            if (funcionario != null)
+            {
+                VerificaAdm.Logar(funcionario.Email, false);  
+                MessageBox.Show("Login bem-sucedido! Bem-vindo, " + funcionario.Nome + ".");
+                Menu menu = new Menu();
+                menu.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha incorretos.");
+            }
         }
+
+
     }
-}
+  }
+

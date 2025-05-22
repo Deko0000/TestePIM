@@ -37,9 +37,10 @@ namespace TestePIM
             if (verificador.Validar(cliente))
             {
                 // Adiciona na lista
+                cliente.DefinirIdentificacao();
                 Listas.Clientes.Add(cliente);
 
-                MessageBox.Show("Cliente cadastrado com sucesso!");
+                MessageBox.Show(cliente.Nome + " cadastrado com sucesso!");
 
                 // Limpa os campos
                 txbNome.Clear();

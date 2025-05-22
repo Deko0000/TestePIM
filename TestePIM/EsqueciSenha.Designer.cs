@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblConfirmaSenha = new System.Windows.Forms.Label();
+            this.txbConfirmaSenha = new System.Windows.Forms.TextBox();
+            this.lblCPF = new System.Windows.Forms.Label();
+            this.txbCPF = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.txbSenha = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblBV = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.txbEmail = new System.Windows.Forms.TextBox();
+            this.tbxEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -56,41 +56,41 @@
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // label2
+            // lblConfirmaSenha
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 361);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 21);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Confirme a nova Senha:";
+            this.lblConfirmaSenha.AutoSize = true;
+            this.lblConfirmaSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmaSenha.Location = new System.Drawing.Point(35, 361);
+            this.lblConfirmaSenha.Name = "lblConfirmaSenha";
+            this.lblConfirmaSenha.Size = new System.Drawing.Size(191, 21);
+            this.lblConfirmaSenha.TabIndex = 24;
+            this.lblConfirmaSenha.Text = "Confirme a nova Senha:";
             // 
-            // textBox2
+            // txbConfirmaSenha
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(33, 396);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(263, 33);
-            this.textBox2.TabIndex = 25;
+            this.txbConfirmaSenha.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbConfirmaSenha.Location = new System.Drawing.Point(33, 396);
+            this.txbConfirmaSenha.Name = "txbConfirmaSenha";
+            this.txbConfirmaSenha.Size = new System.Drawing.Size(263, 33);
+            this.txbConfirmaSenha.TabIndex = 25;
             // 
-            // label1
+            // lblCPF
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 169);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 21);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Confirme o Email:";
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.Location = new System.Drawing.Point(32, 169);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(131, 21);
+            this.lblCPF.TabIndex = 22;
+            this.lblCPF.Text = "Confirme o CPF:";
             // 
-            // textBox1
+            // txbCPF
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(33, 204);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 33);
-            this.textBox1.TabIndex = 23;
+            this.txbCPF.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCPF.Location = new System.Drawing.Point(33, 204);
+            this.txbCPF.Name = "txbCPF";
+            this.txbCPF.Size = new System.Drawing.Size(263, 33);
+            this.txbCPF.TabIndex = 23;
             // 
             // lblSenha
             // 
@@ -116,9 +116,9 @@
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(32, 86);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(150, 21);
+            this.lblEmail.Size = new System.Drawing.Size(146, 21);
             this.lblEmail.TabIndex = 16;
-            this.lblEmail.Text = "Confirme o Nome:";
+            this.lblEmail.Text = "Confirme o Email:";
             // 
             // lblBV
             // 
@@ -145,13 +145,13 @@
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // txbEmail
+            // tbxEmail
             // 
-            this.txbEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbEmail.Location = new System.Drawing.Point(33, 121);
-            this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(263, 33);
-            this.txbEmail.TabIndex = 18;
+            this.tbxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxEmail.Location = new System.Drawing.Point(33, 121);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.Size = new System.Drawing.Size(263, 33);
+            this.tbxEmail.TabIndex = 18;
             // 
             // EsqueciSenha
             // 
@@ -160,18 +160,19 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(327, 539);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblConfirmaSenha);
+            this.Controls.Add(this.txbConfirmaSenha);
+            this.Controls.Add(this.lblCPF);
+            this.Controls.Add(this.txbCPF);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblBV);
             this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.txbEmail);
+            this.Controls.Add(this.tbxEmail);
             this.Name = "EsqueciSenha";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,15 +181,15 @@
         #endregion
 
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblConfirmaSenha;
+        private System.Windows.Forms.TextBox txbConfirmaSenha;
+        private System.Windows.Forms.Label lblCPF;
+        private System.Windows.Forms.TextBox txbCPF;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txbSenha;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblBV;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.TextBox txbEmail;
+        private System.Windows.Forms.TextBox tbxEmail;
     }
 }

@@ -33,6 +33,7 @@ namespace TestePIM
                 VerificaLivro verifica = new VerificaLivro();
                 if (verifica.Validar(livro))
                 {
+                    livro.DefinirIdentificacao();
                     Listas.Livros.Add(livro);  // ou SistemaLivro.Livros.Add(livro);
                     MessageBox.Show("Livro cadastrado com sucesso!");
                     txbTitulo.Clear();

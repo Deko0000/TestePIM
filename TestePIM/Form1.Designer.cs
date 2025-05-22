@@ -37,6 +37,7 @@
             this.btnRelatorioUsuarios = new System.Windows.Forms.Button();
             this.btnRelatorios = new System.Windows.Forms.Button();
             this.panelEmpSubMenu = new System.Windows.Forms.Panel();
+            this.btnMulta = new System.Windows.Forms.Button();
             this.btnDevolveEmp = new System.Windows.Forms.Button();
             this.btnAcompanharEmp = new System.Windows.Forms.Button();
             this.btnRealizarEmp = new System.Windows.Forms.Button();
@@ -46,15 +47,14 @@
             this.btnBuscaLivros = new System.Windows.Forms.Button();
             this.btnLivros = new System.Windows.Forms.Button();
             this.panelCadastrosSubMenu = new System.Windows.Forms.Panel();
+            this.btnFunCadastrados = new System.Windows.Forms.Button();
+            this.btnUsuCadastrados = new System.Windows.Forms.Button();
             this.btnCadastroFuncionario = new System.Windows.Forms.Button();
             this.btnCadastroCliente = new System.Windows.Forms.Button();
             this.btnCadastroLivros = new System.Windows.Forms.Button();
             this.btnCadastros = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelMenuForm = new System.Windows.Forms.Panel();
-            this.btnUsuCadastrados = new System.Windows.Forms.Button();
-            this.btnFunCadastrados = new System.Windows.Forms.Button();
-            this.btnMulta = new System.Windows.Forms.Button();
             this.panelDownSair.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.panelRelatSubMenu.SuspendLayout();
@@ -202,6 +202,24 @@
             this.panelEmpSubMenu.Name = "panelEmpSubMenu";
             this.panelEmpSubMenu.Size = new System.Drawing.Size(204, 169);
             this.panelEmpSubMenu.TabIndex = 6;
+            // 
+            // btnMulta
+            // 
+            this.btnMulta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMulta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMulta.FlatAppearance.BorderSize = 0;
+            this.btnMulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMulta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.btnMulta.Location = new System.Drawing.Point(0, 120);
+            this.btnMulta.Name = "btnMulta";
+            this.btnMulta.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            this.btnMulta.Size = new System.Drawing.Size(204, 40);
+            this.btnMulta.TabIndex = 5;
+            this.btnMulta.Text = "Multas";
+            this.btnMulta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMulta.UseVisualStyleBackColor = true;
+            this.btnMulta.Click += new System.EventHandler(this.btnMultas_Click);
             // 
             // btnDevolveEmp
             // 
@@ -353,6 +371,42 @@
             this.panelCadastrosSubMenu.Size = new System.Drawing.Size(204, 208);
             this.panelCadastrosSubMenu.TabIndex = 2;
             // 
+            // btnFunCadastrados
+            // 
+            this.btnFunCadastrados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFunCadastrados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFunCadastrados.FlatAppearance.BorderSize = 0;
+            this.btnFunCadastrados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFunCadastrados.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFunCadastrados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.btnFunCadastrados.Location = new System.Drawing.Point(0, 160);
+            this.btnFunCadastrados.Name = "btnFunCadastrados";
+            this.btnFunCadastrados.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            this.btnFunCadastrados.Size = new System.Drawing.Size(204, 40);
+            this.btnFunCadastrados.TabIndex = 6;
+            this.btnFunCadastrados.Text = "Funcionários Cadastrados";
+            this.btnFunCadastrados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFunCadastrados.UseVisualStyleBackColor = true;
+            this.btnFunCadastrados.Click += new System.EventHandler(this.btnFunCadastrados_Click);
+            // 
+            // btnUsuCadastrados
+            // 
+            this.btnUsuCadastrados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUsuCadastrados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuCadastrados.FlatAppearance.BorderSize = 0;
+            this.btnUsuCadastrados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuCadastrados.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuCadastrados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.btnUsuCadastrados.Location = new System.Drawing.Point(0, 120);
+            this.btnUsuCadastrados.Name = "btnUsuCadastrados";
+            this.btnUsuCadastrados.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            this.btnUsuCadastrados.Size = new System.Drawing.Size(204, 40);
+            this.btnUsuCadastrados.TabIndex = 5;
+            this.btnUsuCadastrados.Text = "Usuários Cadastrados";
+            this.btnUsuCadastrados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuCadastrados.UseVisualStyleBackColor = true;
+            this.btnUsuCadastrados.Click += new System.EventHandler(this.btnUsuCadastrados_Click);
+            // 
             // btnCadastroFuncionario
             // 
             this.btnCadastroFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -441,60 +495,6 @@
             this.panelMenuForm.Size = new System.Drawing.Size(638, 619);
             this.panelMenuForm.TabIndex = 2;
             // 
-            // btnUsuCadastrados
-            // 
-            this.btnUsuCadastrados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUsuCadastrados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUsuCadastrados.FlatAppearance.BorderSize = 0;
-            this.btnUsuCadastrados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuCadastrados.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuCadastrados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnUsuCadastrados.Location = new System.Drawing.Point(0, 120);
-            this.btnUsuCadastrados.Name = "btnUsuCadastrados";
-            this.btnUsuCadastrados.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
-            this.btnUsuCadastrados.Size = new System.Drawing.Size(204, 40);
-            this.btnUsuCadastrados.TabIndex = 5;
-            this.btnUsuCadastrados.Text = "Usuários Cadastrados";
-            this.btnUsuCadastrados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuCadastrados.UseVisualStyleBackColor = true;
-            this.btnUsuCadastrados.Click += new System.EventHandler(this.btnUsuCadastrados_Click);
-            // 
-            // btnFunCadastrados
-            // 
-            this.btnFunCadastrados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFunCadastrados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFunCadastrados.FlatAppearance.BorderSize = 0;
-            this.btnFunCadastrados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFunCadastrados.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFunCadastrados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnFunCadastrados.Location = new System.Drawing.Point(0, 160);
-            this.btnFunCadastrados.Name = "btnFunCadastrados";
-            this.btnFunCadastrados.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
-            this.btnFunCadastrados.Size = new System.Drawing.Size(204, 40);
-            this.btnFunCadastrados.TabIndex = 6;
-            this.btnFunCadastrados.Text = "Funcionários Cadastrados";
-            this.btnFunCadastrados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFunCadastrados.UseVisualStyleBackColor = true;
-            this.btnFunCadastrados.Click += new System.EventHandler(this.btnFunCadastrados_Click);
-            // 
-            // btnMulta
-            // 
-            this.btnMulta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMulta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMulta.FlatAppearance.BorderSize = 0;
-            this.btnMulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMulta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnMulta.Location = new System.Drawing.Point(0, 120);
-            this.btnMulta.Name = "btnMulta";
-            this.btnMulta.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
-            this.btnMulta.Size = new System.Drawing.Size(204, 40);
-            this.btnMulta.TabIndex = 5;
-            this.btnMulta.Text = "Multas";
-            this.btnMulta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMulta.UseVisualStyleBackColor = true;
-            this.btnMulta.Click += new System.EventHandler(this.btnMultas_Click);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,6 +505,8 @@
             this.Controls.Add(this.panelDownSair);
             this.Name = "Menu";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.panelDownSair.ResumeLayout(false);
             this.panelSideMenu.ResumeLayout(false);
             this.panelRelatSubMenu.ResumeLayout(false);
