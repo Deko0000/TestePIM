@@ -44,8 +44,13 @@ namespace TestePIM
                     MessageBox.Show("RA inválido.");
                     return false;
                 }
+                if (Listas.Clientes.Any(u => u.RA == cliente.RA))
+                {
+                    MessageBox.Show("Já existe um cliente com esse RA.");
+                    return false;
+                }
 
-                if (Listas.Clientes.Any(u => u.Email == cliente.Email))
+            if (Listas.Clientes.Any(u => u.Email == cliente.Email))
                 {
                     MessageBox.Show("Já existe um cliente com esse e-mail.");
                     return false;
@@ -56,10 +61,10 @@ namespace TestePIM
                     return false;
                 }
 
-            return true;
+                return true;
             }
-        }
-
     }
+
+}
 
 

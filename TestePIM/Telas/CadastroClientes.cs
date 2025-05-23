@@ -36,8 +36,7 @@ namespace TestePIM
             VerificaCliente verificador = new VerificaCliente();
             if (verificador.Validar(cliente))
             {
-                // Adiciona na lista
-                cliente.DefinirIdentificacao();
+                // Adiciona na lista                
                 Listas.Clientes.Add(cliente);
 
                 MessageBox.Show(cliente.Nome + " cadastrado com sucesso!");

@@ -402,7 +402,7 @@
             this.btnUsuCadastrados.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
             this.btnUsuCadastrados.Size = new System.Drawing.Size(204, 40);
             this.btnUsuCadastrados.TabIndex = 5;
-            this.btnUsuCadastrados.Text = "Usuários Cadastrados";
+            this.btnUsuCadastrados.Text = "Clientes Cadastrados";
             this.btnUsuCadastrados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuCadastrados.UseVisualStyleBackColor = true;
             this.btnUsuCadastrados.Click += new System.EventHandler(this.btnUsuCadastrados_Click);

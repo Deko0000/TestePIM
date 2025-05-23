@@ -257,9 +257,9 @@
             this.lblIF.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIF.Location = new System.Drawing.Point(18, 459);
             this.lblIF.Name = "lblIF";
-            this.lblIF.Size = new System.Drawing.Size(211, 20);
+            this.lblIF.Size = new System.Drawing.Size(187, 20);
             this.lblIF.TabIndex = 62;
-            this.lblIF.Text = "Identificação do Funcionário:";
+            this.lblIF.Text = "Matrícula do Funcionário:";
             // 
             // lblIdentificaFuncionario
             // 

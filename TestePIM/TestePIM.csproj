@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controle\VerificaClienteEditado.cs" />
     <Compile Include="Telas\CadastroClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +69,18 @@
       <DependentUpon>CadastroLivros.cs</DependentUpon>
     </Compile>
     <Compile Include="Dados\Cliente.cs" />
+    <Compile Include="Telas\ClientesCadastrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\ClientesCadastrados.Designer.cs">
+      <DependentUpon>ClientesCadastrados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\EditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\EditarCliente.Designer.cs">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\EsqueciSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +119,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\CadastroLivros.resx">
       <DependentUpon>CadastroLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ClientesCadastrados.resx">
+      <DependentUpon>ClientesCadastrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\EditarCliente.resx">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\EsqueciSenha.resx">
       <DependentUpon>EsqueciSenha.cs</DependentUpon>

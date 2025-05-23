@@ -10,7 +10,7 @@ namespace TestePIM
     {
         
 
-        public int Id { get; private set; }
+        
         public string Nome { get; set; }
         public string Email { get; set; }
         public string CPF { get; set; }
@@ -30,11 +30,7 @@ namespace TestePIM
             
             
         }
-        public void DefinirIdentificacao()
-        {
-
-            Id = GerarIdentificacao.GerarIDCliente();
-        }
+        
 
     }
 

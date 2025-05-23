@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestePIM.Telas;
 
 namespace TestePIM
 {
@@ -93,6 +94,7 @@ namespace TestePIM
 
         private void btnUsuCadastrados_Click(object sender, EventArgs e)
         {
+            abreMenuForm(new ClientesCadastrados());
             escondeSubMenu();
         }
         private void btnFunCadastrados_Click(object sender, EventArgs e)
