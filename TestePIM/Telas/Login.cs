@@ -12,7 +12,7 @@ namespace TestePIM
 {
     public partial class Login : Form
     {
-        public string emailAdmin = "admin@admin.com";
+        public string nomeAdmin = "admin";
         public string senhaAdmin = "1234";
         public Login()
         {
@@ -54,14 +54,15 @@ namespace TestePIM
         {
             abreLoginForm(new EsqueciSenha());
         }
+        
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            string usuario = txbEmail.Text;
+            string usuario = txbNome.Text;
             string senha = txbSenha.Text;
 
             // Verifica se é o Admin
-            if (usuario == emailAdmin && senha == senhaAdmin)
+            if (usuario == nomeAdmin && senha == senhaAdmin)
             {
                 VerificaAdm.Logar(usuario, true); 
                 MessageBox.Show("Login bem-sucedido! Bem-vindo, administrador.");
@@ -73,11 +74,11 @@ namespace TestePIM
 
             // Verifica se é um Funcionário
             var funcionario = Listas.Funcionarios
-            .FirstOrDefault(f => f.Email == usuario && f.Senha == senha);
+            .FirstOrDefault(f => f.Nome == usuario && f.Senha == senha);
 
             if (funcionario != null)
             {
-                VerificaAdm.Logar(funcionario.Email, false);  
+                VerificaAdm.Logar(funcionario.Nome, false);  
                 MessageBox.Show("Login bem-sucedido! Bem-vindo, " + funcionario.Nome + ".");
                 Menu menu = new Menu();
                 menu.Show();
@@ -88,8 +89,45 @@ namespace TestePIM
                 MessageBox.Show("Usuário ou senha incorretos.");
             }
         }
+        
+        private new void Enter(object sender, KeyPressEventArgs e)
+        {
+            string usuario = txbNome.Text;
+            string senha = txbSenha.Text;
 
+            // Verifica se é o Admin
+            if (usuario == nomeAdmin && senha == senhaAdmin)
+            {
+                VerificaAdm.Logar(usuario, true);
+                MessageBox.Show("Login bem-sucedido! Bem-vindo, administrador.");
+                Menu menu = new Menu();
+                menu.Show();
+                this.Hide();
+                return;
+            }
 
+            // Verifica se é um Funcionário
+            var funcionario = Listas.Funcionarios
+            .FirstOrDefault(f => f.Nome == usuario && f.Senha == senha);
+
+            if (funcionario != null)
+            {
+                VerificaAdm.Logar(funcionario.Nome, false);
+                MessageBox.Show("Login bem-sucedido! Bem-vindo, " + funcionario.Nome + ".");
+                Menu menu = new Menu();
+                menu.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha incorretos.");
+            }
+
+        }
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
   }
 

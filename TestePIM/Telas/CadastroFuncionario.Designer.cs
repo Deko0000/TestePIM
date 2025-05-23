@@ -56,6 +56,7 @@
             // dtpDataNasc
             // 
             this.dtpDataNasc.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataNasc.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.dtpDataNasc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpDataNasc.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -93,6 +94,7 @@
             // 
             // txbEndereco
             // 
+            this.txbEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbEndereco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbEndereco.Location = new System.Drawing.Point(20, 327);
@@ -112,6 +114,7 @@
             // 
             // txbSenha
             // 
+            this.txbSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSenha.Location = new System.Drawing.Point(325, 259);
@@ -170,6 +173,7 @@
             // 
             // txbCPF
             // 
+            this.txbCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbCPF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCPF.Location = new System.Drawing.Point(20, 260);
@@ -199,6 +203,7 @@
             // 
             // txbNome
             // 
+            this.txbNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNome.Location = new System.Drawing.Point(20, 189);
@@ -218,6 +223,7 @@
             // 
             // txbEmail
             // 
+            this.txbEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbEmail.Location = new System.Drawing.Point(326, 188);
@@ -237,6 +243,7 @@
             // 
             // txbConfirmaSenha
             // 
+            this.txbConfirmaSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbConfirmaSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbConfirmaSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbConfirmaSenha.Location = new System.Drawing.Point(326, 328);
@@ -268,21 +275,23 @@
             // cbxMostraSenha
             // 
             this.cbxMostraSenha.AutoSize = true;
+            this.cbxMostraSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.cbxMostraSenha.Location = new System.Drawing.Point(616, 268);
             this.cbxMostraSenha.Name = "cbxMostraSenha";
             this.cbxMostraSenha.Size = new System.Drawing.Size(15, 14);
             this.cbxMostraSenha.TabIndex = 64;
-            this.cbxMostraSenha.UseVisualStyleBackColor = true;
+            this.cbxMostraSenha.UseVisualStyleBackColor = false;
             this.cbxMostraSenha.CheckedChanged += new System.EventHandler(this.cbxMostraSenha_CheckedChanged);
             // 
             // cbxMostraSenha2
             // 
             this.cbxMostraSenha2.AutoSize = true;
+            this.cbxMostraSenha2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.cbxMostraSenha2.Location = new System.Drawing.Point(617, 337);
             this.cbxMostraSenha2.Name = "cbxMostraSenha2";
             this.cbxMostraSenha2.Size = new System.Drawing.Size(15, 14);
             this.cbxMostraSenha2.TabIndex = 65;
-            this.cbxMostraSenha2.UseVisualStyleBackColor = true;
+            this.cbxMostraSenha2.UseVisualStyleBackColor = false;
             this.cbxMostraSenha2.CheckedChanged += new System.EventHandler(this.cbxMostraSenha2_CheckedChanged);
             // 
             // CadastroFuncionario

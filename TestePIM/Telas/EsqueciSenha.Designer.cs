@@ -35,10 +35,10 @@
             this.txbCPF = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.txbSenha = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblMatricula = new System.Windows.Forms.Label();
             this.lblBV = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.tbxEmail = new System.Windows.Forms.TextBox();
+            this.txbMatricula = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -60,7 +60,7 @@
             // 
             this.lblConfirmaSenha.AutoSize = true;
             this.lblConfirmaSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmaSenha.Location = new System.Drawing.Point(35, 361);
+            this.lblConfirmaSenha.Location = new System.Drawing.Point(29, 372);
             this.lblConfirmaSenha.Name = "lblConfirmaSenha";
             this.lblConfirmaSenha.Size = new System.Drawing.Size(191, 21);
             this.lblConfirmaSenha.TabIndex = 24;
@@ -68,6 +68,8 @@
             // 
             // txbConfirmaSenha
             // 
+            this.txbConfirmaSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.txbConfirmaSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbConfirmaSenha.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbConfirmaSenha.Location = new System.Drawing.Point(33, 396);
             this.txbConfirmaSenha.Name = "txbConfirmaSenha";
@@ -78,7 +80,7 @@
             // 
             this.lblCPF.AutoSize = true;
             this.lblCPF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPF.Location = new System.Drawing.Point(32, 169);
+            this.lblCPF.Location = new System.Drawing.Point(29, 180);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(131, 21);
             this.lblCPF.TabIndex = 22;
@@ -86,6 +88,8 @@
             // 
             // txbCPF
             // 
+            this.txbCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.txbCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbCPF.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCPF.Location = new System.Drawing.Point(33, 204);
             this.txbCPF.Name = "txbCPF";
@@ -96,7 +100,7 @@
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(35, 273);
+            this.lblSenha.Location = new System.Drawing.Point(29, 284);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(150, 21);
             this.lblSenha.TabIndex = 20;
@@ -104,21 +108,23 @@
             // 
             // txbSenha
             // 
+            this.txbSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.txbSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbSenha.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSenha.Location = new System.Drawing.Point(33, 308);
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.Size = new System.Drawing.Size(263, 33);
             this.txbSenha.TabIndex = 21;
             // 
-            // lblEmail
+            // lblMatricula
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(32, 86);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(146, 21);
-            this.lblEmail.TabIndex = 16;
-            this.lblEmail.Text = "Confirme o Email:";
+            this.lblMatricula.AutoSize = true;
+            this.lblMatricula.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatricula.Location = new System.Drawing.Point(29, 97);
+            this.lblMatricula.Name = "lblMatricula";
+            this.lblMatricula.Size = new System.Drawing.Size(175, 21);
+            this.lblMatricula.TabIndex = 16;
+            this.lblMatricula.Text = "Confirme a Matrícula:";
             // 
             // lblBV
             // 
@@ -145,13 +151,15 @@
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // tbxEmail
+            // txbMatricula
             // 
-            this.tbxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxEmail.Location = new System.Drawing.Point(33, 121);
-            this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(263, 33);
-            this.tbxEmail.TabIndex = 18;
+            this.txbMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.txbMatricula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbMatricula.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMatricula.Location = new System.Drawing.Point(33, 121);
+            this.txbMatricula.Name = "txbMatricula";
+            this.txbMatricula.Size = new System.Drawing.Size(263, 33);
+            this.txbMatricula.TabIndex = 18;
             // 
             // EsqueciSenha
             // 
@@ -166,10 +174,10 @@
             this.Controls.Add(this.txbCPF);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.txbSenha);
-            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblMatricula);
             this.Controls.Add(this.lblBV);
             this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.tbxEmail);
+            this.Controls.Add(this.txbMatricula);
             this.Name = "EsqueciSenha";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -187,9 +195,9 @@
         private System.Windows.Forms.TextBox txbCPF;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txbSenha;
-        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblMatricula;
         private System.Windows.Forms.Label lblBV;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.TextBox tbxEmail;
+        private System.Windows.Forms.TextBox txbMatricula;
     }
 }

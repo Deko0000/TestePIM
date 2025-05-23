@@ -38,14 +38,14 @@
             this.lblOrg = new System.Windows.Forms.Label();
             this.lblLA = new System.Windows.Forms.Label();
             this.panelLoginForm = new System.Windows.Forms.Panel();
+            this.cbxMostraSenha = new System.Windows.Forms.CheckBox();
             this.lklEsqueciSenha = new System.Windows.Forms.LinkLabel();
             this.lblSenha = new System.Windows.Forms.Label();
             this.txbSenha = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.lblBV = new System.Windows.Forms.Label();
             this.btnLogar = new System.Windows.Forms.Button();
-            this.txbEmail = new System.Windows.Forms.TextBox();
-            this.cbxMostraSenha = new System.Windows.Forms.CheckBox();
+            this.txbNome = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelLoginForm.SuspendLayout();
             this.SuspendLayout();
@@ -153,15 +153,26 @@
             this.panelLoginForm.Controls.Add(this.lklEsqueciSenha);
             this.panelLoginForm.Controls.Add(this.lblSenha);
             this.panelLoginForm.Controls.Add(this.txbSenha);
-            this.panelLoginForm.Controls.Add(this.lblEmail);
+            this.panelLoginForm.Controls.Add(this.lblNome);
             this.panelLoginForm.Controls.Add(this.lblBV);
             this.panelLoginForm.Controls.Add(this.btnLogar);
-            this.panelLoginForm.Controls.Add(this.txbEmail);
+            this.panelLoginForm.Controls.Add(this.txbNome);
             this.panelLoginForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLoginForm.Location = new System.Drawing.Point(267, 0);
             this.panelLoginForm.Name = "panelLoginForm";
             this.panelLoginForm.Size = new System.Drawing.Size(327, 539);
             this.panelLoginForm.TabIndex = 1;
+            // 
+            // cbxMostraSenha
+            // 
+            this.cbxMostraSenha.AutoSize = true;
+            this.cbxMostraSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.cbxMostraSenha.Location = new System.Drawing.Point(302, 293);
+            this.cbxMostraSenha.Name = "cbxMostraSenha";
+            this.cbxMostraSenha.Size = new System.Drawing.Size(15, 14);
+            this.cbxMostraSenha.TabIndex = 6;
+            this.cbxMostraSenha.UseVisualStyleBackColor = false;
+            this.cbxMostraSenha.CheckedChanged += new System.EventHandler(this.cbxMostraSenha_CheckedChanged);
             // 
             // lklEsqueciSenha
             // 
@@ -184,7 +195,7 @@
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(34, 247);
+            this.lblSenha.Location = new System.Drawing.Point(28, 258);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(61, 21);
             this.lblSenha.TabIndex = 3;
@@ -192,6 +203,8 @@
             // 
             // txbSenha
             // 
+            this.txbSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.txbSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbSenha.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSenha.Location = new System.Drawing.Point(32, 282);
             this.txbSenha.Name = "txbSenha";
@@ -199,15 +212,15 @@
             this.txbSenha.Size = new System.Drawing.Size(263, 33);
             this.txbSenha.TabIndex = 4;
             // 
-            // lblEmail
+            // lblNome
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(34, 132);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(57, 21);
-            this.lblEmail.TabIndex = 1;
-            this.lblEmail.Text = "Email:";
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(28, 143);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(61, 21);
+            this.lblNome.TabIndex = 1;
+            this.lblNome.Text = "Nome:";
             // 
             // lblBV
             // 
@@ -234,23 +247,15 @@
             this.btnLogar.UseVisualStyleBackColor = false;
             this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
             // 
-            // txbEmail
+            // txbNome
             // 
-            this.txbEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbEmail.Location = new System.Drawing.Point(32, 167);
-            this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(263, 33);
-            this.txbEmail.TabIndex = 1;
-            // 
-            // cbxMostraSenha
-            // 
-            this.cbxMostraSenha.AutoSize = true;
-            this.cbxMostraSenha.Location = new System.Drawing.Point(302, 293);
-            this.cbxMostraSenha.Name = "cbxMostraSenha";
-            this.cbxMostraSenha.Size = new System.Drawing.Size(15, 14);
-            this.cbxMostraSenha.TabIndex = 6;
-            this.cbxMostraSenha.UseVisualStyleBackColor = true;
-            this.cbxMostraSenha.CheckedChanged += new System.EventHandler(this.cbxMostraSenha_CheckedChanged);
+            this.txbNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.txbNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbNome.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNome.Location = new System.Drawing.Point(32, 167);
+            this.txbNome.Name = "txbNome";
+            this.txbNome.Size = new System.Drawing.Size(263, 33);
+            this.txbNome.TabIndex = 1;
             // 
             // Login
             // 
@@ -262,6 +267,7 @@
             this.Name = "Login";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Enter);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelLoginForm.ResumeLayout(false);
@@ -275,11 +281,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelLoginForm;
         private System.Windows.Forms.Button btnLogar;
-        private System.Windows.Forms.TextBox txbEmail;
+        private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.Label lblBV;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txbSenha;
-        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.LinkLabel lklEsqueciSenha;
         private System.Windows.Forms.Label lblLA;
         private System.Windows.Forms.Label lblCadas;

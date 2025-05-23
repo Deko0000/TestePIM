@@ -88,6 +88,7 @@
             // 
             // txbCPF
             // 
+            this.txbCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbCPF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCPF.Location = new System.Drawing.Point(21, 259);
@@ -107,6 +108,7 @@
             // 
             // txbEmail
             // 
+            this.txbEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbEmail.Location = new System.Drawing.Point(334, 260);
@@ -126,6 +128,7 @@
             // 
             // txbNome
             // 
+            this.txbNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNome.Location = new System.Drawing.Point(20, 190);
@@ -155,6 +158,7 @@
             // 
             // txbEndereco
             // 
+            this.txbEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbEndereco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbEndereco.Location = new System.Drawing.Point(334, 190);
@@ -174,6 +178,7 @@
             // 
             // txbRA
             // 
+            this.txbRA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbRA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbRA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbRA.Location = new System.Drawing.Point(335, 331);
@@ -210,6 +215,7 @@
             // dtpDataNasc
             // 
             this.dtpDataNasc.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataNasc.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.dtpDataNasc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpDataNasc.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -223,6 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(638, 619);
             this.Controls.Add(this.dtpDataNasc);
             this.Controls.Add(this.btnCadastrar);

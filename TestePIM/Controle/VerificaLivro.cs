@@ -28,13 +28,7 @@ namespace TestePIM
                 {
                     MessageBox.Show("Digite um Ano válido.");
                     return false;
-                }
-
-                if (livro.ISBN.Length > 13 || !livro.ISBN.All(char.IsDigit))
-                {
-                    MessageBox.Show("Digite um formato de ISBN válido.");
-                    return false;
-                }
+                }                
 
                 if (livro.Quantidade < 1 || livro.Quantidade > 50)
                 {

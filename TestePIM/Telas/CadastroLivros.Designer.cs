@@ -32,7 +32,6 @@
             this.btnPegaImagem = new System.Windows.Forms.Button();
             this.lblCL = new System.Windows.Forms.Label();
             this.pbxCapa = new System.Windows.Forms.PictureBox();
-            this.cbxGenero = new System.Windows.Forms.ComboBox();
             this.txbTitulo = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblAutor = new System.Windows.Forms.Label();
@@ -50,6 +49,8 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.lblSinopse = new System.Windows.Forms.Label();
             this.txbSinopse = new System.Windows.Forms.TextBox();
+            this.btnBuscarISBN = new System.Windows.Forms.Button();
+            this.txbGenero = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCapa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDownQuant)).BeginInit();
             this.SuspendLayout();
@@ -89,106 +90,9 @@
             this.pbxCapa.TabIndex = 2;
             this.pbxCapa.TabStop = false;
             // 
-            // cbxGenero
-            // 
-            this.cbxGenero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxGenero.FormattingEnabled = true;
-            this.cbxGenero.Items.AddRange(new object[] {
-            "Aventura",
-            "",
-            "",
-            "Autoajuda",
-            "",
-            "",
-            "Autobiografia",
-            "",
-            "",
-            "Biografia",
-            "",
-            "",
-            "Chick-lit",
-            "",
-            "",
-            "Comédia",
-            "",
-            "",
-            "Contos",
-            "",
-            "",
-            "Crônicas",
-            "",
-            "",
-            "Distopia",
-            "",
-            "",
-            "Drama",
-            "",
-            "",
-            "Ensino",
-            "",
-            "",
-            "Espiritualidade / Religião",
-            "",
-            "",
-            "Fantasia",
-            "",
-            "",
-            "Ficção Científica",
-            "",
-            "",
-            "Ficção Histórica",
-            "",
-            "",
-            "Filosofia",
-            "",
-            "",
-            "Graphic Novel",
-            "",
-            "",
-            "Infantojuvenil",
-            "",
-            "",
-            "Literatura Clássica",
-            "",
-            "",
-            "Literatura Infantojuvenil",
-            "",
-            "",
-            "Mangá",
-            "",
-            "",
-            "Mistério",
-            "",
-            "",
-            "Poesia",
-            "",
-            "",
-            "Policial",
-            "",
-            "",
-            "Quadrinhos (HQ)",
-            "",
-            "",
-            "Romance",
-            "",
-            "",
-            "Romance Histórico",
-            "",
-            "",
-            "Suspense / Thriller",
-            "",
-            "",
-            "Terror / Horror",
-            "",
-            "",
-            "Young Adult (YA)"});
-            this.cbxGenero.Location = new System.Drawing.Point(25, 330);
-            this.cbxGenero.Name = "cbxGenero";
-            this.cbxGenero.Size = new System.Drawing.Size(216, 29);
-            this.cbxGenero.TabIndex = 3;
-            // 
             // txbTitulo
             // 
+            this.txbTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbTitulo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTitulo.Location = new System.Drawing.Point(25, 115);
@@ -218,6 +122,7 @@
             // 
             // txbAutor
             // 
+            this.txbAutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbAutor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbAutor.Location = new System.Drawing.Point(25, 185);
@@ -237,6 +142,7 @@
             // 
             // txbISBN
             // 
+            this.txbISBN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbISBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbISBN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbISBN.Location = new System.Drawing.Point(25, 257);
@@ -295,9 +201,9 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(173, 511);
+            this.btnCadastrar.Location = new System.Drawing.Point(25, 557);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(139, 40);
+            this.btnCadastrar.Size = new System.Drawing.Size(149, 40);
             this.btnCadastrar.TabIndex = 16;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = false;
@@ -315,6 +221,7 @@
             // 
             // nUpDownQuant
             // 
+            this.nUpDownQuant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.nUpDownQuant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nUpDownQuant.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nUpDownQuant.Location = new System.Drawing.Point(121, 452);
@@ -329,6 +236,7 @@
             // 
             // txbAnoPubli
             // 
+            this.txbAnoPubli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbAnoPubli.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbAnoPubli.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbAnoPubli.Location = new System.Drawing.Point(24, 406);
@@ -344,7 +252,7 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
-            this.btnLimpar.Location = new System.Drawing.Point(22, 511);
+            this.btnLimpar.Location = new System.Drawing.Point(189, 557);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(139, 40);
             this.btnLimpar.TabIndex = 35;
@@ -364,6 +272,7 @@
             // 
             // txbSinopse
             // 
+            this.txbSinopse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbSinopse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbSinopse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSinopse.Location = new System.Drawing.Point(329, 401);
@@ -373,12 +282,40 @@
             this.txbSinopse.Size = new System.Drawing.Size(287, 150);
             this.txbSinopse.TabIndex = 37;
             // 
+            // btnBuscarISBN
+            // 
+            this.btnBuscarISBN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
+            this.btnBuscarISBN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarISBN.FlatAppearance.BorderSize = 0;
+            this.btnBuscarISBN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarISBN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
+            this.btnBuscarISBN.Location = new System.Drawing.Point(25, 499);
+            this.btnBuscarISBN.Name = "btnBuscarISBN";
+            this.btnBuscarISBN.Size = new System.Drawing.Size(149, 40);
+            this.btnBuscarISBN.TabIndex = 38;
+            this.btnBuscarISBN.Text = "BUSCAR ISBN";
+            this.btnBuscarISBN.UseVisualStyleBackColor = false;
+            this.btnBuscarISBN.Click += new System.EventHandler(this.btnBuscarISBN_Click);
+            // 
+            // txbGenero
+            // 
+            this.txbGenero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.txbGenero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbGenero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbGenero.Location = new System.Drawing.Point(24, 332);
+            this.txbGenero.Name = "txbGenero";
+            this.txbGenero.Size = new System.Drawing.Size(217, 29);
+            this.txbGenero.TabIndex = 39;
+            // 
             // CadastroLivros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(638, 619);
+            this.Controls.Add(this.txbGenero);
+            this.Controls.Add(this.btnBuscarISBN);
             this.Controls.Add(this.txbSinopse);
             this.Controls.Add(this.lblSinopse);
             this.Controls.Add(this.btnLimpar);
@@ -396,7 +333,6 @@
             this.Controls.Add(this.txbAutor);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txbTitulo);
-            this.Controls.Add(this.cbxGenero);
             this.Controls.Add(this.pbxCapa);
             this.Controls.Add(this.lblCL);
             this.Controls.Add(this.btnPegaImagem);
@@ -415,7 +351,6 @@
         private System.Windows.Forms.Button btnPegaImagem;
         private System.Windows.Forms.Label lblCL;
         private System.Windows.Forms.PictureBox pbxCapa;
-        private System.Windows.Forms.ComboBox cbxGenero;
         private System.Windows.Forms.TextBox txbTitulo;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblAutor;
@@ -433,5 +368,7 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Label lblSinopse;
         private System.Windows.Forms.TextBox txbSinopse;
+        private System.Windows.Forms.Button btnBuscarISBN;
+        private System.Windows.Forms.TextBox txbGenero;
     }
 }

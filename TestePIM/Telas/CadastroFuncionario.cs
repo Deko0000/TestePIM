@@ -78,6 +78,7 @@ namespace TestePIM
                 txbEndereco.Clear();
                 txbSenha.Clear();
                 txbConfirmaSenha.Clear();
+                lblIdentificaFuncionario.Visible = false;
             }
         }
 
