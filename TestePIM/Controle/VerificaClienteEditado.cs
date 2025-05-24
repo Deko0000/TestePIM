@@ -42,6 +42,21 @@ namespace TestePIM.Controle
                 return false;
             }
 
+            DateTime hoje = DateTime.Now;
+            int idade = hoje.Year - cliente.DataNasc.Year;
+
+            // Ajuste se a data de nascimento ainda não fez aniversário este ano
+            if (cliente.DataNasc.Date > hoje.AddYears(-idade))
+            {
+                idade--;
+            }
+
+            if (idade < 10)
+            {
+                MessageBox.Show("Data de Nascimento inválida (Min 10 anos).");
+                return false;
+            }
+
             return true;
         }
     }

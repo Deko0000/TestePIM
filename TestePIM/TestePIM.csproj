@@ -49,7 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controle\CardBuscaLivro.cs" />
     <Compile Include="Controle\VerificaClienteEditado.cs" />
+    <Compile Include="Controle\VerificaFuncionarioEditado.cs" />
+    <Compile Include="Controle\VerificaLivroEditado.cs" />
+    <Compile Include="Controle\VerificaLivroEditadoEstoque.cs" />
+    <Compile Include="Telas\BuscaLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\BuscaLivros.Designer.cs">
+      <DependentUpon>BuscaLivros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\CadastroClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,17 +85,53 @@
     <Compile Include="Telas\ClientesCadastrados.Designer.cs">
       <DependentUpon>ClientesCadastrados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\DadosLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\DadosLivro.Designer.cs">
+      <DependentUpon>DadosLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\DadosLivroEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\DadosLivroEstoque.Designer.cs">
+      <DependentUpon>DadosLivroEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\EditarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\EditarCliente.Designer.cs">
       <DependentUpon>EditarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\EditarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\EditarFuncionario.Designer.cs">
+      <DependentUpon>EditarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\EditarLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\EditarLivro.Designer.cs">
+      <DependentUpon>EditarLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\EditarLivroEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\EditarLivroEstoque.Designer.cs">
+      <DependentUpon>EditarLivroEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\EsqueciSenha.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\EsqueciSenha.Designer.cs">
       <DependentUpon>EsqueciSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Estoque.Designer.cs">
+      <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Form1.cs">
       <SubType>Form</SubType>
@@ -97,6 +143,12 @@
     <Compile Include="Controle\GerarIdentificacao.cs" />
     <Compile Include="Dados\Listas.cs" />
     <Compile Include="Dados\Livro.cs" />
+    <Compile Include="Telas\FuncionariosCadastrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\FuncionariosCadastrados.Designer.cs">
+      <DependentUpon>FuncionariosCadastrados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +163,21 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controle\VerificaLivro.cs" />
+    <Compile Include="Telas\VerDadosCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\VerDadosCliente.Designer.cs">
+      <DependentUpon>VerDadosCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\VerDadosFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\VerDadosFuncionario.Designer.cs">
+      <DependentUpon>VerDadosFuncionario.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Telas\BuscaLivros.resx">
+      <DependentUpon>BuscaLivros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\CadastroClientes.resx">
       <DependentUpon>CadastroClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,14 +190,35 @@
     <EmbeddedResource Include="Telas\ClientesCadastrados.resx">
       <DependentUpon>ClientesCadastrados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\DadosLivro.resx">
+      <DependentUpon>DadosLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\DadosLivroEstoque.resx">
+      <DependentUpon>DadosLivroEstoque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\EditarCliente.resx">
       <DependentUpon>EditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\EditarFuncionario.resx">
+      <DependentUpon>EditarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\EditarLivro.resx">
+      <DependentUpon>EditarLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\EditarLivroEstoque.resx">
+      <DependentUpon>EditarLivroEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\EsqueciSenha.resx">
       <DependentUpon>EsqueciSenha.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Estoque.resx">
+      <DependentUpon>Estoque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\FuncionariosCadastrados.resx">
+      <DependentUpon>FuncionariosCadastrados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -144,6 +232,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Telas\VerDadosCliente.resx">
+      <DependentUpon>VerDadosCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\VerDadosFuncionario.resx">
+      <DependentUpon>VerDadosFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

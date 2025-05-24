@@ -22,6 +22,8 @@ namespace TestePIM.Telas
         {
             if (ClienteParaEditar != null)
             {
+                
+
                 txbNome.Text = ClienteParaEditar.Nome;
                 txbEmail.Text = ClienteParaEditar.Email;
                 txbCPF.Text = ClienteParaEditar.CPF;
@@ -34,6 +36,15 @@ namespace TestePIM.Telas
         {
             if (ClienteParaEditar != null)
             {
+                var confirmacao = MessageBox.Show("Tem certeza que deseja editar este cliente?",
+                                          "Confirmar Edição",
+                                          MessageBoxButtons.YesNo,
+                                          MessageBoxIcon.Question);
+                if (confirmacao != DialogResult.Yes)
+                {
+                    return;  // Usuário desistiu da edição
+                }
+
                 // Atualiza os dados do cliente com o que está nas caixas de texto
                 ClienteParaEditar.Nome = txbNome.Text;
                 ClienteParaEditar.Email = txbEmail.Text;
@@ -75,6 +86,13 @@ namespace TestePIM.Telas
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

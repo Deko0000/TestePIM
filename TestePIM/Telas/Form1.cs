@@ -99,6 +99,7 @@ namespace TestePIM
         }
         private void btnFunCadastrados_Click(object sender, EventArgs e)
         {
+            abreMenuForm(new FuncionariosCadastrados());
             escondeSubMenu();
         }
         #endregion
@@ -111,11 +112,13 @@ namespace TestePIM
 
         private void btnBuscaLivros_Click(object sender, EventArgs e)
         {
+            abreMenuForm(new BuscaLivros());
             escondeSubMenu();
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
         {
+            abreMenuForm(new Estoque());
             escondeSubMenu();
         }
         #endregion

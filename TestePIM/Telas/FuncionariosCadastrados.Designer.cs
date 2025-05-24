@@ -1,6 +1,6 @@
 ﻿namespace TestePIM.Telas
 {
-    partial class ClientesCadastrados
+    partial class FuncionariosCadastrados
     {
         /// <summary>
         /// Required designer variable.
@@ -29,34 +29,32 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesCadastrados));
-            this.panelClientesCadastrados = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FuncionariosCadastrados));
+            this.panelFunCadastrados = new System.Windows.Forms.Panel();
             this.panelDataGrid = new System.Windows.Forms.Panel();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnVerDados = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.dgvFuncionarios = new System.Windows.Forms.DataGridView();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txbBuscar = new System.Windows.Forms.TextBox();
             this.pbLupa = new System.Windows.Forms.PictureBox();
-            this.panelClientesCadastrados.SuspendLayout();
             this.panelDataGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).BeginInit();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLupa)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelClientesCadastrados
+            // panelFunCadastrados
             // 
-            this.panelClientesCadastrados.Controls.Add(this.panelDataGrid);
-            this.panelClientesCadastrados.Controls.Add(this.panelHeader);
-            this.panelClientesCadastrados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelClientesCadastrados.Location = new System.Drawing.Point(0, 0);
-            this.panelClientesCadastrados.Name = "panelClientesCadastrados";
-            this.panelClientesCadastrados.Size = new System.Drawing.Size(638, 619);
-            this.panelClientesCadastrados.TabIndex = 0;
+            this.panelFunCadastrados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.panelFunCadastrados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFunCadastrados.Location = new System.Drawing.Point(0, 0);
+            this.panelFunCadastrados.Name = "panelFunCadastrados";
+            this.panelFunCadastrados.Size = new System.Drawing.Size(638, 619);
+            this.panelFunCadastrados.TabIndex = 0;
             // 
             // panelDataGrid
             // 
@@ -65,12 +63,12 @@
             this.panelDataGrid.Controls.Add(this.btnExcluir);
             this.panelDataGrid.Controls.Add(this.btnVerDados);
             this.panelDataGrid.Controls.Add(this.btnEditar);
-            this.panelDataGrid.Controls.Add(this.dgvClientes);
+            this.panelDataGrid.Controls.Add(this.dgvFuncionarios);
             this.panelDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDataGrid.Location = new System.Drawing.Point(0, 220);
             this.panelDataGrid.Name = "panelDataGrid";
             this.panelDataGrid.Size = new System.Drawing.Size(638, 399);
-            this.panelDataGrid.TabIndex = 74;
+            this.panelDataGrid.TabIndex = 76;
             // 
             // btnExcluir
             // 
@@ -120,10 +118,10 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // dgvClientes
+            // dgvFuncionarios
             // 
-            this.dgvClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFuncionarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.dgvFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,14 +129,13 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvClientes.Location = new System.Drawing.Point(22, 76);
-            this.dgvClientes.MultiSelect = false;
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(593, 321);
-            this.dgvClientes.TabIndex = 0;
+            this.dgvFuncionarios.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvFuncionarios.Location = new System.Drawing.Point(22, 76);
+            this.dgvFuncionarios.MultiSelect = false;
+            this.dgvFuncionarios.Name = "dgvFuncionarios";
+            this.dgvFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFuncionarios.Size = new System.Drawing.Size(593, 321);
+            this.dgvFuncionarios.TabIndex = 0;
             // 
             // panelHeader
             // 
@@ -151,18 +148,18 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(638, 220);
-            this.panelHeader.TabIndex = 68;
+            this.panelHeader.TabIndex = 75;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.label1.Location = new System.Drawing.Point(150, 46);
+            this.label1.Location = new System.Drawing.Point(104, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(342, 37);
+            this.label1.Size = new System.Drawing.Size(425, 37);
             this.label1.TabIndex = 69;
-            this.label1.Text = "CLIENTES CADASTRADOS";
+            this.label1.Text = "FUNCIONÁRIOS CADASTRADOS";
             // 
             // btnVoltar
             // 
@@ -194,42 +191,41 @@
             this.pbLupa.Name = "pbLupa";
             this.pbLupa.Size = new System.Drawing.Size(32, 32);
             this.pbLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbLupa.TabIndex = 70;
+            this.pbLupa.TabIndex = 77;
             this.pbLupa.TabStop = false;
             // 
-            // ClientesCadastrados
+            // FuncionariosCadastrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(638, 619);
-            this.Controls.Add(this.panelClientesCadastrados);
-            this.Name = "ClientesCadastrados";
+            this.Controls.Add(this.panelDataGrid);
+            this.Controls.Add(this.panelHeader);
+            this.Controls.Add(this.panelFunCadastrados);
+            this.Name = "FuncionariosCadastrados";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.panelClientesCadastrados.ResumeLayout(false);
-            this.panelClientesCadastrados.PerformLayout();
             this.panelDataGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLupa)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelClientesCadastrados;
-        private System.Windows.Forms.TextBox txbBuscar;
-        private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Panel panelFunCadastrados;
         private System.Windows.Forms.Panel panelDataGrid;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnVerDados;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridView dgvFuncionarios;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.TextBox txbBuscar;
         private System.Windows.Forms.PictureBox pbLupa;
     }
 }

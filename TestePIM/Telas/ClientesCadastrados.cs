@@ -171,8 +171,17 @@ namespace TestePIM.Telas
 
             if (cliente != null)
             {
-                MessageBox.Show($"Dados do Cliente:\n\nNome: {cliente.Nome}\nRA: {cliente.RA}\nEmail: {cliente.Email}" +
-                    $"\nCPF: {cliente.CPF}\nEndereço: {cliente.Endereco}\nData de Nascimento: {cliente.DataNasc}");
+                var formVisualizar = new VerDadosCliente();
+                formVisualizar.ClienteParaVisualizar = cliente;
+
+                // Assina o evento FormClosed para quando fechar a edição mostrar o panelHeader de novo
+                formVisualizar.FormClosed += (s, args) =>
+                {
+                    panelHeader.Visible = true;   // Volta a mostrar o panelHeader
+                    CarregarClientes(Listas.Clientes); // Recarrega clientes atualizados
+                };
+
+                abreEditForm(formVisualizar);
             }
         }
 

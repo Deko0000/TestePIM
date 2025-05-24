@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestePIM.Controle;
 
 namespace TestePIM
 {
@@ -18,6 +19,7 @@ namespace TestePIM
         {
             InitializeComponent();
         }
+
         private async Task BuscarLivroPorISBN(string isbn)
         {
             string url = $"https://www.googleapis.com/books/v1/volumes?q=isbn:{isbn}";
@@ -38,11 +40,9 @@ namespace TestePIM
                     {
                         txbTitulo.Text = item["title"]?.ToString() ?? "";
                         txbAutor.Text = string.Join(", ", item["authors"]?.ToObject<string[]>() ?? new string[0]);
-                        txbGenero.Text = item["categories"]?.ToString() ?? "";
+                        txbGenero.Text = item["categories"]?.First?.ToString() ?? "";
                         txbSinopse.Text = item["description"]?.ToString() ?? "";
-                        txbAnoPubli.Text = item["publishedDate"]?.ToString() ?? "";
-
-                        // Opcional: carregar a imagem da capa
+                        txbAnoPubli.Text = item["publishedDate"]?.ToString() ?? "";                     
                         string imagemUrl = item["imageLinks"]?["thumbnail"]?.ToString();
                         if (!string.IsNullOrEmpty(imagemUrl))
                         {
@@ -52,6 +52,9 @@ namespace TestePIM
                                 {
                                     var imagemStream = await imagemResponse.Content.ReadAsStreamAsync();
                                     pbxCapa.Image = Image.FromStream(imagemStream);
+
+                                    // Opcional: guardar a URL da imagem no Tag para cadastro
+                                    pbxCapa.Tag = imagemUrl;
                                 }
                             }
                         }
@@ -67,42 +70,42 @@ namespace TestePIM
                 }
             }
         }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             try
             {
+                string caminhoCapa = pbxCapa.Tag?.ToString() ?? "";
+
                 Livro livro = new Livro(
+
                     txbTitulo.Text,
                     txbAutor.Text,
                     txbISBN.Text,
                     txbAnoPubli.Text,
                     (int)nUpDownQuant.Value,
                     txbGenero.Text,
-                    txbSinopse.Text
+                    txbSinopse.Text,
+                    caminhoCapa
                 );
 
                 VerificaLivro verifica = new VerificaLivro();
                 if (verifica.Validar(livro))
                 {
                     livro.DefinirIdentificacao();
-                    Listas.Livros.Add(livro);  // ou SistemaLivro.Livros.Add(livro);
+                    Listas.Livros.Add(livro);
                     MessageBox.Show("Livro cadastrado com sucesso!");
-                    txbTitulo.Clear();
-                    txbAutor.Clear();
-                    txbGenero.Clear();
-                    txbISBN.Clear();
-                    txbAnoPubli.Clear();
-                    nUpDownQuant.Value = 0;
-                    pbxCapa.Image = null;
 
+                    // Limpa os campos
+                    LimparCampos();
                 }
-                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao cadastrar livro: " + ex.Message);
             }
         }
+
         private void btnPegaImagem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -111,11 +114,9 @@ namespace TestePIM
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 pbxCapa.Image = Image.FromFile(dialog.FileName);
-                pbxCapa.Tag = dialog.FileName; // Salva o caminho da imagem no Tag (se precisar depois)
+                pbxCapa.Tag = dialog.FileName;  // Armazena o caminho da imagem
             }
-
         }
-
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -123,6 +124,11 @@ namespace TestePIM
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void LimparCampos()
         {
             txbTitulo.Clear();
             txbAutor.Clear();
@@ -132,16 +138,14 @@ namespace TestePIM
             txbSinopse.Clear();
             nUpDownQuant.Value = 0;
             pbxCapa.Image = null;
-
+            pbxCapa.Tag = null;
         }
 
         private async void btnBuscarISBN_Click(object sender, EventArgs e)
         {
-            
             string isbn = txbISBN.Text.Trim();
             if (!string.IsNullOrEmpty(isbn))
             {
-              
                 await BuscarLivroPorISBN(isbn);
             }
             else

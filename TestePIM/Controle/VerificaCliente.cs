@@ -50,7 +50,7 @@ namespace TestePIM
                     return false;
                 }
 
-            if (Listas.Clientes.Any(u => u.Email == cliente.Email))
+                if (Listas.Clientes.Any(u => u.Email == cliente.Email))
                 {
                     MessageBox.Show("Já existe um cliente com esse e-mail.");
                     return false;
@@ -61,7 +61,20 @@ namespace TestePIM
                     return false;
                 }
 
-                return true;
+                DateTime hoje = DateTime.Now;
+                int idade = hoje.Year - cliente.DataNasc.Year;
+                if (cliente.DataNasc.Date > hoje.AddYears(-idade))
+                {
+                    idade--;
+                }
+
+                if (idade < 10)
+                {
+                    MessageBox.Show("Data de Nascimento inválida (Min 10 anos).");
+                    return false;
+                }
+
+            return true;
             }
     }
 
