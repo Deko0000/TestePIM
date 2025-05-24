@@ -49,76 +49,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controle\CardBuscaLivro.cs" />
-    <Compile Include="Controle\VerificaClienteEditado.cs" />
-    <Compile Include="Controle\VerificaFuncionarioEditado.cs" />
-    <Compile Include="Controle\VerificaLivroEditado.cs" />
-    <Compile Include="Controle\VerificaLivroEditadoEstoque.cs" />
-    <Compile Include="Telas\BuscaLivros.cs">
+    <Compile Include="Controle\Emprestimo\VerificaRealizacaoEmp.cs" />
+    <Compile Include="Controle\Livro\CardBuscaLivro.cs" />
+    <Compile Include="Controle\Cliente\VerificaClienteEditado.cs" />
+    <Compile Include="Controle\Funcionario\VerificaFuncionarioEditado.cs" />
+    <Compile Include="Controle\Livro\VerificaLivroEditado.cs" />
+    <Compile Include="Controle\Livro\VerificaLivroEditadoEstoque.cs" />
+    <Compile Include="Dados\Emprestimo.cs" />
+    <Compile Include="Telas\Emprestimo\RealizaEmp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\BuscaLivros.Designer.cs">
+    <Compile Include="Telas\Emprestimo\RealizaEmp.Designer.cs">
+      <DependentUpon>RealizaEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Livro\BuscaLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Livro\BuscaLivros.Designer.cs">
       <DependentUpon>BuscaLivros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\CadastroClientes.cs">
+    <Compile Include="Telas\Cliente\CadastroClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\CadastroClientes.Designer.cs">
+    <Compile Include="Telas\Cliente\CadastroClientes.Designer.cs">
       <DependentUpon>CadastroClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\CadastroFuncionario.cs">
+    <Compile Include="Telas\Funcionario\CadastroFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\CadastroFuncionario.Designer.cs">
+    <Compile Include="Telas\Funcionario\CadastroFuncionario.Designer.cs">
       <DependentUpon>CadastroFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\CadastroLivros.cs">
+    <Compile Include="Telas\Livro\CadastroLivros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\CadastroLivros.Designer.cs">
+    <Compile Include="Telas\Livro\CadastroLivros.Designer.cs">
       <DependentUpon>CadastroLivros.cs</DependentUpon>
     </Compile>
     <Compile Include="Dados\Cliente.cs" />
-    <Compile Include="Telas\ClientesCadastrados.cs">
+    <Compile Include="Telas\Cliente\ClientesCadastrados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\ClientesCadastrados.Designer.cs">
+    <Compile Include="Telas\Cliente\ClientesCadastrados.Designer.cs">
       <DependentUpon>ClientesCadastrados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\DadosLivro.cs">
+    <Compile Include="Telas\Livro\DadosLivro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\DadosLivro.Designer.cs">
+    <Compile Include="Telas\Livro\DadosLivro.Designer.cs">
       <DependentUpon>DadosLivro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\DadosLivroEstoque.cs">
+    <Compile Include="Telas\Livro\DadosLivroEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\DadosLivroEstoque.Designer.cs">
+    <Compile Include="Telas\Livro\DadosLivroEstoque.Designer.cs">
       <DependentUpon>DadosLivroEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\EditarCliente.cs">
+    <Compile Include="Telas\Cliente\EditarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\EditarCliente.Designer.cs">
+    <Compile Include="Telas\Cliente\EditarCliente.Designer.cs">
       <DependentUpon>EditarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\EditarFuncionario.cs">
+    <Compile Include="Telas\Funcionario\EditarFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\EditarFuncionario.Designer.cs">
+    <Compile Include="Telas\Funcionario\EditarFuncionario.Designer.cs">
       <DependentUpon>EditarFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\EditarLivro.cs">
+    <Compile Include="Telas\Livro\EditarLivro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\EditarLivro.Designer.cs">
+    <Compile Include="Telas\Livro\EditarLivro.Designer.cs">
       <DependentUpon>EditarLivro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\EditarLivroEstoque.cs">
+    <Compile Include="Telas\Livro\EditarLivroEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\EditarLivroEstoque.Designer.cs">
+    <Compile Include="Telas\Livro\EditarLivroEstoque.Designer.cs">
       <DependentUpon>EditarLivroEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\EsqueciSenha.cs">
@@ -127,10 +135,10 @@
     <Compile Include="Telas\EsqueciSenha.Designer.cs">
       <DependentUpon>EsqueciSenha.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Estoque.cs">
+    <Compile Include="Telas\Livro\Estoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Estoque.Designer.cs">
+    <Compile Include="Telas\Livro\Estoque.Designer.cs">
       <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Form1.cs">
@@ -143,10 +151,10 @@
     <Compile Include="Controle\GerarIdentificacao.cs" />
     <Compile Include="Dados\Listas.cs" />
     <Compile Include="Dados\Livro.cs" />
-    <Compile Include="Telas\FuncionariosCadastrados.cs">
+    <Compile Include="Telas\Funcionario\FuncionariosCadastrados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\FuncionariosCadastrados.Designer.cs">
+    <Compile Include="Telas\Funcionario\FuncionariosCadastrados.Designer.cs">
       <DependentUpon>FuncionariosCadastrados.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Login.cs">
@@ -158,66 +166,75 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controle\VerificaAdm.cs" />
-    <Compile Include="Controle\VerificaCliente.cs" />
-    <Compile Include="Controle\VerificaFuncionario.cs">
+    <Compile Include="Controle\Cliente\VerificaCliente.cs" />
+    <Compile Include="Controle\Funcionario\VerificaFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controle\VerificaLivro.cs" />
-    <Compile Include="Telas\VerDadosCliente.cs">
+    <Compile Include="Controle\Livro\VerificaLivro.cs" />
+    <Compile Include="Telas\Cliente\VerDadosCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\VerDadosCliente.Designer.cs">
+    <Compile Include="Telas\Cliente\VerDadosCliente.Designer.cs">
       <DependentUpon>VerDadosCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\VerDadosFuncionario.cs">
+    <Compile Include="Telas\Funcionario\VerDadosFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\VerDadosFuncionario.Designer.cs">
+    <Compile Include="Telas\Funcionario\VerDadosFuncionario.Designer.cs">
       <DependentUpon>VerDadosFuncionario.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Telas\BuscaLivros.resx">
+    <Compile Include="Telas\Emprestimo\MenuEmprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\MenuEmprestimo.Designer.cs">
+      <DependentUpon>MenuEmprestimo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Telas\Emprestimo\RealizaEmp.resx">
+      <DependentUpon>RealizaEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Livro\BuscaLivros.resx">
       <DependentUpon>BuscaLivros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\CadastroClientes.resx">
+    <EmbeddedResource Include="Telas\Cliente\CadastroClientes.resx">
       <DependentUpon>CadastroClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\CadastroFuncionario.resx">
+    <EmbeddedResource Include="Telas\Funcionario\CadastroFuncionario.resx">
       <DependentUpon>CadastroFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\CadastroLivros.resx">
+    <EmbeddedResource Include="Telas\Livro\CadastroLivros.resx">
       <DependentUpon>CadastroLivros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\ClientesCadastrados.resx">
+    <EmbeddedResource Include="Telas\Cliente\ClientesCadastrados.resx">
       <DependentUpon>ClientesCadastrados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\DadosLivro.resx">
+    <EmbeddedResource Include="Telas\Livro\DadosLivro.resx">
       <DependentUpon>DadosLivro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\DadosLivroEstoque.resx">
+    <EmbeddedResource Include="Telas\Livro\DadosLivroEstoque.resx">
       <DependentUpon>DadosLivroEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\EditarCliente.resx">
+    <EmbeddedResource Include="Telas\Cliente\EditarCliente.resx">
       <DependentUpon>EditarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\EditarFuncionario.resx">
+    <EmbeddedResource Include="Telas\Funcionario\EditarFuncionario.resx">
       <DependentUpon>EditarFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\EditarLivro.resx">
+    <EmbeddedResource Include="Telas\Livro\EditarLivro.resx">
       <DependentUpon>EditarLivro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\EditarLivroEstoque.resx">
+    <EmbeddedResource Include="Telas\Livro\EditarLivroEstoque.resx">
       <DependentUpon>EditarLivroEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\EsqueciSenha.resx">
       <DependentUpon>EsqueciSenha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Estoque.resx">
+    <EmbeddedResource Include="Telas\Livro\Estoque.resx">
       <DependentUpon>Estoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FuncionariosCadastrados.resx">
+    <EmbeddedResource Include="Telas\Funcionario\FuncionariosCadastrados.resx">
       <DependentUpon>FuncionariosCadastrados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Login.resx">
@@ -232,11 +249,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Telas\VerDadosCliente.resx">
+    <EmbeddedResource Include="Telas\Cliente\VerDadosCliente.resx">
       <DependentUpon>VerDadosCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\VerDadosFuncionario.resx">
+    <EmbeddedResource Include="Telas\Funcionario\VerDadosFuncionario.resx">
       <DependentUpon>VerDadosFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Emprestimo\MenuEmprestimo.resx">
+      <DependentUpon>MenuEmprestimo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

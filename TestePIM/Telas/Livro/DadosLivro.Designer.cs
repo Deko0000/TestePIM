@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DadosLivro));
             this.panelDadosLivro = new System.Windows.Forms.Panel();
             this.txbGenero = new System.Windows.Forms.TextBox();
-            this.btnBuscarISBN = new System.Windows.Forms.Button();
+            this.btnRealizaEmp = new System.Windows.Forms.Button();
             this.txbSinopse = new System.Windows.Forms.TextBox();
             this.lblSinopse = new System.Windows.Forms.Label();
             this.txbAnoPubli = new System.Windows.Forms.TextBox();
@@ -59,7 +59,7 @@
             // 
             this.panelDadosLivro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.panelDadosLivro.Controls.Add(this.txbGenero);
-            this.panelDadosLivro.Controls.Add(this.btnBuscarISBN);
+            this.panelDadosLivro.Controls.Add(this.btnRealizaEmp);
             this.panelDadosLivro.Controls.Add(this.txbSinopse);
             this.panelDadosLivro.Controls.Add(this.lblSinopse);
             this.panelDadosLivro.Controls.Add(this.txbAnoPubli);
@@ -94,20 +94,21 @@
             this.txbGenero.Size = new System.Drawing.Size(217, 29);
             this.txbGenero.TabIndex = 61;
             // 
-            // btnBuscarISBN
+            // btnRealizaEmp
             // 
-            this.btnBuscarISBN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
-            this.btnBuscarISBN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarISBN.FlatAppearance.BorderSize = 0;
-            this.btnBuscarISBN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarISBN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
-            this.btnBuscarISBN.Location = new System.Drawing.Point(39, 561);
-            this.btnBuscarISBN.Name = "btnBuscarISBN";
-            this.btnBuscarISBN.Size = new System.Drawing.Size(242, 40);
-            this.btnBuscarISBN.TabIndex = 60;
-            this.btnBuscarISBN.Text = "REALIZAR EMPRÉSTIMO";
-            this.btnBuscarISBN.UseVisualStyleBackColor = false;
+            this.btnRealizaEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
+            this.btnRealizaEmp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRealizaEmp.FlatAppearance.BorderSize = 0;
+            this.btnRealizaEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRealizaEmp.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRealizaEmp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
+            this.btnRealizaEmp.Location = new System.Drawing.Point(39, 561);
+            this.btnRealizaEmp.Name = "btnRealizaEmp";
+            this.btnRealizaEmp.Size = new System.Drawing.Size(242, 40);
+            this.btnRealizaEmp.TabIndex = 60;
+            this.btnRealizaEmp.Text = "REALIZAR EMPRÉSTIMO";
+            this.btnRealizaEmp.UseVisualStyleBackColor = false;
+            this.btnRealizaEmp.Click += new System.EventHandler(this.btnRealizaEmp_Click);
             // 
             // txbSinopse
             // 
@@ -325,7 +326,7 @@
 
         private System.Windows.Forms.Panel panelDadosLivro;
         private System.Windows.Forms.TextBox txbGenero;
-        private System.Windows.Forms.Button btnBuscarISBN;
+        private System.Windows.Forms.Button btnRealizaEmp;
         private System.Windows.Forms.TextBox txbSinopse;
         private System.Windows.Forms.Label lblSinopse;
         private System.Windows.Forms.TextBox txbAnoPubli;

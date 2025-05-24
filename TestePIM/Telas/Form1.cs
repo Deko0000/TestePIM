@@ -18,18 +18,15 @@ namespace TestePIM
             InitializeComponent();
             customizeDesing();
             btnCadastroFuncionario.Visible = false;
-            btnFunCadastrados.Visible = false;
-            btnGerenciaRelat.Visible = false;
+            btnFunCadastrados.Visible = false;            
             panelCadastrosSubMenu.Size = new Size(204, 128);
-            panelRelatSubMenu.Size = new Size(204, 86);
+            
         }
 
         private void customizeDesing()
         {
             panelCadastrosSubMenu.Visible = false;
-            panelLivrosSubMenu.Visible = false;
-            panelEmpSubMenu.Visible = false;
-            panelRelatSubMenu.Visible = false;           
+            panelLivrosSubMenu.Visible = false;                    
 
         }
 
@@ -39,10 +36,6 @@ namespace TestePIM
                 panelCadastrosSubMenu.Visible = false;
             if (panelLivrosSubMenu.Visible == true)
                 panelLivrosSubMenu.Visible = false;
-            if (panelEmpSubMenu.Visible == true)
-                panelEmpSubMenu.Visible = false;
-            if (panelRelatSubMenu.Visible == true)
-                panelRelatSubMenu.Visible = false;
         }
 
         private void mostraSubMenu(Panel subMenu)
@@ -61,11 +54,10 @@ namespace TestePIM
         {
             if (VerificaAdm.IsAdmin) // 👈 usa a classe de controle
             {
-                panelCadastrosSubMenu.Size = new Size(204, 208);
-                panelRelatSubMenu.Size = new Size(204, 126);
+                panelCadastrosSubMenu.Size = new Size(204, 208);              
                 btnCadastroFuncionario.Visible = true;
                 btnFunCadastrados.Visible = true;
-                btnGerenciaRelat.Visible = true;
+               
             }
         }
 
@@ -123,49 +115,20 @@ namespace TestePIM
         }
         #endregion
 
-        #region Emprestimos
+        
         private void btnEmprestimos_Click(object sender, EventArgs e)
         {
-            mostraSubMenu(panelEmpSubMenu);
+            MenuEmprestimo menuEmprestimo = new MenuEmprestimo();
+            menuEmprestimo.Show();
+            this.Hide();
         }
-
-        private void btnRealizarEmp_Click(object sender, EventArgs e)
-        {
-            escondeSubMenu();
-        }
-
-        private void btnAcompanharEmp_Click(object sender, EventArgs e)
-        {
-            escondeSubMenu();
-        }
-
-        private void btnMultas_Click(object sender, EventArgs e)
-        {
-            escondeSubMenu();
-        }
-        #endregion
-
-        #region Relatorios
+        
         private void btnRelatorios_Click(object sender, EventArgs e)
         {
-            mostraSubMenu(panelRelatSubMenu);
-        }
-
-        private void btnRelatorioUsuarios_Click(object sender, EventArgs e)
-        {
+            abreMenuForm(new Estoque());
             escondeSubMenu();
         }
-
-        private void btnRelatórioLivros_Click(object sender, EventArgs e)
-        {
-            escondeSubMenu();
-        }
-
-        private void btnGerenciaRelat_Click(object sender, EventArgs e)
-        {
-            escondeSubMenu();
-        }
-        #endregion
+        
 
         private Form ativaForm = null;
         private void abreMenuForm(Form menuForm)

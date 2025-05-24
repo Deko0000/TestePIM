@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestePIM.Telas.Emprestimo;
 
 namespace TestePIM.Telas
 {
@@ -110,6 +111,15 @@ namespace TestePIM.Telas
             this.FormVerDadosLivro_Load(null, null); // recarrega os dados após edição
             
         }
-       
+
+        private void btnRealizaEmp_Click(object sender, EventArgs e)
+        {
+            RealizaEmp formEmp = new RealizaEmp();
+            formEmp.LivroRecebido = this.LivroParaVisualizar;
+
+            MenuEmprestimo menuEmp = new MenuEmprestimo();
+            menuEmp.abreMenuEmpForm(formEmp);
+            menuEmp.Show();
+        }
     }
 }
