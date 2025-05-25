@@ -126,7 +126,6 @@
             this.dtpEmprestimo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEmprestimo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEmprestimo.Location = new System.Drawing.Point(30, 492);
-            this.dtpEmprestimo.MinDate = new System.DateTime(2025, 5, 24, 0, 0, 0, 0);
             this.dtpEmprestimo.Name = "dtpEmprestimo";
             this.dtpEmprestimo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpEmprestimo.Size = new System.Drawing.Size(165, 33);
@@ -246,7 +245,6 @@
             this.dtpDevolucao.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDevolucao.Location = new System.Drawing.Point(250, 492);
-            this.dtpDevolucao.MinDate = new System.DateTime(2025, 5, 24, 0, 0, 0, 0);
             this.dtpDevolucao.Name = "dtpDevolucao";
             this.dtpDevolucao.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpDevolucao.Size = new System.Drawing.Size(165, 33);

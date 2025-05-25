@@ -16,20 +16,22 @@ namespace TestePIM
         public Menu()
         {
             InitializeComponent();
-            customizeDesing();
+            customizeDesing(); // Oculta os submenus ao iniciar
             btnCadastroFuncionario.Visible = false;
-            btnFunCadastrados.Visible = false;            
+            btnFunCadastrados.Visible = false;
+
+            // Define tamanho inicial do submenu de cadastros (modo padrão, não-admin)
             panelCadastrosSubMenu.Size = new Size(204, 128);
-            
         }
 
+        // Oculta os submenus ao carregar o formulário
         private void customizeDesing()
         {
             panelCadastrosSubMenu.Visible = false;
-            panelLivrosSubMenu.Visible = false;                    
-
+            panelLivrosSubMenu.Visible = false;
         }
 
+        // Oculta ambos os submenus, útil antes de abrir outro
         private void escondeSubMenu()
         {
             if (panelCadastrosSubMenu.Visible == true)
@@ -38,30 +40,34 @@ namespace TestePIM
                 panelLivrosSubMenu.Visible = false;
         }
 
+        // Exibe submenu específico. Se já estiver visível, oculta.
         private void mostraSubMenu(Panel subMenu)
         {
-            if(subMenu.Visible == false)
+            if (subMenu.Visible == false)
             {
-                escondeSubMenu();
+                escondeSubMenu(); // Oculta todos os outros antes
                 subMenu.Visible = true;
             }
             else
             {
-                subMenu.Visible = false;
-            }
-        }
-        public void Menu_Load(object sender, EventArgs e)
-        {
-            if (VerificaAdm.IsAdmin) // 👈 usa a classe de controle
-            {
-                panelCadastrosSubMenu.Size = new Size(204, 208);              
-                btnCadastroFuncionario.Visible = true;
-                btnFunCadastrados.Visible = true;
-               
+                subMenu.Visible = false; // Oculta se clicar novamente
             }
         }
 
-        # region Cadastros
+        // Evento disparado quando o Menu é carregado
+        public void Menu_Load(object sender, EventArgs e)
+        {
+            // Exibe botões extras apenas se o usuário logado for administrador
+            if (VerificaAdm.IsAdmin)
+            {
+                panelCadastrosSubMenu.Size = new Size(204, 208); // Aumenta o painel para incluir novos botões
+                btnCadastroFuncionario.Visible = true;
+                btnFunCadastrados.Visible = true;
+            }
+        }
+
+        #region Cadastros
+
         private void btnCadastros_Click(object sender, EventArgs e)
         {
             mostraSubMenu(panelCadastrosSubMenu);
@@ -78,6 +84,7 @@ namespace TestePIM
             abreMenuForm(new CadastroClientes());
             escondeSubMenu();
         }
+
         private void btnCadastroFuncionario_Click(object sender, EventArgs e)
         {
             abreMenuForm(new CadastroFuncionario());
@@ -89,14 +96,17 @@ namespace TestePIM
             abreMenuForm(new ClientesCadastrados());
             escondeSubMenu();
         }
+
         private void btnFunCadastrados_Click(object sender, EventArgs e)
         {
             abreMenuForm(new FuncionariosCadastrados());
             escondeSubMenu();
         }
+
         #endregion
 
         #region Livros
+
         private void btnLivros_Click(object sender, EventArgs e)
         {
             mostraSubMenu(panelLivrosSubMenu);
@@ -113,38 +123,44 @@ namespace TestePIM
             abreMenuForm(new Estoque());
             escondeSubMenu();
         }
+
         #endregion
 
-        
+        // Botão que leva ao menu de empréstimos
         private void btnEmprestimos_Click(object sender, EventArgs e)
         {
             MenuEmprestimo menuEmprestimo = new MenuEmprestimo();
             menuEmprestimo.Show();
-            this.Hide();
+            this.Hide(); // Oculta a tela atual
         }
-        
+
+        // Botão de relatórios (usa o mesmo form de Estoque, talvez por simplicidade ou placeholder)
         private void btnRelatorios_Click(object sender, EventArgs e)
         {
             abreMenuForm(new Estoque());
             escondeSubMenu();
         }
-        
 
+        // Formulário atual exibido no painel central
         private Form ativaForm = null;
+
+        // Método para abrir formulário dentro do painel central (sem bordas)
         private void abreMenuForm(Form menuForm)
         {
             if (ativaForm != null)
-                ativaForm.Close();
+                ativaForm.Close(); // Fecha form anterior se houver
+
             ativaForm = menuForm;
             menuForm.TopLevel = false;
-            menuForm.FormBorderStyle  = FormBorderStyle.None;
+            menuForm.FormBorderStyle = FormBorderStyle.None;
             menuForm.Dock = DockStyle.Fill;
             panelMenuForm.Controls.Add(menuForm);
             panelMenuForm.Tag = menuForm;
             menuForm.BringToFront();
             menuForm.Show();
-        }        
+        }
 
+        // Botão de sair: confirma saída e volta para tela de login
         private void btnSair_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show(
@@ -160,8 +176,9 @@ namespace TestePIM
                 login.Show();
                 this.Hide();
             }
-            
         }
+
+        // Evento disparado ao fechar o formulário principal (encerra a aplicação por completo)
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

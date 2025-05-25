@@ -65,10 +65,6 @@ namespace TestePIM
             dtpDataNasc.Value = DateTime.Now;
             txbRA.Clear();
             txbEndereco.Clear();
-        }
-
-        
-
-        
+        }        
     }
 }

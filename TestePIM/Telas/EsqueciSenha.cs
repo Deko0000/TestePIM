@@ -16,8 +16,11 @@ namespace TestePIM
         {
             InitializeComponent();
         }
+
+        // Evento de Clique do botão "Confirmar"
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            // Obtém os valores dos campos de texto
             string matricula = txbMatricula.Text;
             string cpf = txbCPF.Text;
             string novaSenha = txbSenha.Text;
@@ -39,10 +42,13 @@ namespace TestePIM
                 MessageBox.Show("As senhas não conferem.");
                 return;
             }
-            var funcionarioEncontrado = Listas.Funcionarios
-                .FirstOrDefault(f => f.NumIdentifica == matricula && f.CPF == cpf);         
-            
 
+            // Verifica se a matrícula e o CPF são válidos
+            var funcionarioEncontrado = Listas.Funcionarios
+                .FirstOrDefault(f => f.NumIdentifica == matricula && f.CPF == cpf);
+
+
+            // Se o funcionário for encontrado, altera a senha
             if (funcionarioEncontrado != null)
             {
                 funcionarioEncontrado.Senha = novaSenha;
@@ -56,11 +62,13 @@ namespace TestePIM
             
         }
 
+        // Evento de Clique do botão "Voltar"
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();            
             
         }
+        // Evento de Clique do botão "Fechar"
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

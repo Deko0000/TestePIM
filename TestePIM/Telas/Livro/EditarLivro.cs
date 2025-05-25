@@ -21,6 +21,7 @@ namespace TestePIM.Telas
 
         public Livro LivroParaEditar { get; set; }
 
+        // Evento de carregamento do formulário, inicializa campos com dados do livro
         private void EditarLivro_Load(object sender, EventArgs e)
         {
             if (LivroParaEditar != null)
@@ -33,13 +34,14 @@ namespace TestePIM.Telas
                 txbSinopse.Text = LivroParaEditar.Sinopse;
                 nUpDownQuant.Value = LivroParaEditar.Quantidade;
 
-                txbISBN.ReadOnly = true; 
+                txbISBN.ReadOnly = true;
                 nUpDownQuant.Enabled = false;
 
                 if (!string.IsNullOrEmpty(LivroParaEditar.CaminhoCapa))
                 {
                     try
                     {
+                        // Carrega imagem da capa a partir de URL ou arquivo local
                         if (LivroParaEditar.CaminhoCapa.StartsWith("http"))
                         {
                             using (HttpClient client = new HttpClient())
@@ -64,6 +66,7 @@ namespace TestePIM.Telas
             }
         }
 
+        // Botão para trocar a imagem da capa
         private void btnTrocarImagem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -75,8 +78,8 @@ namespace TestePIM.Telas
                 pbxCapa.Tag = dialog.FileName;  // Armazena novo caminho
             }
         }
-        
 
+        // Botão de confirmação da edição do livro
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (LivroParaEditar != null)
@@ -91,6 +94,7 @@ namespace TestePIM.Telas
                 LivroParaEditar.Titulo = txbTitulo.Text;
                 LivroParaEditar.Autor = txbAutor.Text;
 
+                // Validação do ano de publicação
                 if (int.TryParse(txbAnoPubli.Text, out int ano))
                 {
                     LivroParaEditar.AnoPubli = ano.ToString();
@@ -101,13 +105,13 @@ namespace TestePIM.Telas
                     return;
                 }
 
-               
                 LivroParaEditar.Sinopse = txbSinopse.Text;
                 LivroParaEditar.Genero = txbGenero.Text;
                 LivroParaEditar.CaminhoCapa = pbxCapa.Tag?.ToString() ?? "";
 
                 var verificador = new TestePIM.Controle.VerificaLivroEditado();
 
+                // Validação dos dados editados
                 if (!verificador.Validar(LivroParaEditar))
                 {
                     return;
@@ -130,7 +134,8 @@ namespace TestePIM.Telas
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
+            
+        // Limpa todos os campos do formulário
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             txbTitulo.Clear();

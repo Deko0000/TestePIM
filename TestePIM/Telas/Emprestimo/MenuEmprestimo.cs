@@ -14,21 +14,20 @@ namespace TestePIM.Telas
 {
     public partial class MenuEmprestimo : Form
     {
+        // Construtor do formulário de Menu de Empréstimos
         public MenuEmprestimo()
         {
             InitializeComponent();
-           
-            
         }
 
-       
-
+        // Oculta o submenu de empréstimos, se estiver visível
         private void escondeSubMenu()
         {
             if (panelEmpSubMenu.Visible == true)
-                panelEmpSubMenu.Visible = false;           
+                panelEmpSubMenu.Visible = false;
         }
 
+        // Exibe ou oculta o submenu passado como parâmetro
         private void mostraSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
@@ -40,38 +39,44 @@ namespace TestePIM.Telas
             {
                 subMenu.Visible = false;
             }
-        }      
+        }
 
-        
+        // Evento do botão principal de Empréstimos: mostra/oculta submenu
         private void btnEmprestimos_Click(object sender, EventArgs e)
-        {            
+        {
             mostraSubMenu(panelEmpSubMenu);
         }
 
+        // Evento do botão "Realizar Empréstimo": abre tela de realizar empréstimo
         private void btnRealizarEmp_Click(object sender, EventArgs e)
         {
             abreMenuEmpForm(new RealizaEmp());
             escondeSubMenu();
         }
 
+        // Evento do botão "Acompanhar Empréstimo": abre tela de acompanhamento
         private void btnAcompanharEmp_Click(object sender, EventArgs e)
         {
-            escondeSubMenu();
+            abreMenuEmpForm(new AcompanhaEmp());
         }
+
+        // Evento do botão "Devolver Empréstimo": abre tela de devolução
         private void btnDevolveEmp_Click(object sender, EventArgs e)
         {
+            abreMenuEmpForm(new DevoluEmp());
             escondeSubMenu();
         }
 
+        // Evento do botão "Multas": apenas esconde submenu (pode ser expandido futuramente)
         private void btnMultas_Click(object sender, EventArgs e)
         {
             escondeSubMenu();
         }
-      
 
-        
-
+        // Guarda referência ao formulário ativo dentro do painel
         public Form ativaForm = null;
+
+        // Abre um formulário dentro do painel principal, fechando o anterior se houver
         public void abreMenuEmpForm(Form menuForm)
         {
             if (ativaForm != null)
@@ -86,12 +91,15 @@ namespace TestePIM.Telas
             menuForm.Show();
         }
 
+        // Evento do botão "Voltar": retorna ao menu principal
         private void btnVoltarMenu_Click(object sender, EventArgs e)
         {
-                Menu menu = new Menu();
-                menu.Show();
-                this.Hide();            
+            Menu menu = new Menu();
+            menu.Show();
+            this.Hide();
         }
+
+        // Evento disparado ao fechar o formulário: encerra a aplicação
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

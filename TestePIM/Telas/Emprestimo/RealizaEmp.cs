@@ -15,150 +15,170 @@ using TestePIM.Controle.Emprestimo;
 namespace TestePIM.Telas.Emprestimo
 {
     public partial class RealizaEmp : Form
-    {      
-            public Livro LivroRecebido { get; set; } // Livro passado por outra tela
+    {
+        // Propriedade para receber o livro selecionado de outra tela
+        public Livro LivroRecebido { get; set; }
 
-            Livro livroSelecionado = null;
-            Cliente clienteSelecionado = null;
+        // Variável para armazenar o livro selecionado na tela
+        Livro livroSelecionado = null;
+        // Variável para armazenar o cliente selecionado na tela
+        Cliente clienteSelecionado = null;
 
-            public RealizaEmp()
+        public RealizaEmp()
+        {
+            InitializeComponent();
+            txbAutor.ReadOnly = true; // Campo autor não editável
+            txbRA.ReadOnly = true;    // Campo RA não editável
+        }
+
+        // Evento disparado ao carregar a tela
+        private void RealizaEmp_Load(object sender, EventArgs e)
+        {
+            // Inicializa as datas com valores padrão
+            dtpEmprestimo.Value = DateTime.Now.Date;
+            dtpDevolucao.Value = DateTime.Now.Date.AddDays(30); // prazo padrão de 30 dias para devolução
+
+            // Se um livro foi recebido de outra tela, preenche os campos
+            if (LivroRecebido != null)
             {
-                InitializeComponent();
-                txbAutor.ReadOnly = true;
-                txbRA.ReadOnly = true;
+                livroSelecionado = LivroRecebido;
+                txbLivro.Text = livroSelecionado.Titulo;
+                txbAutor.Text = livroSelecionado.Autor;
+                CarregarCapaLivro(livroSelecionado.CaminhoCapa);
+            }
+        }
 
-                // Conectar evento Load do formulário para preencher dados iniciais
-                
+        // Carrega a imagem da capa do livro, se houver
+        private void CarregarCapaLivro(string caminho)
+        {
+            if (string.IsNullOrEmpty(caminho))
+            {
+                pbxCapa.Image = null;
+                return;
             }
 
-            private void RealizaEmp_Load(object sender, EventArgs e)
+            try
             {
-                if (LivroRecebido != null)
+                if (caminho.StartsWith("http"))
                 {
-                    livroSelecionado = LivroRecebido;
-                    txbLivro.Text = livroSelecionado.Titulo;
-                    txbAutor.Text = livroSelecionado.Autor;
-                    CarregarCapaLivro(livroSelecionado.CaminhoCapa);
-                }
-            }
-
-            private void CarregarCapaLivro(string caminho)
-            {
-                if (string.IsNullOrEmpty(caminho))
-                {
-                    pbxCapa.Image = null;
-                    return;
-                }
-
-                try
-                {
-                    if (caminho.StartsWith("http"))
+                    // Carrega imagem de uma URL
+                    using (HttpClient client = new HttpClient())
+                    using (var response = client.GetAsync(caminho).Result)
+                    using (var stream = response.Content.ReadAsStreamAsync().Result)
                     {
-                        using (HttpClient client = new HttpClient())
-                        using (var response = client.GetAsync(caminho).Result)
-                        using (var stream = response.Content.ReadAsStreamAsync().Result)
-                        {
-                            pbxCapa.Image = Image.FromStream(stream);
-                        }
-                    }
-                    else if (File.Exists(caminho))
-                    {
-                        pbxCapa.Image = Image.FromFile(caminho);
-                    }
-                    else
-                    {
-                        pbxCapa.Image = null;
+                        pbxCapa.Image = Image.FromStream(stream);
                     }
                 }
-                catch
+                else if (File.Exists(caminho))
                 {
-                    MessageBox.Show("Erro ao carregar a capa.");
-                    pbxCapa.Image = null;
-                }
-            }
-
-            private void btnBuscaLivro_Click(object sender, EventArgs e)
-            {
-                string termo = txbLivro.Text.Trim().ToLower();
-
-                livroSelecionado = Listas.Livros
-                    .FirstOrDefault(l => l.Titulo.ToLower().Contains(termo) || l.Id.ToString() == termo);
-
-                if (livroSelecionado != null)
-                {
-                    txbLivro.Text = livroSelecionado.Titulo;
-                    txbAutor.Text = livroSelecionado.Autor;
-                    CarregarCapaLivro(livroSelecionado.CaminhoCapa);
+                    // Carrega imagem de um arquivo local
+                    pbxCapa.Image = Image.FromFile(caminho);
                 }
                 else
                 {
-                    MessageBox.Show("Livro não encontrado.");
+                    pbxCapa.Image = null;
                 }
             }
-
-            private void btnBuscaCliente_Click(object sender, EventArgs e)
+            catch
             {
-                string termo = txbCliente.Text.Trim().ToLower();
-
-                clienteSelecionado = Listas.Clientes
-                    .FirstOrDefault(c => c.Nome.ToLower().Contains(termo) || c.RA.ToLower() == termo);
-
-                if (clienteSelecionado != null)
-                {
-                    txbCliente.Text = clienteSelecionado.Nome;
-                    txbRA.Text = clienteSelecionado.RA;
-                }
-                else
-                {
-                    MessageBox.Show("Cliente não encontrado.");
-                }
+                MessageBox.Show("Erro ao carregar a capa.");
+                pbxCapa.Image = null;
             }
+        }
 
-            private void btnConfirmar_Click(object sender, EventArgs e)
+        // Busca um livro pelo título ou ID digitado
+        private void btnBuscaLivro_Click(object sender, EventArgs e)
+        {
+            string termo = txbLivro.Text.Trim().ToLower();
+
+            livroSelecionado = Listas.Livros
+                .FirstOrDefault(l => l.Titulo.ToLower().Contains(termo) || l.Id.ToString() == termo);
+
+            if (livroSelecionado != null)
             {
-                string erro = VerificaRealizacaoEmp.VerificarCampos(
-                    livroSelecionado,
-                    clienteSelecionado,
-                    dtpEmprestimo.Value,
-                    dtpDevolucao.Value
-                );
+                txbLivro.Text = livroSelecionado.Titulo;
+                txbAutor.Text = livroSelecionado.Autor;
+                CarregarCapaLivro(livroSelecionado.CaminhoCapa);
+            }
+            else
+            {
+                MessageBox.Show("Livro não encontrado.");
+            }
+        }
 
-                if (erro != null)
-                {
-                    MessageBox.Show(erro);
-                    return;
-                }
+        // Busca um cliente pelo nome ou RA digitado
+        private void btnBuscaCliente_Click(object sender, EventArgs e)
+        {
+            string termo = txbCliente.Text.Trim().ToLower();
 
-                if (livroSelecionado.Quantidade <= 0)
-                {
-                    MessageBox.Show("Livro indisponível para empréstimo.");
-                    return;
-                }
+            clienteSelecionado = Listas.Clientes
+                .FirstOrDefault(c => c.Nome.ToLower().Contains(termo) || c.RA.ToLower() == termo);
 
-                var novoEmprestimo = new TestePIM.Dados.Emprestimo
-                {
-                    Livro = livroSelecionado,
-                    Cliente = clienteSelecionado,
-                    DataEmprestimo = dtpEmprestimo.Value,
-                    DataDevolucao = dtpDevolucao.Value,
-                    Status = true
-                };
+            if (clienteSelecionado != null)
+            {
+                txbCliente.Text = clienteSelecionado.Nome;
+                txbRA.Text = clienteSelecionado.RA;
+            }
+            else
+            {
+                MessageBox.Show("Cliente não encontrado.");
+            }
+        }
 
-                livroSelecionado.Quantidade--;
-                Listas.Emprestimos.Add(novoEmprestimo);
+        // Confirma e registra o empréstimo
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            DateTime dataEmprestimo = dtpEmprestimo.Value.Date;
+            DateTime dataDevolucao = dtpDevolucao.Value.Date;
 
-                MessageBox.Show("Empréstimo registrado com sucesso!");
-                this.Close();
+            // Valida os campos obrigatórios
+            string erro = VerificaRealizacaoEmp.VerificarCampos(
+                livroSelecionado,
+                clienteSelecionado,
+                dataEmprestimo,
+                dataDevolucao
+            );
+
+            if (erro != null)
+            {
+                MessageBox.Show(erro);
+                return;
             }
 
+            // Verifica se o livro está disponível
+            if (livroSelecionado.Quantidade <= 0)
+            {
+                MessageBox.Show("Livro indisponível para empréstimo.");
+                return;
+            }
+
+            // Cria um novo empréstimo e adiciona à lista
+            var novoEmprestimo = new TestePIM.Dados.Emprestimo
+            {
+                Cliente = clienteSelecionado,
+                Livro = livroSelecionado,
+                DataEmprestimo = DateTime.Today,
+                DataDevolucao = DateTime.Today.AddDays(7),
+                Status = true // ativo
+            };
+
+            livroSelecionado.Quantidade--;
+            Listas.Emprestimos.Add(novoEmprestimo);
+
+            MessageBox.Show("Empréstimo registrado com sucesso!");
+            this.Close();
+        }
+
+        // Cancela a operação e fecha a tela
         private void btnCancelar_Click(object sender, EventArgs e)
-            {
-                this.Close();
-            }
+        {
+            this.Close();
+        }
 
-            private void btnVoltar_Click(object sender, EventArgs e)
-            {
-                this.Close();
-            }
+        // Volta para a tela anterior
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

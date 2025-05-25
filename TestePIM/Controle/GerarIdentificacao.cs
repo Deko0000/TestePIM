@@ -8,10 +8,13 @@ namespace TestePIM
 {
     public static class GerarIdentificacao
     {
-        private static int ultimoIdFuncionario = 0;       
+        // Armazena o último ID gerado para funcionário
+        private static int ultimoIdFuncionario = 0;
+        // Armazena o último ID gerado para livro
         private static int ultimoIdLivro = 0;
 
-        // Para funcionário: retorna ID e Número de Identificação
+        // Gera um novo ID e número de identificação para funcionário
+        // Retorna uma tupla com o ID e o número de identificação formatado (ex: FUNC0001)
         public static (int, string) GerarIDFuncionario()
         {
             ultimoIdFuncionario++;
@@ -19,10 +22,7 @@ namespace TestePIM
             return (ultimoIdFuncionario, numIdentifica);
         }
 
-        // Para cliente: só ID
-        
-
-        // Para livro: só ID
+        // Gera um novo ID para livro e retorna esse ID
         public static int GerarIDLivro()
         {
             ultimoIdLivro++;

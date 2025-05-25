@@ -9,40 +9,47 @@ using TestePIM;
 namespace TestePIM
 {
    
-        public class VerificaLivro
+public class VerificaLivro
+    {
+        // Método responsável por validar os dados de um livro antes de cadastrá-lo
+        public bool Validar(Livro livro)
         {
-            public bool Validar(Livro livro)
+            // Verifica se algum campo obrigatório está vazio ou em branco
+            if (string.IsNullOrWhiteSpace(livro.Titulo) ||
+                string.IsNullOrWhiteSpace(livro.Autor) ||
+                string.IsNullOrWhiteSpace(livro.ISBN) ||
+                string.IsNullOrWhiteSpace(livro.AnoPubli) ||
+                string.IsNullOrWhiteSpace(livro.Genero) ||
+                string.IsNullOrWhiteSpace(livro.Sinopse))
             {
-                if (string.IsNullOrWhiteSpace(livro.Titulo) ||
-                    string.IsNullOrWhiteSpace(livro.Autor) ||
-                    string.IsNullOrWhiteSpace(livro.ISBN) ||
-                    string.IsNullOrWhiteSpace(livro.AnoPubli) ||
-                    string.IsNullOrWhiteSpace(livro.Genero) ||
-                    string.IsNullOrWhiteSpace(livro.Sinopse))
-                {
-                    MessageBox.Show("Por favor, preencha todos os campos.");
-                    return false;
-                }
-
-                if (!int.TryParse(livro.AnoPubli, out int ano) || livro.AnoPubli.Length != 4)
-                {
-                    MessageBox.Show("Digite um Ano válido.");
-                    return false;
-                }                
-
-                if (livro.Quantidade < 1 || livro.Quantidade > 50)
-                {
-                    MessageBox.Show("Quantidade inválida. Máximo permitido: 50.");
-                    return false;
-                }
-                if (Listas.Livros.Any(u => u.ISBN == livro.ISBN))
-                {
-                    MessageBox.Show("Já existe um livro com esse ISBN.");
-                    return false;
-                }
-
-                return true;
+                MessageBox.Show("Por favor, preencha todos os campos.");
+                return false;
             }
+
+            // Verifica se o ano de publicação é um número inteiro de 4 dígitos
+            if (!int.TryParse(livro.AnoPubli, out int ano) || livro.AnoPubli.Length != 4)
+            {
+                MessageBox.Show("Digite um Ano válido.");
+                return false;
+            }
+
+            // Verifica se a quantidade está dentro do limite permitido (1 a 50)
+            if (livro.Quantidade < 1 || livro.Quantidade > 50)
+            {
+                MessageBox.Show("Quantidade inválida. Máximo permitido: 50.");
+                return false;
+            }
+
+            // Verifica se já existe um livro cadastrado com o mesmo ISBN
+            if (Listas.Livros.Any(u => u.ISBN == livro.ISBN))
+            {
+                MessageBox.Show("Já existe um livro com esse ISBN.");
+                return false;
+            }
+
+            // Se todas as validações passarem, retorna verdadeiro
+            return true;
         }
+    }
     }
 

@@ -19,14 +19,11 @@ namespace TestePIM.Telas
             CarregarClientes(Listas.Clientes);
         }
 
-
-        
-
+        // Configura as colunas do DataGridView para exibir os clientes
         private void ConfigurarDataGridView()
         {
             dgvClientes.Columns.Clear();
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
 
             // Coluna Nome
             DataGridViewTextBoxColumn nomeCol = new DataGridViewTextBoxColumn();
@@ -42,7 +39,7 @@ namespace TestePIM.Telas
             raCol.ReadOnly = true;
             dgvClientes.Columns.Add(raCol);
 
-            // Coluna de seleção
+            // Coluna de seleção (checkbox)
             DataGridViewCheckBoxColumn chkCol = new DataGridViewCheckBoxColumn();
             chkCol.HeaderText = "Selecionar";
             chkCol.Name = "chkSelecionar";
@@ -51,6 +48,7 @@ namespace TestePIM.Telas
             dgvClientes.AllowUserToAddRows = false;
         }
 
+        // Carrega a lista de clientes no DataGridView
         private void CarregarClientes(List<Cliente> clientes)
         {
             dgvClientes.Rows.Clear();
@@ -61,6 +59,7 @@ namespace TestePIM.Telas
             }
         }
 
+        // Filtra os clientes conforme o texto digitado na busca
         private void txbBuscar_TextChanged(object sender, EventArgs e)
         {
             string termo = txbBuscar.Text.Trim().ToLower();
@@ -72,6 +71,7 @@ namespace TestePIM.Telas
             CarregarClientes(filtrados);
         }
 
+        // Retorna as linhas selecionadas no DataGridView
         private List<DataGridViewRow> ObterSelecionados()
         {
             return dgvClientes.Rows
@@ -81,6 +81,8 @@ namespace TestePIM.Telas
         }
 
         private Form ativaForm = null;
+
+        // Abre um formulário interno para edição ou visualização
         private void abreEditForm(Form editForm)
         {
             if (ativaForm != null)
@@ -97,6 +99,7 @@ namespace TestePIM.Telas
             editForm.Show();
         }
 
+        // Evento do botão Editar: abre o formulário de edição para o cliente selecionado
         private void btnEditar_Click(object sender, EventArgs e)
         {
             var selecionados = ObterSelecionados();
@@ -116,7 +119,7 @@ namespace TestePIM.Telas
                 var formEditar = new EditarCliente();
                 formEditar.ClienteParaEditar = cliente;
 
-                // Assina o evento FormClosed para quando fechar a edição mostrar o panelHeader de novo
+                // Ao fechar o formulário de edição, exibe novamente o cabeçalho e recarrega os clientes
                 formEditar.FormClosed += (s, args) =>
                 {
                     panelHeader.Visible = true;   // Volta a mostrar o panelHeader
@@ -127,6 +130,7 @@ namespace TestePIM.Telas
             }
         }
 
+        // Evento do botão Excluir: remove os clientes selecionados
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             var selecionados = ObterSelecionados();
@@ -155,6 +159,7 @@ namespace TestePIM.Telas
             }
         }
 
+        // Evento do botão Ver Dados: abre o formulário de visualização para o cliente selecionado
         private void btnVerDados_Click(object sender, EventArgs e)
         {
             var selecionados = ObterSelecionados();
@@ -174,7 +179,7 @@ namespace TestePIM.Telas
                 var formVisualizar = new VerDadosCliente();
                 formVisualizar.ClienteParaVisualizar = cliente;
 
-                // Assina o evento FormClosed para quando fechar a edição mostrar o panelHeader de novo
+                // Ao fechar o formulário de visualização, exibe novamente o cabeçalho e recarrega os clientes
                 formVisualizar.FormClosed += (s, args) =>
                 {
                     panelHeader.Visible = true;   // Volta a mostrar o panelHeader
@@ -185,6 +190,7 @@ namespace TestePIM.Telas
             }
         }
 
+        // Evento do botão Voltar: fecha o formulário atual
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();

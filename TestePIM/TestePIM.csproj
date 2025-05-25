@@ -49,13 +49,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controle\Emprestimo\CardDevolucao.cs" />
     <Compile Include="Controle\Emprestimo\VerificaRealizacaoEmp.cs" />
+    <Compile Include="Controle\Emprestimo\VerificarStatus.cs" />
     <Compile Include="Controle\Livro\CardBuscaLivro.cs" />
     <Compile Include="Controle\Cliente\VerificaClienteEditado.cs" />
     <Compile Include="Controle\Funcionario\VerificaFuncionarioEditado.cs" />
     <Compile Include="Controle\Livro\VerificaLivroEditado.cs" />
     <Compile Include="Controle\Livro\VerificaLivroEditadoEstoque.cs" />
     <Compile Include="Dados\Emprestimo.cs" />
+    <Compile Include="Dados\Multa.cs" />
+    <Compile Include="Telas\Emprestimo\AcompanhaEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\AcompanhaEmp.Designer.cs">
+      <DependentUpon>AcompanhaEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\DetalhesEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\DetalhesEmp.Designer.cs">
+      <DependentUpon>DetalhesEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\DevoluEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\DevoluEmp.Designer.cs">
+      <DependentUpon>DevoluEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\Multas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\Multas.Designer.cs">
+      <DependentUpon>Multas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Emprestimo\RealizaEmp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +216,18 @@
     <Compile Include="Telas\Emprestimo\MenuEmprestimo.Designer.cs">
       <DependentUpon>MenuEmprestimo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Telas\Emprestimo\AcompanhaEmp.resx">
+      <DependentUpon>AcompanhaEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Emprestimo\DetalhesEmp.resx">
+      <DependentUpon>DetalhesEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Emprestimo\DevoluEmp.resx">
+      <DependentUpon>DevoluEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Emprestimo\Multas.resx">
+      <DependentUpon>Multas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Emprestimo\RealizaEmp.resx">
       <DependentUpon>RealizaEmp.cs</DependentUpon>
     </EmbeddedResource>
