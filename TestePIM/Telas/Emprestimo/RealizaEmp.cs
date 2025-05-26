@@ -129,14 +129,16 @@ namespace TestePIM.Telas.Emprestimo
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             DateTime dataEmprestimo = dtpEmprestimo.Value.Date;
-            DateTime dataDevolucao = dtpDevolucao.Value.Date;
+            DateTime dataParaDevolucao = dtpDevolucao.Value.Date;
+            
+
 
             // Valida os campos obrigatórios
             string erro = VerificaRealizacaoEmp.VerificarCampos(
                 livroSelecionado,
                 clienteSelecionado,
                 dataEmprestimo,
-                dataDevolucao
+                dataParaDevolucao
             );
 
             if (erro != null)
@@ -157,8 +159,8 @@ namespace TestePIM.Telas.Emprestimo
             {
                 Cliente = clienteSelecionado,
                 Livro = livroSelecionado,
-                DataEmprestimo = DateTime.Today,
-                DataDevolucao = DateTime.Today.AddDays(7),
+                DataEmprestimo = dataEmprestimo,
+                DataParaDevolucao = dataParaDevolucao,
                 Status = true // ativo
             };
 

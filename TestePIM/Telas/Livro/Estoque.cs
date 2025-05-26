@@ -138,10 +138,29 @@
                     abreEditForm(formEditar);
                 }
             }
+            private void ReorganizarIDs()
+            {
+                var livrosOrdenados = Listas.Livros.OrderBy(l => l.Id).ToList();
+
+                // Limpa a lista original e adiciona os livros ordenados
+                Listas.Livros.Clear();
+                Listas.Livros.AddRange(livrosOrdenados);
+
+                // Reatribui os IDs de 1 até N
+                int novoId = 1;
+                foreach (var livro in Listas.Livros)
+                {
+                    livro.Id = novoId;
+                    novoId++;
+                }
+
+                // Atualiza o último ID na classe GerarIdentificacao
+                GerarIdentificacao.ReajustarUltimoIdLivro(novoId - 1);
+            }
 
             // Evento do botão Excluir: remove os livros selecionados da lista
             private void btnExcluir_Click(object sender, EventArgs e)
-            {
+             {
                 var selecionados = ObterSelecionados();
 
                 if (selecionados.Count == 0)
@@ -163,6 +182,10 @@
                             Listas.Livros.Remove(livro);
                     }
 
+                    // Reorganiza IDs após exclusão
+                    ReorganizarIDs();
+
+                    // Recarrega a grid
                     CarregarLivros(Listas.Livros);
                     MessageBox.Show("Livro(s) excluído(s) com sucesso!");
                 }

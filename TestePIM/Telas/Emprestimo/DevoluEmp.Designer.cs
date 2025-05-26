@@ -51,6 +51,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxBuscaLivro = new System.Windows.Forms.ComboBox();
             this.panelLivro = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,17 +115,17 @@
             // 
             this.lblDataDevolu.AutoSize = true;
             this.lblDataDevolu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataDevolu.Location = new System.Drawing.Point(24, 401);
+            this.lblDataDevolu.Location = new System.Drawing.Point(24, 393);
             this.lblDataDevolu.Name = "lblDataDevolu";
-            this.lblDataDevolu.Size = new System.Drawing.Size(144, 20);
+            this.lblDataDevolu.Size = new System.Drawing.Size(146, 20);
             this.lblDataDevolu.TabIndex = 88;
-            this.lblDataDevolu.Text = "Data da Devolução:";
+            this.lblDataDevolu.Text = "Devolução Prevista:";
             // 
             // dtpDevolu
             // 
             this.dtpDevolu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDevolu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDevolu.Location = new System.Drawing.Point(28, 424);
+            this.dtpDevolu.Location = new System.Drawing.Point(28, 416);
             this.dtpDevolu.Name = "dtpDevolu";
             this.dtpDevolu.Size = new System.Drawing.Size(200, 29);
             this.dtpDevolu.TabIndex = 87;
@@ -155,7 +157,7 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnConfirmar.Location = new System.Drawing.Point(25, 508);
+            this.btnConfirmar.Location = new System.Drawing.Point(27, 530);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(178, 36);
             this.btnConfirmar.TabIndex = 90;
@@ -170,7 +172,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnCancelar.Location = new System.Drawing.Point(261, 508);
+            this.btnCancelar.Location = new System.Drawing.Point(247, 530);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(104, 36);
             this.btnCancelar.TabIndex = 91;
@@ -290,12 +292,33 @@
             this.panelLivro.Size = new System.Drawing.Size(213, 224);
             this.panelLivro.TabIndex = 102;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(23, 453);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(144, 20);
+            this.label2.TabIndex = 104;
+            this.label2.Text = "Data da Devolução:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(27, 476);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 29);
+            this.dateTimePicker1.TabIndex = 103;
+            // 
             // DevoluEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(638, 619);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.panelLivro);
             this.Controls.Add(this.cbxBuscaLivro);
             this.Controls.Add(this.label1);
@@ -349,5 +372,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxBuscaLivro;
         private System.Windows.Forms.Panel panelLivro;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

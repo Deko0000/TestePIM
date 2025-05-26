@@ -28,6 +28,16 @@ namespace TestePIM
             ultimoIdLivro++;
             return ultimoIdLivro;
         }
+
+        public static void ReajustarUltimoIdLivro(int novoUltimoId)
+        {
+            ultimoIdLivro = novoUltimoId;
+        }
+        public static void ReajustarUltimoIdFun(int novoUltimoId)
+        {
+            ultimoIdFuncionario = novoUltimoId;
+        }
     }
+
 }
 

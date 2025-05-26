@@ -84,9 +84,9 @@ namespace TestePIM.Telas.Emprestimo
 
                 dtpEmp.Value = EmprestimoParaDevolver.DataEmprestimo;
 
-                // Data prevista para devolução (7 dias após o empréstimo)
-                DateTime dataPrevista = EmprestimoParaDevolver.DataEmprestimo.AddDays(7);
-                dtpDevolu.Value = DateTime.Today;
+                // Data prevista para devolução (30 dias após o empréstimo)
+                DateTime dataPrevista = EmprestimoParaDevolver.DataDevolucao;
+                dtpDevolu.Value = EmprestimoParaDevolver.DataDevolucao;
 
                 string status;
                 if (!EmprestimoParaDevolver.Status)
@@ -131,7 +131,7 @@ namespace TestePIM.Telas.Emprestimo
             }
 
             DateTime dataDevolucaoReal = dtpDevolu.Value.Date;
-            DateTime dataPrevista = EmprestimoParaDevolver.DataEmprestimo.AddDays(7);
+            DateTime dataPrevista = EmprestimoParaDevolver.DataEmprestimo.AddDays(30);
 
             bool estaAtrasado = dataDevolucaoReal > dataPrevista;
 

@@ -18,10 +18,12 @@ namespace TestePIM.Dados
         public Funcionario Funcionario { get; set; }
 
         // Data em que o empréstimo foi realizado
-        public DateTime DataEmprestimo { get; set; }
+        public DateTime DataEmprestimo { get; set; }        
 
         // Data prevista para devolução do livro
-        public DateTime DataDevolucao { get; set; }
+        public DateTime DataParaDevolucao { get; set; }    
+        
+
 
         // Status do empréstimo: true = ativo, false = devolvido
         public bool Status { get; set; }

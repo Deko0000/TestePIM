@@ -9,10 +9,10 @@ namespace TestePIM
     public class Funcionario
     {
         // Propriedade que armazena o ID único do funcionário
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
         // Propriedade que armazena o número de identificação do funcionário
-        public string NumIdentifica { get; private set; }
+        public string NumIdentifica { get; set; }
 
         // Nome do funcionário
         public string Nome { get; set; }

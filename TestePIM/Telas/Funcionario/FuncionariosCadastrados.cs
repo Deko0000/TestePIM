@@ -25,6 +25,13 @@ namespace TestePIM.Telas
             dgvFuncionarios.Columns.Clear();
             dgvFuncionarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+            // Coluna de ID (somente leitura)
+            DataGridViewTextBoxColumn idCol = new DataGridViewTextBoxColumn();
+            idCol.HeaderText = "ID";
+            idCol.Name = "colID";
+            idCol.ReadOnly = true;
+            dgvFuncionarios.Columns.Add(idCol);
+
             // Coluna Nome
             DataGridViewTextBoxColumn nomeCol = new DataGridViewTextBoxColumn();
             nomeCol.HeaderText = "Nome";
@@ -55,7 +62,7 @@ namespace TestePIM.Telas
 
             foreach (var funcionario in funcionarios)
             {
-                dgvFuncionarios.Rows.Add(funcionario.Nome, funcionario.NumIdentifica, false);
+                dgvFuncionarios.Rows.Add(funcionario.Id, funcionario.Nome, funcionario.NumIdentifica, false);
             }
         }
 
@@ -65,7 +72,8 @@ namespace TestePIM.Telas
             string termo = txbBuscar.Text.Trim().ToLower();
 
             var filtrados = Listas.Funcionarios
-                .Where(f => f.Nome.ToLower().Contains(termo) || f.NumIdentifica.ToLower().Contains(termo))
+                .Where(f => f.Id.ToString().ToLower().Contains(termo) || f.Nome.ToLower().Contains(termo) ||
+                f.NumIdentifica.ToLower().Contains(termo))
                 .ToList();
 
             CarregarFuncionarios(filtrados);
@@ -111,9 +119,9 @@ namespace TestePIM.Telas
                 return;
             }
 
-            string matriculaSelecionada = selecionados[0].Cells["colMatricula"].Value.ToString();
+            string matriculaSelecionada = selecionados[0].Cells["colID"].Value.ToString();
 
-            var funcionario = Listas.Funcionarios.FirstOrDefault(f => f.NumIdentifica == matriculaSelecionada);
+            var funcionario = Listas.Funcionarios.FirstOrDefault(f => f.Id.ToString() == matriculaSelecionada);
 
             if (funcionario != null)
             {
@@ -130,6 +138,26 @@ namespace TestePIM.Telas
 
                 abreEditForm(formEditar);
             }
+        }
+
+        private void ReorganizarIDs()
+        {
+            var funOrdenados = Listas.Funcionarios.OrderBy(l => l.Id).ToList();
+
+            // Limpa a lista original e adiciona os livros ordenados
+            Listas.Funcionarios.Clear();
+            Listas.Funcionarios.AddRange(funOrdenados);
+
+            // Reatribui os IDs de 1 até N
+            int novoId = 1;
+            foreach (var funcionario in Listas.Funcionarios)
+            {
+                funcionario.Id = novoId;
+                novoId++;
+            }
+
+            // Atualiza o último ID na classe GerarIdentificacao
+            GerarIdentificacao.ReajustarUltimoIdFun(novoId - 1);
         }
 
         // Evento do botão Excluir: remove os funcionários selecionados
@@ -155,6 +183,7 @@ namespace TestePIM.Telas
                     if (funcionario != null)
                         Listas.Funcionarios.Remove(funcionario);
                 }
+                ReorganizarIDs();
 
                 CarregarFuncionarios(Listas.Funcionarios);
                 MessageBox.Show("Funcionário(s) excluído(s) com sucesso!");
@@ -174,7 +203,7 @@ namespace TestePIM.Telas
 
             string matriculaSelecionada = selecionados[0].Cells["colMatricula"].Value.ToString();
 
-            var funcionario = Listas.Funcionarios.FirstOrDefault(f => f.NumIdentifica == matriculaSelecionada);
+            var funcionario = Listas.Funcionarios.FirstOrDefault(f => f.Id.ToString() == matriculaSelecionada);
 
             if (funcionario != null)
             {

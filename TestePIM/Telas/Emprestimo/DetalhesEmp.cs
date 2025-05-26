@@ -45,7 +45,7 @@ namespace TestePIM.Telas.Emprestimo
                 if (!EmprestimoParaVisualizar.Status)
                 {
                     // Já devolvido
-                    if (EmprestimoParaVisualizar.DataDevolucao > EmprestimoParaVisualizar.DataEmprestimo.AddDays(7))
+                    if (EmprestimoParaVisualizar.DataDevolucao > EmprestimoParaVisualizar.DataDevolucao.AddDays(30))
                         status = "Devolvido com atraso";
                     else
                         status = "Devolvido";

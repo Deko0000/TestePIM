@@ -53,18 +53,20 @@ namespace TestePIM.Telas.Emprestimo
 
             DateTime inicio = dtpInicio.Value.Date;
             DateTime final = dtpFinal.Value.Date;
+            DateTime dataDaDevolucao = DataParaDevolucao.Value.Date;
 
             var emprestimosFiltrados = Listas.Emprestimos
+                
                 .Where(e =>
                     (string.IsNullOrEmpty(termo) ||
                      e.Livro.Titulo.ToLower().Contains(termo) ||
                      e.Cliente.Nome.ToLower().Contains(termo)) &&
 
                     (statusSelecionado == "Todos" ||
-                     (statusSelecionado == "Ativos" && e.Status && e.DataDevolucao >= DateTime.Today) ||
-                     (statusSelecionado == "Atrasados" && e.Status && e.DataDevolucao < DateTime.Today) ||
-                     (statusSelecionado == "Devolvidos" && !e.Status && e.DataDevolucao <= e.DataEmprestimo.AddDays(7)) ||
-                     (statusSelecionado == "Devolvidos com atraso" && !e.Status && e.DataDevolucao > e.DataEmprestimo.AddDays(7))) &&
+                     (statusSelecionado == "Ativos" && e.Status && e.DataParaDevolucao >= DateTime.Today) ||
+                     (statusSelecionado == "Atrasados" && e.Status && e.DataParaDevolucao < DateTime.Today) ||
+                     (statusSelecionado == "Devolvidos" && !e.Status && e.DataParaDevolucao <= e.DataEmprestimo.AddDays(7)) ||
+                     (statusSelecionado == "Devolvidos com atraso" && !e.Status && e.DataParaDevolucao > e.DataParaDevolucao.AddDays(30))) &&
 
                     (e.DataEmprestimo.Date >= inicio && e.DataEmprestimo.Date <= final)
                 )
@@ -79,7 +81,7 @@ namespace TestePIM.Telas.Emprestimo
                 if (!emp.Status)
                 {
                     // Se já foi devolvido, verifica se foi no prazo ou com atraso
-                    status = emp.DataDevolucao <= emp.DataEmprestimo.AddDays(7)
+                    status = emp.DataDevolucao <= emp.DataDevolucao.AddDays(30)
                         ? "Devolvido"
                         : "Devolvido com atraso";
                 }
