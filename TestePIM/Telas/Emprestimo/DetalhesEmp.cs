@@ -38,14 +38,23 @@ namespace TestePIM.Telas.Emprestimo
 
                 // Preenche as datas de empréstimo e devolução
                 dtpEmp.Value = EmprestimoParaVisualizar.DataEmprestimo;
-                dtpDevolu.Value = EmprestimoParaVisualizar.DataDevolucao;
+                dtpDevolu.Value = EmprestimoParaVisualizar.DataParaDevolucao;
+                if (EmprestimoParaVisualizar.DataDevolvida.HasValue)
+                {
+                    dtpDataDevolvida.Value = EmprestimoParaVisualizar.DataDevolvida.Value;
+                }
+                else
+                {
+                    dtpDataDevolvida.Visible = false;
+                    lblDataDevolvida.Visible = false; 
+                }
 
                 // Determina o status do empréstimo
                 string status;
                 if (!EmprestimoParaVisualizar.Status)
                 {
                     // Já devolvido
-                    if (EmprestimoParaVisualizar.DataDevolucao > EmprestimoParaVisualizar.DataDevolucao.AddDays(30))
+                    if (EmprestimoParaVisualizar.DataDevolvida > EmprestimoParaVisualizar.DataParaDevolucao)
                         status = "Devolvido com atraso";
                     else
                         status = "Devolvido";
@@ -53,7 +62,7 @@ namespace TestePIM.Telas.Emprestimo
                 else
                 {
                     // Ainda não devolvido
-                    if (EmprestimoParaVisualizar.DataDevolucao < DateTime.Today)
+                    if (EmprestimoParaVisualizar.DataParaDevolucao < DateTime.Today)
                         status = "Atrasado";
                     else
                         status = "Ativo";

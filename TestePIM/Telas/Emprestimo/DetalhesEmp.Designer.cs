@@ -45,8 +45,8 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.txbNome = new System.Windows.Forms.TextBox();
             this.panelLivro = new System.Windows.Forms.Panel();
-            this.psnelCliente = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.psnelCliente = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.txbStatus = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,6 +54,8 @@
             this.dtpDevolu = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpEmp = new System.Windows.Forms.DateTimePicker();
+            this.lblDataDevolvida = new System.Windows.Forms.Label();
+            this.dtpDataDevolvida = new System.Windows.Forms.DateTimePicker();
             this.panelHeader.SuspendLayout();
             this.panelLivro.SuspendLayout();
             this.psnelCliente.SuspendLayout();
@@ -228,6 +230,16 @@
             this.panelLivro.Size = new System.Drawing.Size(318, 343);
             this.panelLivro.TabIndex = 78;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(120, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 25);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "LIVRO";
+            // 
             // psnelCliente
             // 
             this.psnelCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -242,16 +254,6 @@
             this.psnelCliente.Name = "psnelCliente";
             this.psnelCliente.Size = new System.Drawing.Size(322, 343);
             this.psnelCliente.TabIndex = 79;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(120, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 25);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "LIVRO";
             // 
             // label2
             // 
@@ -289,9 +291,9 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(238, 476);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 20);
+            this.label4.Size = new System.Drawing.Size(146, 20);
             this.label4.TabIndex = 82;
-            this.label4.Text = "Data da Devolução:";
+            this.label4.Text = "Devolução Prevista:";
             // 
             // dtpDevolu
             // 
@@ -321,12 +323,35 @@
             this.dtpEmp.Size = new System.Drawing.Size(200, 29);
             this.dtpEmp.TabIndex = 78;
             // 
+            // lblDataDevolvida
+            // 
+            this.lblDataDevolvida.AutoSize = true;
+            this.lblDataDevolvida.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataDevolvida.Location = new System.Drawing.Point(238, 544);
+            this.lblDataDevolvida.Name = "lblDataDevolvida";
+            this.lblDataDevolvida.Size = new System.Drawing.Size(144, 20);
+            this.lblDataDevolvida.TabIndex = 85;
+            this.lblDataDevolvida.Text = "Data da Devolução:";
+            this.lblDataDevolvida.Visible = false;
+            // 
+            // dtpDataDevolvida
+            // 
+            this.dtpDataDevolvida.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataDevolvida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataDevolvida.Location = new System.Drawing.Point(242, 567);
+            this.dtpDataDevolvida.Name = "dtpDataDevolvida";
+            this.dtpDataDevolvida.Size = new System.Drawing.Size(200, 29);
+            this.dtpDataDevolvida.TabIndex = 84;
+            this.dtpDataDevolvida.Visible = false;
+            // 
             // DetalhesEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(638, 619);
+            this.Controls.Add(this.lblDataDevolvida);
+            this.Controls.Add(this.dtpDataDevolvida);
             this.Controls.Add(this.txbStatus);
             this.Controls.Add(this.psnelCliente);
             this.Controls.Add(this.label5);
@@ -377,5 +402,7 @@
         private System.Windows.Forms.DateTimePicker dtpDevolu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpEmp;
+        private System.Windows.Forms.Label lblDataDevolvida;
+        private System.Windows.Forms.DateTimePicker dtpDataDevolvida;
     }
 }

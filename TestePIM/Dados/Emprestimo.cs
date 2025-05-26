@@ -22,7 +22,10 @@ namespace TestePIM.Dados
 
         // Data prevista para devolução do livro
         public DateTime DataParaDevolucao { get; set; }    
-        
+
+        //Data da Devolução de fato
+        public DateTime? DataDevolvida { get; set; }
+
 
 
         // Status do empréstimo: true = ativo, false = devolvido

@@ -35,7 +35,7 @@
             this.txbStatus = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblDataDevolu = new System.Windows.Forms.Label();
-            this.dtpDevolu = new System.Windows.Forms.DateTimePicker();
+            this.dtpDevoluPrevista = new System.Windows.Forms.DateTimePicker();
             this.lblDataEmp = new System.Windows.Forms.Label();
             this.dtpEmp = new System.Windows.Forms.DateTimePicker();
             this.btnConfirmar = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             this.cbxBuscaLivro = new System.Windows.Forms.ComboBox();
             this.panelLivro = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDaDevolu = new System.Windows.Forms.DateTimePicker();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,14 +121,14 @@
             this.lblDataDevolu.TabIndex = 88;
             this.lblDataDevolu.Text = "Devolução Prevista:";
             // 
-            // dtpDevolu
+            // dtpDevoluPrevista
             // 
-            this.dtpDevolu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDevolu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDevolu.Location = new System.Drawing.Point(28, 416);
-            this.dtpDevolu.Name = "dtpDevolu";
-            this.dtpDevolu.Size = new System.Drawing.Size(200, 29);
-            this.dtpDevolu.TabIndex = 87;
+            this.dtpDevoluPrevista.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDevoluPrevista.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDevoluPrevista.Location = new System.Drawing.Point(28, 416);
+            this.dtpDevoluPrevista.Name = "dtpDevoluPrevista";
+            this.dtpDevoluPrevista.Size = new System.Drawing.Size(200, 29);
+            this.dtpDevoluPrevista.TabIndex = 87;
             // 
             // lblDataEmp
             // 
@@ -302,14 +302,14 @@
             this.label2.TabIndex = 104;
             this.label2.Text = "Data da Devolução:";
             // 
-            // dateTimePicker1
+            // dtpDaDevolu
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(27, 476);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 29);
-            this.dateTimePicker1.TabIndex = 103;
+            this.dtpDaDevolu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDaDevolu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDaDevolu.Location = new System.Drawing.Point(27, 476);
+            this.dtpDaDevolu.Name = "dtpDaDevolu";
+            this.dtpDaDevolu.Size = new System.Drawing.Size(200, 29);
+            this.dtpDaDevolu.TabIndex = 103;
             // 
             // DevoluEmp
             // 
@@ -318,7 +318,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(638, 619);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpDaDevolu);
             this.Controls.Add(this.panelLivro);
             this.Controls.Add(this.cbxBuscaLivro);
             this.Controls.Add(this.label1);
@@ -335,7 +335,7 @@
             this.Controls.Add(this.txbStatus);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblDataDevolu);
-            this.Controls.Add(this.dtpDevolu);
+            this.Controls.Add(this.dtpDevoluPrevista);
             this.Controls.Add(this.lblDataEmp);
             this.Controls.Add(this.dtpEmp);
             this.Controls.Add(this.panelHeader);
@@ -356,7 +356,7 @@
         private System.Windows.Forms.TextBox txbStatus;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblDataDevolu;
-        private System.Windows.Forms.DateTimePicker dtpDevolu;
+        private System.Windows.Forms.DateTimePicker dtpDevoluPrevista;
         private System.Windows.Forms.Label lblDataEmp;
         private System.Windows.Forms.DateTimePicker dtpEmp;
         private System.Windows.Forms.Button btnConfirmar;
@@ -373,6 +373,6 @@
         private System.Windows.Forms.ComboBox cbxBuscaLivro;
         private System.Windows.Forms.Panel panelLivro;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDaDevolu;
     }
 }

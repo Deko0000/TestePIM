@@ -14,7 +14,6 @@ namespace TestePIM.Telas.Emprestimo
 {
     public partial class DevoluEmp : Form
     {
-        // Propriedade que armazena o empréstimo selecionado para devolução
         public TestePIM.Dados.Emprestimo EmprestimoParaDevolver { get; set; }
 
         public DevoluEmp()
@@ -22,14 +21,12 @@ namespace TestePIM.Telas.Emprestimo
             InitializeComponent();
         }
 
-        // Construtor que recebe um empréstimo e carrega seus dados na tela
         public DevoluEmp(TestePIM.Dados.Emprestimo emprestimo) : this()
         {
             EmprestimoParaDevolver = emprestimo;
             CarregarDadosDoEmprestimo();
         }
 
-        // Evento do botão Buscar: busca cliente pelo nome ou RA e carrega empréstimos ativos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string busca = txbNome.Text.Trim();
@@ -44,9 +41,8 @@ namespace TestePIM.Telas.Emprestimo
                 txbEmail.Text = cliente.Email;
                 txbRA.Text = cliente.RA;
 
-                // Filtra empréstimos ativos do cliente
                 var emprestimos = Listas.Emprestimos
-                    .Where(emp => emp.Cliente == cliente && emp.Status) // Somente ativos
+                    .Where(emp => emp.Cliente == cliente && emp.Status) // apenas ativos
                     .ToList();
 
                 cbxBuscaLivro.DataSource = emprestimos;
@@ -63,7 +59,6 @@ namespace TestePIM.Telas.Emprestimo
             }
         }
 
-        // Evento disparado ao selecionar um empréstimo na ComboBox de livros
         private void cbxBuscaLivro_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxBuscaLivro.SelectedItem is TestePIM.Dados.Emprestimo emprestimo)
@@ -73,7 +68,6 @@ namespace TestePIM.Telas.Emprestimo
             }
         }
 
-        // Carrega os dados do empréstimo selecionado nos campos da tela
         private void CarregarDadosDoEmprestimo()
         {
             if (EmprestimoParaDevolver != null)
@@ -83,34 +77,32 @@ namespace TestePIM.Telas.Emprestimo
                 txbRA.Text = EmprestimoParaDevolver.Cliente?.RA ?? "";
 
                 dtpEmp.Value = EmprestimoParaDevolver.DataEmprestimo;
+                dtpDevoluPrevista.Value = EmprestimoParaDevolver.DataParaDevolucao;
 
-                // Data prevista para devolução (30 dias após o empréstimo)
-                DateTime dataPrevista = EmprestimoParaDevolver.DataDevolucao;
-                dtpDevolu.Value = EmprestimoParaDevolver.DataDevolucao;
-
+                DateTime hoje = DateTime.Today;
                 string status;
-                if (!EmprestimoParaDevolver.Status)
+
+                if (!EmprestimoParaDevolver.Status && EmprestimoParaDevolver.DataDevolvida.HasValue)
                 {
-                    // Empréstimo já devolvido
-                    if (EmprestimoParaDevolver.DataDevolucao > dataPrevista)
+                    if (EmprestimoParaDevolver.DataDevolvida.Value > EmprestimoParaDevolver.DataParaDevolucao)
                         status = "Devolvido com atraso";
                     else
                         status = "Devolvido";
+
+                    dtpDaDevolu.Value = EmprestimoParaDevolver.DataDevolvida.Value;
                 }
                 else
                 {
-                    // Empréstimo ainda ativo
-                    status = dataPrevista < DateTime.Today ? "Atrasado" : "Ativo";
+                    dtpDaDevolu.Value = hoje;
+                    status = EmprestimoParaDevolver.DataParaDevolucao < hoje ? "Atrasado" : "Ativo";
                 }
 
                 txbStatus.Text = status;
-                // Define a cor do status conforme a situação
                 txbStatus.ForeColor = status == "Atrasado" ? Color.Red :
                                       status == "Devolvido" ? Color.Gray :
                                       status == "Devolvido com atraso" ? Color.Orange :
                                       Color.Green;
 
-                // Exibe o card do livro emprestado
                 panelLivro.Controls.Clear();
                 if (EmprestimoParaDevolver.Livro != null)
                 {
@@ -121,7 +113,6 @@ namespace TestePIM.Telas.Emprestimo
             }
         }
 
-        // Evento do botão Confirmar: realiza a devolução do empréstimo
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (EmprestimoParaDevolver == null || !EmprestimoParaDevolver.Status)
@@ -130,21 +121,19 @@ namespace TestePIM.Telas.Emprestimo
                 return;
             }
 
-            DateTime dataDevolucaoReal = dtpDevolu.Value.Date;
-            DateTime dataPrevista = EmprestimoParaDevolver.DataEmprestimo.AddDays(30);
+            DateTime dataDevolucaoReal = dtpDaDevolu.Value.Date;
+            DateTime dataPrevista = EmprestimoParaDevolver.DataParaDevolucao;
 
             bool estaAtrasado = dataDevolucaoReal > dataPrevista;
 
-            // Atualiza status do empréstimo e quantidade do livro
             EmprestimoParaDevolver.Status = false;
+            EmprestimoParaDevolver.DataDevolvida = dataDevolucaoReal;
             EmprestimoParaDevolver.Livro.Quantidade++;
-            EmprestimoParaDevolver.DataDevolucao = dataDevolucaoReal;
 
             if (estaAtrasado)
             {
                 try
                 {
-                    // Aplica multa se devolução estiver atrasada
                     VerificarStatus.AplicarMulta(EmprestimoParaDevolver);
                     MessageBox.Show("Devolução com atraso! Multa aplicada.");
                 }
@@ -161,13 +150,11 @@ namespace TestePIM.Telas.Emprestimo
             this.Close();
         }
 
-        // Evento do botão Cancelar: fecha a tela sem realizar alterações
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        // Evento do botão Voltar: fecha a tela
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -15,13 +15,12 @@ namespace TestePIM.Telas.Emprestimo
         public AcompanhaEmp()
         {
             InitializeComponent();
-            ConfigurarDataGridView(); // Configura as colunas do DataGridView
-            AtualizarTabela(); // Preenche a tabela com os dados filtrados
+            ConfigurarDataGridView();
+            AtualizarTabela();
         }
 
         private void AcompanhaEmp_Load(object sender, EventArgs e)
         {
-            // Preenche o ComboBox de status com as opções disponíveis
             cbxStatus.Items.Clear();
             cbxStatus.Items.AddRange(new string[] { "Todos", "Ativos", "Atrasados", "Devolvidos", "Devolvidos com atraso" });
             cbxStatus.SelectedIndex = 0;
@@ -29,14 +28,14 @@ namespace TestePIM.Telas.Emprestimo
 
         private void ConfigurarDataGridView()
         {
-            // Configura as colunas do DataGridView de empréstimos
             dgvEmprestimos.Columns.Clear();
             dgvEmprestimos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dgvEmprestimos.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Título", Name = "colTitulo", ReadOnly = true });
             dgvEmprestimos.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Cliente", Name = "colCliente", ReadOnly = true });
             dgvEmprestimos.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Data Empréstimo", Name = "colDataEmprestimo", ReadOnly = true });
-            dgvEmprestimos.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Data Devolução", Name = "colDataDevolucao", ReadOnly = true });
+            dgvEmprestimos.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Data Prev. Devolução", Name = "colDataPrevista", ReadOnly = true });
+            dgvEmprestimos.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Data Devolvida", Name = "colDataDevolvida", ReadOnly = true });
             dgvEmprestimos.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Status", Name = "colStatus", ReadOnly = true });
 
             dgvEmprestimos.Columns.Add(new DataGridViewCheckBoxColumn { HeaderText = "Selecionar", Name = "chkSelecionar" });
@@ -45,18 +44,15 @@ namespace TestePIM.Telas.Emprestimo
             dgvEmprestimos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
+        private bool aplicarFiltroDatas = false;
         private void AtualizarTabela()
         {
-            // Atualiza a tabela de empréstimos conforme os filtros aplicados
             string termo = txbBusca.Text.Trim().ToLower();
             string statusSelecionado = cbxStatus.SelectedItem?.ToString();
-
             DateTime inicio = dtpInicio.Value.Date;
             DateTime final = dtpFinal.Value.Date;
-            DateTime dataDaDevolucao = DataParaDevolucao.Value.Date;
 
             var emprestimosFiltrados = Listas.Emprestimos
-                
                 .Where(e =>
                     (string.IsNullOrEmpty(termo) ||
                      e.Livro.Titulo.ToLower().Contains(termo) ||
@@ -65,10 +61,10 @@ namespace TestePIM.Telas.Emprestimo
                     (statusSelecionado == "Todos" ||
                      (statusSelecionado == "Ativos" && e.Status && e.DataParaDevolucao >= DateTime.Today) ||
                      (statusSelecionado == "Atrasados" && e.Status && e.DataParaDevolucao < DateTime.Today) ||
-                     (statusSelecionado == "Devolvidos" && !e.Status && e.DataParaDevolucao <= e.DataEmprestimo.AddDays(7)) ||
-                     (statusSelecionado == "Devolvidos com atraso" && !e.Status && e.DataParaDevolucao > e.DataParaDevolucao.AddDays(30))) &&
+                     (statusSelecionado == "Devolvidos" && !e.Status && e.DataDevolvida <= e.DataParaDevolucao) ||
+                     (statusSelecionado == "Devolvidos com atraso" && !e.Status && e.DataDevolvida > e.DataParaDevolucao)) &&
 
-                    (e.DataEmprestimo.Date >= inicio && e.DataEmprestimo.Date <= final)
+                    (!aplicarFiltroDatas || (e.DataEmprestimo.Date >= inicio && e.DataEmprestimo.Date <= final))
                 )
                 .ToList();
 
@@ -78,45 +74,43 @@ namespace TestePIM.Telas.Emprestimo
             {
                 string status;
 
-                if (!emp.Status)
+                if (!emp.Status) // Já devolvido
                 {
-                    // Se já foi devolvido, verifica se foi no prazo ou com atraso
-                    status = emp.DataDevolucao <= emp.DataDevolucao.AddDays(30)
-                        ? "Devolvido"
-                        : "Devolvido com atraso";
+                    status = emp.DataDevolvida > emp.DataParaDevolucao
+                        ? "Devolvido com atraso"
+                        : "Devolvido";
                 }
-                else
+                else // Ainda ativo
                 {
-                    // Se ainda está ativo, verifica se está atrasado
-                    status = emp.DataDevolucao < DateTime.Today
+                    status = emp.DataParaDevolucao < DateTime.Today
                         ? "Atrasado"
                         : "Ativo";
                 }
 
-                dgvEmprestimos.Rows.Add(
+                dgvEmprestimos.Rows.Add
+                (
                     emp.Livro.Titulo,
                     emp.Cliente.Nome,
                     emp.DataEmprestimo.ToShortDateString(),
-                    emp.DataDevolucao == DateTime.MinValue ? "-" : emp.DataDevolucao.ToShortDateString(),
-                    status,
-                    false);
+                    emp.DataParaDevolucao.ToShortDateString(),
+                    emp.Status ? "-" : (emp.DataDevolvida.HasValue ? emp.DataDevolvida.Value.ToShortDateString() : "-"),
+                    status, false
+                );
             }
         }
 
         private List<DataGridViewRow> ObterSelecionados()
         {
-            // Retorna a lista de linhas selecionadas pelo usuário
             return dgvEmprestimos.Rows
                 .Cast<DataGridViewRow>()
                 .Where(r => Convert.ToBoolean(r.Cells["chkSelecionar"].Value))
                 .ToList();
         }
 
-        private Form ativaForm = null; // Guarda referência ao formulário filho ativo
+        private Form ativaForm = null;
 
         private void abreEmpForm(Form form)
         {
-            // Abre um formulário filho dentro do painel, ocultando cabeçalho e busca
             if (ativaForm != null)
                 ativaForm.Close();
 
@@ -136,33 +130,35 @@ namespace TestePIM.Telas.Emprestimo
 
             form.FormClosed += (s, args) =>
             {
-                // Restaura a visibilidade dos painéis ao fechar o formulário filho
                 panelHeader.Visible = true;
                 panelBusca.Visible = true;
+                AtualizarTabela(); // Garante atualização ao voltar
             };
         }
 
         private void txbBusca_TextChanged(object sender, EventArgs e)
         {
-            // Atualiza a tabela ao digitar na busca
             AtualizarTabela();
         }
 
         private void cbxStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Atualiza a tabela ao trocar o status selecionado
             AtualizarTabela();
         }
 
         private void btnBuscaPeriodo_Click(object sender, EventArgs e)
         {
-            // Atualiza a tabela ao clicar para buscar por período
+            aplicarFiltroDatas = true;
+            AtualizarTabela();
+        }
+        private void btnLimparPeriodo_Click(object sender, EventArgs e)
+        {
+            aplicarFiltroDatas = false;
             AtualizarTabela();
         }
 
         private void btnVerDetalhes_Click(object sender, EventArgs e)
         {
-            // Abre o formulário de detalhes do empréstimo selecionado
             var selecionados = ObterSelecionados();
             if (selecionados.Count != 1)
             {
@@ -183,19 +179,12 @@ namespace TestePIM.Telas.Emprestimo
                     EmprestimoParaVisualizar = emprestimo
                 };
 
-                formDetalhes.FormClosed += (s, args) =>
-                {
-                    panelHeader.Visible = true;
-                    panelBusca.Visible = true;
-                };
-
                 abreEmpForm(formDetalhes);
             }
         }
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
-            // Abre o formulário de devolução para o empréstimo selecionado
             var selecionados = ObterSelecionados();
             if (selecionados.Count != 1)
             {
@@ -213,7 +202,6 @@ namespace TestePIM.Telas.Emprestimo
             {
                 var formDevolucao = new DevoluEmp(emprestimo);
                 formDevolucao.EmprestimoParaDevolver = emprestimo;
-                formDevolucao.FormClosed += (s, args) => AtualizarTabela();
                 abreEmpForm(formDevolucao);
             }
             else
@@ -224,8 +212,10 @@ namespace TestePIM.Telas.Emprestimo
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            // Fecha o formulário atual
-            this.Close();
+            this.Close();            
+            
         }
+
+        
     }
 }
