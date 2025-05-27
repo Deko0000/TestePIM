@@ -36,7 +36,8 @@ namespace TestePIM.Telas.Emprestimo
         {
             // Inicializa as datas com valores padrão
             dtpEmprestimo.Value = DateTime.Now.Date;
-            dtpDevolucao.Value = DateTime.Now.Date.AddDays(30); // prazo padrão de 30 dias para devolução
+            dtpDevolucao.Value = DateTime.Now.Date.AddDays(30);
+            // prazo padrão de 30 dias para devolução
 
             // Se um livro foi recebido de outra tela, preenche os campos
             if (LivroRecebido != null)
@@ -129,7 +130,10 @@ namespace TestePIM.Telas.Emprestimo
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             DateTime dataEmprestimo = dtpEmprestimo.Value.Date;
+            dtpDevolucao.MaxDate = dataEmprestimo.AddDays(30);
             DateTime dataParaDevolucao = dtpDevolucao.Value.Date;
+
+            
             
 
 
@@ -154,21 +158,24 @@ namespace TestePIM.Telas.Emprestimo
                 return;
             }
 
-            // Cria um novo empréstimo e adiciona à lista
-            var novoEmprestimo = new TestePIM.Dados.Emprestimo
-            {
-                Cliente = clienteSelecionado,
-                Livro = livroSelecionado,
-                DataEmprestimo = dataEmprestimo,
-                DataParaDevolucao = dataParaDevolucao,
-                Status = true // ativo
-            };
+            
+            
+                // Cria um novo empréstimo e adiciona à lista
+                var novoEmprestimo = new TestePIM.Dados.Emprestimo
+                {
+                    Cliente = clienteSelecionado,
+                    Livro = livroSelecionado,
+                    DataEmprestimo = dataEmprestimo,
+                    DataParaDevolucao = dataParaDevolucao,
+                    Status = true // ativo
+                };
 
-            livroSelecionado.Quantidade--;
-            Listas.Emprestimos.Add(novoEmprestimo);
+                livroSelecionado.Quantidade--;
+                Listas.Emprestimos.Add(novoEmprestimo);
 
-            MessageBox.Show("Empréstimo registrado com sucesso!");
-            this.Close();
+                MessageBox.Show("Empréstimo registrado com sucesso!");
+                this.Close();
+            
         }
 
         // Cancela a operação e fecha a tela
