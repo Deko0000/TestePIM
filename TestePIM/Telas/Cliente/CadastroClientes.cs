@@ -44,8 +44,7 @@ namespace TestePIM
                 // Limpa os campos
                 txbNome.Clear();
                 txbEmail.Clear();
-                txbCPF.Clear();
-                dtpDataNasc.Value = DateTime.Now;
+                txbCPF.Clear();                
                 txbRA.Clear();
                 txbEndereco.Clear();
             }

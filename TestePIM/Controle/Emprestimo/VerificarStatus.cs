@@ -46,6 +46,10 @@ namespace TestePIM.Controle.Emprestimo
                         ValorMulta = valorMulta
                     };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
                     Listas.Multas.Add(multa);
                 }
             }

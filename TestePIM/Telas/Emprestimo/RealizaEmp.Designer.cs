@@ -51,8 +51,13 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnPagar = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.lblValorEmp = new System.Windows.Forms.Label();
             this.txbValorEmp = new System.Windows.Forms.TextBox();
+=======
+            this.txbValorEmp = new System.Windows.Forms.TextBox();
+            this.lblValorEmp = new System.Windows.Forms.Label();
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCapa)).BeginInit();
             this.SuspendLayout();
@@ -128,7 +133,7 @@
             this.dtpEmprestimo.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.dtpEmprestimo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEmprestimo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEmprestimo.Location = new System.Drawing.Point(30, 492);
+            this.dtpEmprestimo.Location = new System.Drawing.Point(30, 480);
             this.dtpEmprestimo.Name = "dtpEmprestimo";
             this.dtpEmprestimo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpEmprestimo.Size = new System.Drawing.Size(165, 33);
@@ -226,7 +231,7 @@
             // 
             this.lblDataEmp.AutoSize = true;
             this.lblDataEmp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataEmp.Location = new System.Drawing.Point(26, 468);
+            this.lblDataEmp.Location = new System.Drawing.Point(26, 456);
             this.lblDataEmp.Name = "lblDataEmp";
             this.lblDataEmp.Size = new System.Drawing.Size(169, 21);
             this.lblDataEmp.TabIndex = 15;
@@ -236,7 +241,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(246, 468);
+            this.label1.Location = new System.Drawing.Point(235, 456);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 21);
             this.label1.TabIndex = 17;
@@ -247,7 +252,7 @@
             this.dtpDevolucao.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.dtpDevolucao.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDevolucao.Location = new System.Drawing.Point(250, 492);
+            this.dtpDevolucao.Location = new System.Drawing.Point(239, 480);
             this.dtpDevolucao.Name = "dtpDevolucao";
             this.dtpDevolucao.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpDevolucao.Size = new System.Drawing.Size(165, 33);
@@ -262,7 +267,7 @@
             this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.btnConfirmar.Location = new System.Drawing.Point(30, 550);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(163, 38);
+            this.btnConfirmar.Size = new System.Drawing.Size(165, 38);
             this.btnConfirmar.TabIndex = 18;
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = false;
@@ -290,17 +295,39 @@
             this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+<<<<<<< HEAD
             this.btnPagar.Location = new System.Drawing.Point(240, 550);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(163, 38);
             this.btnPagar.TabIndex = 20;
             this.btnPagar.Text = "PAGAR";
             this.btnPagar.UseVisualStyleBackColor = false;
+=======
+            this.btnPagar.Location = new System.Drawing.Point(239, 550);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(165, 38);
+            this.btnPagar.TabIndex = 20;
+            this.btnPagar.Text = "PAGAR";
+            this.btnPagar.UseVisualStyleBackColor = false;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
+            // 
+            // txbValorEmp
+            // 
+            this.txbValorEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.txbValorEmp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbValorEmp.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbValorEmp.Location = new System.Drawing.Point(448, 480);
+            this.txbValorEmp.Name = "txbValorEmp";
+            this.txbValorEmp.ReadOnly = true;
+            this.txbValorEmp.Size = new System.Drawing.Size(163, 33);
+            this.txbValorEmp.TabIndex = 107;
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
             // 
             // lblValorEmp
             // 
             this.lblValorEmp.AutoSize = true;
             this.lblValorEmp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.lblValorEmp.Location = new System.Drawing.Point(433, 470);
             this.lblValorEmp.Name = "lblValorEmp";
             this.lblValorEmp.Size = new System.Drawing.Size(173, 21);
@@ -316,6 +343,13 @@
             this.txbValorEmp.ReadOnly = true;
             this.txbValorEmp.Size = new System.Drawing.Size(174, 29);
             this.txbValorEmp.TabIndex = 21;
+=======
+            this.lblValorEmp.Location = new System.Drawing.Point(444, 456);
+            this.lblValorEmp.Name = "lblValorEmp";
+            this.lblValorEmp.Size = new System.Drawing.Size(174, 21);
+            this.lblValorEmp.TabIndex = 108;
+            this.lblValorEmp.Text = "Valor do Empréstimo:";
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
             // 
             // RealizaEmp
             // 
@@ -323,8 +357,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(638, 619);
+<<<<<<< HEAD
             this.Controls.Add(this.lblValorEmp);
             this.Controls.Add(this.txbValorEmp);
+=======
+            this.Controls.Add(this.txbValorEmp);
+            this.Controls.Add(this.lblValorEmp);
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
             this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
@@ -380,7 +419,12 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnPagar;
+<<<<<<< HEAD
         private System.Windows.Forms.Label lblValorEmp;
         private System.Windows.Forms.TextBox txbValorEmp;
+=======
+        private System.Windows.Forms.TextBox txbValorEmp;
+        private System.Windows.Forms.Label lblValorEmp;
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
     }
 }

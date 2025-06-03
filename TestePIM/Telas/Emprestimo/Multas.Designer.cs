@@ -222,7 +222,11 @@
             this.dtpInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpInicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+<<<<<<< HEAD
             this.dtpInicio.Location = new System.Drawing.Point(55, 14);
+=======
+            this.dtpInicio.Location = new System.Drawing.Point(121, 14);
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(163, 25);
             this.dtpInicio.TabIndex = 3;

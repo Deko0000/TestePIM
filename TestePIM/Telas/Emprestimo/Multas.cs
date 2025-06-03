@@ -17,6 +17,7 @@ namespace TestePIM.Telas.Emprestimo
         public Multas()
         {
             InitializeComponent();
+<<<<<<< HEAD
             ConfigurarDataGridView(); // Configura as colunas do DataGridView
             CarregarMultas(Listas.Multas); // Carrega os livros na grid
 
@@ -50,11 +51,24 @@ namespace TestePIM.Telas.Emprestimo
         }
 
         // Configura as colunas do DataGridView de livros
+=======
+            ConfigurarDataGridView();
+            AtualizarTabela();
+        }
+
+        private void VerificaMultas_Load(object sender, EventArgs e)
+        {
+            dtpInicio.Value = DateTime.Today.AddMonths(-1);
+            dtpFinal.Value = DateTime.Today;
+        }
+
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
         private void ConfigurarDataGridView()
         {
             dgvMultas.Columns.Clear();
             dgvMultas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+<<<<<<< HEAD
             // Coluna de ID (somente leitura)
             DataGridViewTextBoxColumn idCol = new DataGridViewTextBoxColumn();
             idCol.HeaderText = "ID";
@@ -115,11 +129,49 @@ namespace TestePIM.Telas.Emprestimo
                      (statusSelecionado == "Devolvidos com atraso" && !e.Status && e.DataDevolvida > e.DataParaDevolucao)) &&
 
                     (!aplicarFiltroDatas || (e.DataEmprestimo.Date >= inicio && e.DataEmprestimo.Date <= final))
+=======
+            dgvMultas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Título", Name = "colTitulo", ReadOnly = true });
+            dgvMultas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Cliente", Name = "colCliente", ReadOnly = true });
+            dgvMultas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Data Empréstimo", Name = "colDataEmprestimo", ReadOnly = true });
+            dgvMultas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Prev. Devolução", Name = "colDataPrevista", ReadOnly = true });
+            dgvMultas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Data Devolvida", Name = "colDataDevolvida", ReadOnly = true });
+            dgvMultas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Dias em Atraso", Name = "colDiasAtraso", ReadOnly = true });
+            dgvMultas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Multa (R$)", Name = "colMulta", ReadOnly = true });
+
+            dgvMultas.AllowUserToAddRows = false;
+            dgvMultas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private bool aplicarFiltroDatas = false;
+
+        private void AtualizarTabela()
+        {
+            string termo = txbBusca.Text.Trim().ToLower();
+            DateTime inicio = dtpInicio.Value.Date;
+            DateTime final = dtpFinal.Value.Date;
+
+            var emprestimosComMulta = Listas.Emprestimos
+                .Where(e =>
+                    // Filtro de multa
+                    (!e.Status && e.DataDevolvida.HasValue && e.DataDevolvida.Value > e.DataParaDevolucao) || // devolvido com atraso
+                    (e.Status && e.DataParaDevolucao < DateTime.Today) // ainda ativo e atrasado
+                )
+                .Where(e =>
+                    // Filtro por período
+                    !aplicarFiltroDatas || (e.DataEmprestimo.Date >= inicio && e.DataEmprestimo.Date <= final)
+                )
+                .Where(e =>
+                    // Filtro por texto
+                    string.IsNullOrEmpty(termo) ||
+                    e.Livro.Titulo.ToLower().Contains(termo) ||
+                    e.Cliente.Nome.ToLower().Contains(termo)
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
                 )
                 .ToList();
 
             dgvMultas.Rows.Clear();
 
+<<<<<<< HEAD
             foreach (var mul in multasFiltradas)
             {
                 string status;
@@ -208,6 +260,55 @@ namespace TestePIM.Telas.Emprestimo
                 CarregarMultas(Listas.Multas);
                 MessageBox.Show("Multa(s) excluída(s) com sucesso!");
             }
+=======
+            foreach (var emp in emprestimosComMulta)
+            {
+                int diasAtraso = 0;
+                if (!emp.Status && emp.DataDevolvida.HasValue)
+                    diasAtraso = (emp.DataDevolvida.Value - emp.DataParaDevolucao).Days;
+                else if (emp.Status)
+                    diasAtraso = (DateTime.Today - emp.DataParaDevolucao).Days;
+
+                decimal valorMulta = CalcularMulta(diasAtraso);
+
+                dgvMultas.Rows.Add(
+                    emp.Livro.Titulo,
+                    emp.Cliente.Nome,
+                    emp.DataEmprestimo.ToShortDateString(),
+                    emp.DataParaDevolucao.ToShortDateString(),
+                    emp.Status ? "-" : emp.DataDevolvida?.ToShortDateString(),
+                    diasAtraso,
+                    valorMulta.ToString("C")
+                );
+            }
+        }
+
+        private decimal CalcularMulta(int diasAtraso)
+        {
+            return diasAtraso * 1.50m; // Exemplo: R$1,50 por dia
+        }
+
+        private void txbBusca_TextChanged(object sender, EventArgs e)
+        {
+            AtualizarTabela();
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            aplicarFiltroDatas = true;
+            AtualizarTabela();
+        }
+
+        private void btnLimparFiltro_Click(object sender, EventArgs e)
+        {
+            aplicarFiltroDatas = false;
+            AtualizarTabela();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
         }
     }
 }

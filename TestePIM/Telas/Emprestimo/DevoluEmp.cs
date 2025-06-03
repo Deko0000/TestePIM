@@ -81,7 +81,11 @@ namespace TestePIM.Telas.Emprestimo
                 dtpEmp.Value = EmprestimoParaDevolver.DataEmprestimo;
                 dtpDevoluPrevista.Value = EmprestimoParaDevolver.DataParaDevolucao;
 
+<<<<<<< HEAD
                 
+=======
+                txbValorMulta.Text = MultaParaDevolver.ValorMulta.ToString("C2");
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
 
                 DateTime hoje = DateTime.Today;
                 string status;
@@ -116,9 +120,19 @@ namespace TestePIM.Telas.Emprestimo
                 }
                 if (MultaParaDevolver != null && MultaParaDevolver.ValorMulta > 0)
                 {
+<<<<<<< HEAD
                     txbValorMulta.Visible = true;
                     lblValorMulta.Visible = true;
                     btnPagarMulta.Visible = true;
+=======
+                    bool paga = MultaParaDevolver.Pago;
+
+                    txbValorMulta.Visible = true;
+                    lblValorMulta.Visible = true;
+                    btnPagarMulta.Visible = !paga;
+                    btnPagarMulta.Enabled = !paga;
+                    btnPagarMulta.Text = paga ? "Pago" : "Pagar Multa";
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
                 }
                 else
                 {
@@ -126,6 +140,7 @@ namespace TestePIM.Telas.Emprestimo
                     lblValorMulta.Visible = false;
                     btnPagarMulta.Visible = false;
                 }
+<<<<<<< HEAD
             }
             if (EmprestimoParaDevolver != null)
             {
@@ -134,7 +149,22 @@ namespace TestePIM.Telas.Emprestimo
             else
             {
                 txbValorMulta.Text = "R$ 0,00"; // ou algum valor padrão
+=======
+>>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
             }
+        }
+
+        private void btnPagarMulta_Click(object sender, EventArgs e)
+        {
+            // (aqui você pode abrir a tela de pagamento)
+
+            // Simulando o pagamento para teste (substitua isso depois pela lógica real)
+            MultaParaDevolver.Pago = true;
+
+            MessageBox.Show("Multa paga com sucesso.");
+
+            btnPagarMulta.Enabled = false;
+            btnPagarMulta.Text = "Pago";
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -150,6 +180,14 @@ namespace TestePIM.Telas.Emprestimo
 
             bool estaAtrasado = dataDevolucaoReal > dataPrevista;
 
+            // Se estiver atrasado e houver multa, mas não foi paga
+            if (estaAtrasado && MultaParaDevolver != null && !MultaParaDevolver.Pago)
+            {
+                MessageBox.Show("Este empréstimo possui multa não paga. Realize o pagamento antes de concluir a devolução.");
+                return;
+            }
+
+            // Prossegue com a devolução
             EmprestimoParaDevolver.Status = false;
             EmprestimoParaDevolver.DataDevolvida = dataDevolucaoReal;
             EmprestimoParaDevolver.Livro.Quantidade++;
@@ -159,7 +197,7 @@ namespace TestePIM.Telas.Emprestimo
                 try
                 {
                     VerificarStatus.AplicarMulta(EmprestimoParaDevolver);
-                    MessageBox.Show("Devolução com atraso! Multa aplicada.");
+                    MessageBox.Show("Devolução com atraso! Multa registrada.");
                 }
                 catch (Exception ex)
                 {
