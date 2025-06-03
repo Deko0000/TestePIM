@@ -17,21 +17,26 @@ namespace TestePIM.Dados
         // Funcionário responsável pelo empréstimo
         public Funcionario Funcionario { get; set; }
 
+        // ➕ Valor fixo cobrado pelo empréstimo
+        public decimal ValorEmprestimo = 10.00m;
+
         // Data em que o empréstimo foi realizado
-        public DateTime DataEmprestimo { get; set; }        
+        public DateTime DataEmprestimo { get; set; }
 
         // Data prevista para devolução do livro
-        public DateTime DataParaDevolucao { get; set; }    
+        public DateTime DataParaDevolucao { get; set; }
 
         //Data da Devolução de fato
         public DateTime? DataDevolvida { get; set; }
 
-
+        // indica se a multa foi paga
+        public bool Pago { get; set; } 
 
         // Status do empréstimo: true = ativo, false = devolvido
-        public bool Status { get; set; }
-
-        // Propriedade somente leitura que retorna o título do livro ou "Sem título" se Livro for nulo
-        public string TituloLivro => Livro?.Titulo ?? "Sem título";
-    }
+        public bool Status { get; set; }        
+    
+        // Construtor com valor fixo (ex: R$ 10,00)
+       
+    } 
 }
+

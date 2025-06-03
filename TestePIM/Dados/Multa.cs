@@ -8,11 +8,12 @@ namespace TestePIM.Dados
 {
     public class Multa
     {
-        public Cliente Cliente { get; set; }
-        public Livro Livro { get; set; }
-        public Funcionario Funcionario { get; set; }
-        public DateTime DataEmprestimo { get; set; }
-        public DateTime DataDevolucao { get; set; }
-        public bool Status { get; set; } // true = ativo, false = devolvido
+        public Emprestimo Emprestimo { get; set; }  // referência ao empréstimo original
+
+        public decimal ValorMulta { get; set; }  // multa calculada por atraso
+        
+        public bool Pago { get; set; } // indica se a multa foi paga
+
+        public bool Status { get; set; } // ativo ou resolvido
     }
 }

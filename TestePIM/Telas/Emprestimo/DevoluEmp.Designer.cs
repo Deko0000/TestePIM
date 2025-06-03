@@ -53,6 +53,9 @@
             this.panelLivro = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpDaDevolu = new System.Windows.Forms.DateTimePicker();
+            this.txbValorMulta = new System.Windows.Forms.TextBox();
+            this.lblValorMulta = new System.Windows.Forms.Label();
+            this.btnPagarMulta = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,7 +160,7 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnConfirmar.Location = new System.Drawing.Point(27, 530);
+            this.btnConfirmar.Location = new System.Drawing.Point(27, 543);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(178, 36);
             this.btnConfirmar.TabIndex = 90;
@@ -172,9 +175,9 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnCancelar.Location = new System.Drawing.Point(247, 530);
+            this.btnCancelar.Location = new System.Drawing.Point(462, 543);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(104, 36);
+            this.btnCancelar.Size = new System.Drawing.Size(144, 36);
             this.btnCancelar.TabIndex = 91;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -289,7 +292,7 @@
             // 
             this.panelLivro.Location = new System.Drawing.Point(393, 221);
             this.panelLivro.Name = "panelLivro";
-            this.panelLivro.Size = new System.Drawing.Size(213, 224);
+            this.panelLivro.Size = new System.Drawing.Size(213, 284);
             this.panelLivro.TabIndex = 102;
             // 
             // label2
@@ -311,12 +314,53 @@
             this.dtpDaDevolu.Size = new System.Drawing.Size(200, 29);
             this.dtpDaDevolu.TabIndex = 103;
             // 
+            // txbValorMulta
+            // 
+            this.txbValorMulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.txbValorMulta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbValorMulta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbValorMulta.Location = new System.Drawing.Point(247, 476);
+            this.txbValorMulta.Name = "txbValorMulta";
+            this.txbValorMulta.Size = new System.Drawing.Size(118, 29);
+            this.txbValorMulta.TabIndex = 105;
+            this.txbValorMulta.Visible = false;
+            // 
+            // lblValorMulta
+            // 
+            this.lblValorMulta.AutoSize = true;
+            this.lblValorMulta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorMulta.Location = new System.Drawing.Point(243, 453);
+            this.lblValorMulta.Name = "lblValorMulta";
+            this.lblValorMulta.Size = new System.Drawing.Size(115, 20);
+            this.lblValorMulta.TabIndex = 106;
+            this.lblValorMulta.Text = "Valor da Multa:";
+            this.lblValorMulta.Visible = false;
+            // 
+            // btnPagarMulta
+            // 
+            this.btnPagarMulta.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnPagarMulta.FlatAppearance.BorderSize = 0;
+            this.btnPagarMulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagarMulta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagarMulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.btnPagarMulta.Location = new System.Drawing.Point(247, 543);
+            this.btnPagarMulta.Name = "btnPagarMulta";
+            this.btnPagarMulta.Size = new System.Drawing.Size(172, 36);
+            this.btnPagarMulta.TabIndex = 107;
+            this.btnPagarMulta.Text = "PAGAR MULTA";
+            this.btnPagarMulta.UseVisualStyleBackColor = false;
+            this.btnPagarMulta.Visible = false;
+            this.btnPagarMulta.Click += new System.EventHandler(this.btnPagarMulta_Click);
+            // 
             // DevoluEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(638, 619);
+            this.Controls.Add(this.btnPagarMulta);
+            this.Controls.Add(this.txbValorMulta);
+            this.Controls.Add(this.lblValorMulta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpDaDevolu);
             this.Controls.Add(this.panelLivro);
@@ -374,5 +418,8 @@
         private System.Windows.Forms.Panel panelLivro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpDaDevolu;
+        private System.Windows.Forms.TextBox txbValorMulta;
+        private System.Windows.Forms.Label lblValorMulta;
+        private System.Windows.Forms.Button btnPagarMulta;
     }
 }

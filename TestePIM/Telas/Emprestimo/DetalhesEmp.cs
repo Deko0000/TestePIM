@@ -15,6 +15,7 @@ namespace TestePIM.Telas.Emprestimo
     {
         // Propriedade pública para receber o empréstimo a ser visualizado
         public TestePIM.Dados.Emprestimo EmprestimoParaVisualizar { get; set; }
+        public TestePIM.Dados.Multa MultaParaVisualizar { get; set; }
 
         public DetalhesEmp()
         {
@@ -36,17 +37,32 @@ namespace TestePIM.Telas.Emprestimo
                 txbEmail.Text = EmprestimoParaVisualizar.Cliente.Email;
                 txbRA.Text = EmprestimoParaVisualizar.Cliente.RA;
 
+                txbValorEmp.Text = EmprestimoParaVisualizar.ValorEmprestimo.ToString("C2"); // Formata o valor do empréstimo como moeda
+                txbValorMulta.Text = MultaParaVisualizar.ValorMulta.ToString("C2"); // Formata o valor da multa como moeda
+
                 // Preenche as datas de empréstimo e devolução
                 dtpEmp.Value = EmprestimoParaVisualizar.DataEmprestimo;
                 dtpDevolu.Value = EmprestimoParaVisualizar.DataParaDevolucao;
                 if (EmprestimoParaVisualizar.DataDevolvida.HasValue)
                 {
                     dtpDataDevolvida.Value = EmprestimoParaVisualizar.DataDevolvida.Value;
+                    
                 }
                 else
                 {
                     dtpDataDevolvida.Visible = false;
                     lblDataDevolvida.Visible = false; 
+                }
+
+                if (MultaParaVisualizar != null && MultaParaVisualizar.ValorMulta > 0)
+                {
+                    txbValorMulta.Visible = true;
+                    lblValorMulta.Visible = true;
+                }
+                else
+                {
+                    txbValorMulta.Visible = false;
+                    lblValorMulta.Visible = false;
                 }
 
                 // Determina o status do empréstimo
@@ -86,8 +102,12 @@ namespace TestePIM.Telas.Emprestimo
                 txbRA.ReadOnly = true;
                 txbStatus.ReadOnly = true;
 
+                txbValorEmp.ReadOnly = true;
+                txbValorMulta.ReadOnly = true;
+
                 dtpEmp.Enabled = false;
                 dtpDevolu.Enabled = false;
+                dtpDataDevolvida.Enabled = false;
             }
             else
             {
