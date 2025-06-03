@@ -26,24 +26,31 @@ namespace TestePIM.Controle.Emprestimo
         /// <param name="emprestimo">Empréstimo referente à multa.</param>
         public static void AplicarMulta(TestePIM.Dados.Emprestimo emprestimo)
         {
-            // Obtém o funcionário atualmente logado no sistema
             var funcionario = VerificaAdm.FuncionarioLogado;
 
             if (funcionario != null)
             {
-                // Cria uma nova multa associando cliente e funcionário
-                var multa = new Multa
+                // Verifica se o empréstimo está atrasado
+                if (EstaAtrasado(emprestimo.DataParaDevolucao, DateTime.Now))
                 {
-                    Cliente = emprestimo.Cliente,
-                    Funcionario = funcionario
-                };
+                    // Calcula dias de atraso
+                    int diasAtraso = (DateTime.Now.Date - emprestimo.DataParaDevolucao.Date).Days;
 
-                // Adiciona a multa à lista de multas do sistema
-                Listas.Multas.Add(multa);
+                    // Calcula valor da multa (R$1,00 por dia de atraso)
+                    decimal valorMulta = diasAtraso * 1.00m;
+
+                    // Cria e registra a multa
+                    var multa = new Multa
+                    {
+                        Emprestimo = emprestimo,
+                        ValorMulta = valorMulta
+                    };
+
+                    Listas.Multas.Add(multa);
+                }
             }
             else
             {
-                // Lança exceção caso não haja funcionário logado
                 throw new Exception("Funcionário não identificado para aplicar multa.");
             }
         }

@@ -15,7 +15,9 @@ namespace TestePIM.Telas.Emprestimo
     public partial class DevoluEmp : Form
     {
         public TestePIM.Dados.Emprestimo EmprestimoParaDevolver { get; set; }
+        public TestePIM.Dados.Multa MultaParaDevolver { get; set; }
 
+       
         public DevoluEmp()
         {
             InitializeComponent();
@@ -79,6 +81,8 @@ namespace TestePIM.Telas.Emprestimo
                 dtpEmp.Value = EmprestimoParaDevolver.DataEmprestimo;
                 dtpDevoluPrevista.Value = EmprestimoParaDevolver.DataParaDevolucao;
 
+                
+
                 DateTime hoje = DateTime.Today;
                 string status;
 
@@ -110,6 +114,26 @@ namespace TestePIM.Telas.Emprestimo
                     card.Left = (panelLivro.Width - card.Width) / 2;
                     panelLivro.Controls.Add(card);
                 }
+                if (MultaParaDevolver != null && MultaParaDevolver.ValorMulta > 0)
+                {
+                    txbValorMulta.Visible = true;
+                    lblValorMulta.Visible = true;
+                    btnPagarMulta.Visible = true;
+                }
+                else
+                {
+                    txbValorMulta.Visible = false;
+                    lblValorMulta.Visible = false;
+                    btnPagarMulta.Visible = false;
+                }
+            }
+            if (EmprestimoParaDevolver != null)
+            {
+                txbValorMulta.Text = MultaParaDevolver.ValorMulta.ToString("C"); // formato de moeda
+            }
+            else
+            {
+                txbValorMulta.Text = "R$ 0,00"; // ou algum valor padrão
             }
         }
 

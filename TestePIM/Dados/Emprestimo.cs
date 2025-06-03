@@ -17,6 +17,9 @@ namespace TestePIM.Dados
         // Funcionário responsável pelo empréstimo
         public Funcionario Funcionario { get; set; }
 
+        //determina o valor do empréstimo
+        public decimal ValorEmp { get; set; }
+
         // Data em que o empréstimo foi realizado
         public DateTime DataEmprestimo { get; set; }        
 
@@ -26,7 +29,8 @@ namespace TestePIM.Dados
         //Data da Devolução de fato
         public DateTime? DataDevolvida { get; set; }
 
-
+        //indica se foi pago ou não
+        public bool Pago { get; set; }
 
         // Status do empréstimo: true = ativo, false = devolvido
         public bool Status { get; set; }

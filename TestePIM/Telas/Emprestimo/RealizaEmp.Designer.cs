@@ -50,6 +50,9 @@
             this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnPagar = new System.Windows.Forms.Button();
+            this.lblValorEmp = new System.Windows.Forms.Label();
+            this.txbValorEmp = new System.Windows.Forms.TextBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCapa)).BeginInit();
             this.SuspendLayout();
@@ -272,7 +275,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnCancelar.Location = new System.Drawing.Point(242, 550);
+            this.btnCancelar.Location = new System.Drawing.Point(448, 550);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(163, 38);
             this.btnCancelar.TabIndex = 19;
@@ -280,12 +283,49 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnPagar
+            // 
+            this.btnPagar.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnPagar.FlatAppearance.BorderSize = 0;
+            this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.btnPagar.Location = new System.Drawing.Point(240, 550);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(163, 38);
+            this.btnPagar.TabIndex = 20;
+            this.btnPagar.Text = "PAGAR";
+            this.btnPagar.UseVisualStyleBackColor = false;
+            // 
+            // lblValorEmp
+            // 
+            this.lblValorEmp.AutoSize = true;
+            this.lblValorEmp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorEmp.Location = new System.Drawing.Point(433, 470);
+            this.lblValorEmp.Name = "lblValorEmp";
+            this.lblValorEmp.Size = new System.Drawing.Size(173, 21);
+            this.lblValorEmp.TabIndex = 22;
+            this.lblValorEmp.Text = "Valor de Empréstimo:";
+            // 
+            // txbValorEmp
+            // 
+            this.txbValorEmp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbValorEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbValorEmp.Location = new System.Drawing.Point(437, 494);
+            this.txbValorEmp.Name = "txbValorEmp";
+            this.txbValorEmp.ReadOnly = true;
+            this.txbValorEmp.Size = new System.Drawing.Size(174, 29);
+            this.txbValorEmp.TabIndex = 21;
+            // 
             // RealizaEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(638, 619);
+            this.Controls.Add(this.lblValorEmp);
+            this.Controls.Add(this.txbValorEmp);
+            this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.label1);
@@ -339,5 +379,8 @@
         private System.Windows.Forms.DateTimePicker dtpDevolucao;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnPagar;
+        private System.Windows.Forms.Label lblValorEmp;
+        private System.Windows.Forms.TextBox txbValorEmp;
     }
 }

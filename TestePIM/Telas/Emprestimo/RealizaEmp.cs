@@ -19,6 +19,8 @@ namespace TestePIM.Telas.Emprestimo
         // Propriedade para receber o livro selecionado de outra tela
         public Livro LivroRecebido { get; set; }
 
+        decimal ValorEmp = 10.00m;
+
         // Variável para armazenar o livro selecionado na tela
         Livro livroSelecionado = null;
         // Variável para armazenar o cliente selecionado na tela
@@ -34,6 +36,7 @@ namespace TestePIM.Telas.Emprestimo
         // Evento disparado ao carregar a tela
         private void RealizaEmp_Load(object sender, EventArgs e)
         {
+            
             // Inicializa as datas com valores padrão
             dtpEmprestimo.Value = DateTime.Now.Date;
             dtpDevolucao.Value = DateTime.Now.Date.AddDays(30);
@@ -99,6 +102,7 @@ namespace TestePIM.Telas.Emprestimo
             {
                 txbLivro.Text = livroSelecionado.Titulo;
                 txbAutor.Text = livroSelecionado.Autor;
+                txbValorEmp.Text = ValorEmp.ToString("C2");
                 CarregarCapaLivro(livroSelecionado.CaminhoCapa);
             }
             else
@@ -125,6 +129,8 @@ namespace TestePIM.Telas.Emprestimo
                 MessageBox.Show("Cliente não encontrado.");
             }
         }
+
+        
 
         // Confirma e registra o empréstimo
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -167,6 +173,7 @@ namespace TestePIM.Telas.Emprestimo
                     Livro = livroSelecionado,
                     DataEmprestimo = dataEmprestimo,
                     DataParaDevolucao = dataParaDevolucao,
+                    ValorEmp = ValorEmp,
                     Status = true // ativo
                 };
 

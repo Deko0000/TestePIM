@@ -12,6 +12,8 @@ namespace TestePIM
         private static int ultimoIdFuncionario = 0;
         // Armazena o último ID gerado para livro
         private static int ultimoIdLivro = 0;
+        // Armazena o último ID gerado para multa
+        
 
         // Gera um novo ID e número de identificação para funcionário
         // Retorna uma tupla com o ID e o número de identificação formatado (ex: FUNC0001)
@@ -27,7 +29,7 @@ namespace TestePIM
         {
             ultimoIdLivro++;
             return ultimoIdLivro;
-        }
+        }       
 
         public static void ReajustarUltimoIdLivro(int novoUltimoId)
         {
@@ -37,6 +39,7 @@ namespace TestePIM
         {
             ultimoIdFuncionario = novoUltimoId;
         }
+        
     }
 
 }
