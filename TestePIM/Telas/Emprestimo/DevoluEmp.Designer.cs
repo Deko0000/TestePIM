@@ -126,6 +126,7 @@
             // 
             // dtpDevoluPrevista
             // 
+            this.dtpDevoluPrevista.Enabled = false;
             this.dtpDevoluPrevista.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDevoluPrevista.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDevoluPrevista.Location = new System.Drawing.Point(28, 416);

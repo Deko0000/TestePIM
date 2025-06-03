@@ -77,6 +77,12 @@
     <Compile Include="Telas\Emprestimo\DevoluEmp.Designer.cs">
       <DependentUpon>DevoluEmp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Emprestimo\ListagemDeMultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\ListagemDeMultas.Designer.cs">
+      <DependentUpon>ListagemDeMultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Emprestimo\Multas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Emprestimo\DevoluEmp.resx">
       <DependentUpon>DevoluEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Emprestimo\ListagemDeMultas.resx">
+      <DependentUpon>ListagemDeMultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Emprestimo\Multas.resx">
       <DependentUpon>Multas.cs</DependentUpon>

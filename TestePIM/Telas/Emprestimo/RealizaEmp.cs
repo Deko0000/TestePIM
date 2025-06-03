@@ -38,7 +38,8 @@ namespace TestePIM.Telas.Emprestimo
         {
             // Inicializa as datas com valores padrão
             dtpEmprestimo.Value = DateTime.Now.Date;
-            dtpDevolucao.Value = DateTime.Now.Date.AddDays(30); // prazo padrão de 30 dias para devolução
+            dtpDevolucao.Value = DateTime.Now.Date.AddDays(30);
+            // prazo padrão de 30 dias para devolução
 
             // Se um livro foi recebido de outra tela, preenche os campos
             if (LivroRecebido != null)
@@ -140,7 +141,14 @@ namespace TestePIM.Telas.Emprestimo
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             DateTime dataEmprestimo = dtpEmprestimo.Value.Date;
+            dtpDevolucao.MaxDate = dataEmprestimo.AddDays(30);
             DateTime dataParaDevolucao = dtpDevolucao.Value.Date;
+<<<<<<< HEAD
+=======
+
+            
+            
+>>>>>>> 50ed36aa700d281488a6c6ac12cc82b0af56bda1
 
             string erro = VerificaRealizacaoEmp.VerificarCampos(
                 livroSelecionado,
@@ -174,6 +182,7 @@ namespace TestePIM.Telas.Emprestimo
                 return;
             }
 
+<<<<<<< HEAD
             // Cria e adiciona o empréstimo
             var novoEmprestimo = new TestePIM.Dados.Emprestimo
             {
@@ -184,12 +193,26 @@ namespace TestePIM.Telas.Emprestimo
                 Pago = true, // já foi pago
                 Status = true
             };
+=======
+            
+            
+                // Cria um novo empréstimo e adiciona à lista
+                var novoEmprestimo = new TestePIM.Dados.Emprestimo
+                {
+                    Cliente = clienteSelecionado,
+                    Livro = livroSelecionado,
+                    DataEmprestimo = dataEmprestimo,
+                    DataParaDevolucao = dataParaDevolucao,
+                    Status = true // ativo
+                };
+>>>>>>> 50ed36aa700d281488a6c6ac12cc82b0af56bda1
 
-            livroSelecionado.Quantidade--;
-            Listas.Emprestimos.Add(novoEmprestimo);
+                livroSelecionado.Quantidade--;
+                Listas.Emprestimos.Add(novoEmprestimo);
 
-            MessageBox.Show("Empréstimo registrado com sucesso!");
-            this.Close();
+                MessageBox.Show("Empréstimo registrado com sucesso!");
+                this.Close();
+            
         }
 
         // Cancela a operação e fecha a tela

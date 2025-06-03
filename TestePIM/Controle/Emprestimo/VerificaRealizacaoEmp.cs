@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TestePIM.Controle.Emprestimo
 {
-    // Classe responsável por validar os campos necessários para a realização de um empréstimo
     internal class VerificaRealizacaoEmp
     {
         /// <summary>
-        /// Verifica se os campos obrigatórios para o empréstimo estão preenchidos corretamente.
+        /// Verifica se os campos obrigatórios para o empréstimo estão preenchidos corretamente
+        /// e se o cliente está apto a fazer o empréstimo com base em regras de negócio.
         /// </summary>
         /// <param name="livro">Objeto do tipo Livro selecionado para empréstimo</param>
         /// <param name="cliente">Objeto do tipo Cliente que irá realizar o empréstimo</param>
@@ -39,7 +39,26 @@ namespace TestePIM.Controle.Emprestimo
             if (dataDevolucao.Date < dataEmprestimo.Date)
                 return "A data de devolução não pode ser anterior à data de empréstimo.";
 
-            // Retorna null caso todos os campos estejam corretos
+            // Verifica quantos livros o cliente já tem emprestados (ativos)
+            int emprestimosAtivos = Listas.Emprestimos
+                .Count(e => e.Cliente.RA == cliente.RA && e.Status);
+
+            if (emprestimosAtivos >= 5)
+                return "O cliente já possui o limite de 5 livros emprestados.";
+
+            // Verifica se o cliente já possui o mesmo livro emprestado e ainda não devolveu
+            bool mesmoLivroEmprestado = Listas.Emprestimos
+                .Any(e => e.Cliente.RA == cliente.RA && e.Livro.Id == livro.Id && e.Status);
+
+            if (mesmoLivroEmprestado)
+                return "Este cliente já possui um exemplar deste livro emprestado.";
+
+            if (dataDevolucao > dataEmprestimo.AddDays(30))
+            {
+                return "A data de devolução não pode ser mais de 30 dias após a data de empréstimo.";
+            }
+
+            // Tudo OK
             return null;
         }
     }
