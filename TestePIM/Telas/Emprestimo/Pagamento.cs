@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace TestePIM.Telas.Emprestimo
 {
-    public partial class Multas : Form
-    {        
-        public Multas()
-        {           
-
+    public partial class Pagamento : Form
+    {
+        public Pagamento()
+        {
+            InitializeComponent();
         }
-
     }
 }

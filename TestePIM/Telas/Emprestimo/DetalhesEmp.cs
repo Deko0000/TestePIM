@@ -37,7 +37,7 @@ namespace TestePIM.Telas.Emprestimo
                 txbEmail.Text = EmprestimoParaVisualizar.Cliente.Email;
                 txbRA.Text = EmprestimoParaVisualizar.Cliente.RA;
 
-                txbValorEmp.Text = EmprestimoParaVisualizar.ValorEmprestimo.ToString("C2"); // Formata o valor do empréstimo como moeda
+                txbValorEmp.Text = EmprestimoParaVisualizar.ValorEmp.ToString("C2"); // Formata o valor do empréstimo como moeda
                 txbValorMulta.Text = MultaParaVisualizar.ValorMulta.ToString("C2"); // Formata o valor da multa como moeda
 
                 // Preenche as datas de empréstimo e devolução

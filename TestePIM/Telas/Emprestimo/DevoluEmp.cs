@@ -81,11 +81,15 @@ namespace TestePIM.Telas.Emprestimo
                 dtpEmp.Value = EmprestimoParaDevolver.DataEmprestimo;
                 dtpDevoluPrevista.Value = EmprestimoParaDevolver.DataParaDevolucao;
 
-<<<<<<< HEAD
-                
-=======
-                txbValorMulta.Text = MultaParaDevolver.ValorMulta.ToString("C2");
->>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
+
+                txbValorMulta.Text = MultaParaDevolver.ValorMulta.ToString("C2"); // formato de moeda
+            }
+            else
+            {
+                txbValorMulta.Text = "R$ 0,00"; // ou algum valor padrão
+
+            }
+
 
                 DateTime hoje = DateTime.Today;
                 string status;
@@ -120,11 +124,8 @@ namespace TestePIM.Telas.Emprestimo
                 }
                 if (MultaParaDevolver != null && MultaParaDevolver.ValorMulta > 0)
                 {
-<<<<<<< HEAD
-                    txbValorMulta.Visible = true;
-                    lblValorMulta.Visible = true;
-                    btnPagarMulta.Visible = true;
-=======
+                   
+
                     bool paga = MultaParaDevolver.Pago;
 
                     txbValorMulta.Visible = true;
@@ -132,7 +133,7 @@ namespace TestePIM.Telas.Emprestimo
                     btnPagarMulta.Visible = !paga;
                     btnPagarMulta.Enabled = !paga;
                     btnPagarMulta.Text = paga ? "Pago" : "Pagar Multa";
->>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
+
                 }
                 else
                 {
@@ -140,19 +141,10 @@ namespace TestePIM.Telas.Emprestimo
                     lblValorMulta.Visible = false;
                     btnPagarMulta.Visible = false;
                 }
-<<<<<<< HEAD
-            }
-            if (EmprestimoParaDevolver != null)
-            {
-                txbValorMulta.Text = MultaParaDevolver.ValorMulta.ToString("C"); // formato de moeda
-            }
-            else
-            {
-                txbValorMulta.Text = "R$ 0,00"; // ou algum valor padrão
-=======
->>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
-            }
-        }
+
+        }            
+            
+        
 
         private void btnPagarMulta_Click(object sender, EventArgs e)
         {

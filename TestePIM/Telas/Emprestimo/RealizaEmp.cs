@@ -20,8 +20,7 @@ namespace TestePIM.Telas.Emprestimo
         public Livro LivroRecebido { get; set; }
         public TestePIM.Dados.Emprestimo EmprestimoRecebido { get; set; }
 
-        decimal ValorEmp = 10.00m;
-
+        
         // Variável para armazenar o livro selecionado na tela
         Livro livroSelecionado = null;
         // Variável para armazenar o cliente selecionado na tela
@@ -52,15 +51,7 @@ namespace TestePIM.Telas.Emprestimo
                 txbAutor.Text = livroSelecionado.Autor;
                 CarregarCapaLivro(livroSelecionado.CaminhoCapa);
             }
-
-            if (EmprestimoRecebido != null)
-            {
-                txbValorEmp.Text = EmprestimoRecebido.ValorEmprestimo.ToString("C"); // formato de moeda
-            }
-            else
-            {
-                txbValorEmp.Text = "R$ 0,00"; // ou algum valor padrão
-            }
+            
         }
 
         // Carrega a imagem da capa do livro, se houver
@@ -112,8 +103,7 @@ namespace TestePIM.Telas.Emprestimo
             if (livroSelecionado != null)
             {
                 txbLivro.Text = livroSelecionado.Titulo;
-                txbAutor.Text = livroSelecionado.Autor;
-                txbValorEmp.Text = ValorEmp.ToString("C2");
+                txbAutor.Text = livroSelecionado.Autor;                
                 CarregarCapaLivro(livroSelecionado.CaminhoCapa);
             }
             else
@@ -149,12 +139,7 @@ namespace TestePIM.Telas.Emprestimo
             DateTime dataEmprestimo = dtpEmprestimo.Value.Date;
             dtpDevolucao.MaxDate = dataEmprestimo.AddDays(30);
             DateTime dataParaDevolucao = dtpDevolucao.Value.Date;
-<<<<<<< HEAD
-=======
 
-            
-            
->>>>>>> 50ed36aa700d281488a6c6ac12cc82b0af56bda1
 
             string erro = VerificaRealizacaoEmp.VerificarCampos(
                 livroSelecionado,
@@ -188,31 +173,18 @@ namespace TestePIM.Telas.Emprestimo
                 return;
             }
 
-<<<<<<< HEAD
+
             // Cria e adiciona o empréstimo
             var novoEmprestimo = new TestePIM.Dados.Emprestimo
             {
                 Cliente = clienteSelecionado,
                 Livro = livroSelecionado,
                 DataEmprestimo = dataEmprestimo,
-                DataParaDevolucao = dataParaDevolucao,
-                Pago = true, // já foi pago
+                DataParaDevolucao = dataParaDevolucao,                
                 Status = true
-            };
-=======
-            
-            
-                // Cria um novo empréstimo e adiciona à lista
-                var novoEmprestimo = new TestePIM.Dados.Emprestimo
-                {
-                    Cliente = clienteSelecionado,
-                    Livro = livroSelecionado,
-                    DataEmprestimo = dataEmprestimo,
-                    DataParaDevolucao = dataParaDevolucao,
-                    ValorEmp = ValorEmp,
-                    Status = true // ativo
-                };
->>>>>>> 50ed36aa700d281488a6c6ac12cc82b0af56bda1
+            };      
+                
+
 
                 livroSelecionado.Quantidade--;
                 Listas.Emprestimos.Add(novoEmprestimo);
@@ -234,17 +206,68 @@ namespace TestePIM.Telas.Emprestimo
             this.Close();
         }
 
+        private Form ativaForm = null;
+
+        private void abrePagarEmpForm(Form form)
+        {
+            if (ativaForm != null)
+                ativaForm.Close();
+
+            ativaForm = form;
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+
+            panelHeader.Visible = false;
+            panelBaixo.Visible = false;
+
+            panelRealizaEmp.Controls.Clear();
+            panelRealizaEmp.Controls.Add(form);
+            panelRealizaEmp.Tag = form;
+            form.BringToFront();
+            form.Show();
+
+            form.FormClosed += (s, args) =>
+            {
+                panelHeader.Visible = true;
+                panelBaixo.Visible = true;
+                
+            };
+        }
         private void btnPagar_Click(object sender, EventArgs e)
         {
             // (aqui você pode abrir a tela de pagamento)
 
-            // Simulando o pagamento para teste (substitua isso depois pela lógica real)
-            EmprestimoRecebido.Pago = true;
+            DateTime dataEmprestimo = dtpEmprestimo.Value.Date;
+            dtpDevolucao.MaxDate = dataEmprestimo.AddDays(30);
+            DateTime dataParaDevolucao = dtpDevolucao.Value.Date;
 
-            MessageBox.Show("Multa paga com sucesso.");
 
-            btnPagar.Enabled = false;
-            btnPagar.Text = "Pago";
+            string erro = VerificaRealizacaoEmp.VerificarCampos(
+                livroSelecionado,
+                clienteSelecionado,
+                dataEmprestimo,
+                dataParaDevolucao
+            );
+
+            if (erro != null)
+            {
+                MessageBox.Show(erro);
+                return;
+            }
+
+            if (livroSelecionado == null || clienteSelecionado == null)
+            {
+                MessageBox.Show("Selecione o cliente e o livro antes de confirmar.");
+                return;
+            }            
+
+            if (livroSelecionado.Quantidade <= 0)
+            {
+                MessageBox.Show("Livro indisponível para empréstimo.");
+                return;
+            }
+            
         }
     }
 }

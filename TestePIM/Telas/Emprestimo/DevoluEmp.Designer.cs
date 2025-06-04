@@ -53,15 +53,10 @@
             this.panelLivro = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpDaDevolu = new System.Windows.Forms.DateTimePicker();
-<<<<<<< HEAD
-            this.btnPagarMulta = new System.Windows.Forms.Button();
-            this.txbValorMulta = new System.Windows.Forms.TextBox();
-            this.lblValorMulta = new System.Windows.Forms.Label();
-=======
             this.txbValorMulta = new System.Windows.Forms.TextBox();
             this.lblValorMulta = new System.Windows.Forms.Label();
             this.btnPagarMulta = new System.Windows.Forms.Button();
->>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
+
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,15 +177,9 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-<<<<<<< HEAD
             this.btnCancelar.Location = new System.Drawing.Point(468, 530);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(138, 36);
-=======
-            this.btnCancelar.Location = new System.Drawing.Point(462, 543);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(144, 36);
->>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
             this.btnCancelar.TabIndex = 91;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -327,24 +316,6 @@
             this.dtpDaDevolu.Size = new System.Drawing.Size(200, 29);
             this.dtpDaDevolu.TabIndex = 103;
             // 
-<<<<<<< HEAD
-            // btnPagarMulta
-            // 
-            this.btnPagarMulta.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnPagarMulta.FlatAppearance.BorderSize = 0;
-            this.btnPagarMulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagarMulta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagarMulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnPagarMulta.Location = new System.Drawing.Point(247, 530);
-            this.btnPagarMulta.Name = "btnPagarMulta";
-            this.btnPagarMulta.Size = new System.Drawing.Size(178, 36);
-            this.btnPagarMulta.TabIndex = 105;
-            this.btnPagarMulta.Text = "PAGAR MULTA";
-            this.btnPagarMulta.UseVisualStyleBackColor = false;
-            this.btnPagarMulta.Visible = false;
-            // 
-=======
->>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
             // txbValorMulta
             // 
             this.txbValorMulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
@@ -352,14 +323,9 @@
             this.txbValorMulta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbValorMulta.Location = new System.Drawing.Point(247, 476);
             this.txbValorMulta.Name = "txbValorMulta";
-<<<<<<< HEAD
             this.txbValorMulta.ReadOnly = true;
             this.txbValorMulta.Size = new System.Drawing.Size(118, 29);
             this.txbValorMulta.TabIndex = 106;
-=======
-            this.txbValorMulta.Size = new System.Drawing.Size(118, 29);
-            this.txbValorMulta.TabIndex = 105;
->>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
             this.txbValorMulta.Visible = false;
             // 
             // lblValorMulta
@@ -369,15 +335,9 @@
             this.lblValorMulta.Location = new System.Drawing.Point(243, 453);
             this.lblValorMulta.Name = "lblValorMulta";
             this.lblValorMulta.Size = new System.Drawing.Size(115, 20);
-<<<<<<< HEAD
             this.lblValorMulta.TabIndex = 107;
             this.lblValorMulta.Text = "Valor da Multa:";
-            this.lblValorMulta.Visible = false;
-            // 
-=======
-            this.lblValorMulta.TabIndex = 106;
-            this.lblValorMulta.Text = "Valor da Multa:";
-            this.lblValorMulta.Visible = false;
+            this.lblValorMulta.Visible = false;           
             // 
             // btnPagarMulta
             // 
@@ -395,22 +355,15 @@
             this.btnPagarMulta.Visible = false;
             this.btnPagarMulta.Click += new System.EventHandler(this.btnPagarMulta_Click);
             // 
->>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
             // DevoluEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(638, 619);
-<<<<<<< HEAD
             this.Controls.Add(this.txbValorMulta);
             this.Controls.Add(this.lblValorMulta);
             this.Controls.Add(this.btnPagarMulta);
-=======
-            this.Controls.Add(this.btnPagarMulta);
-            this.Controls.Add(this.txbValorMulta);
-            this.Controls.Add(this.lblValorMulta);
->>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpDaDevolu);
             this.Controls.Add(this.panelLivro);
@@ -468,14 +421,9 @@
         private System.Windows.Forms.Panel panelLivro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpDaDevolu;
-<<<<<<< HEAD
         private System.Windows.Forms.Button btnPagarMulta;
         private System.Windows.Forms.TextBox txbValorMulta;
-        private System.Windows.Forms.Label lblValorMulta;
-=======
-        private System.Windows.Forms.TextBox txbValorMulta;
-        private System.Windows.Forms.Label lblValorMulta;
-        private System.Windows.Forms.Button btnPagarMulta;
->>>>>>> 7e24c23518c4ec90d1ea46c46f2d3d8c715634f6
+        private System.Windows.Forms.Label lblValorMulta;       
+
     }
 }

@@ -83,6 +83,12 @@
     <Compile Include="Telas\Emprestimo\Multas.Designer.cs">
       <DependentUpon>Multas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Emprestimo\Pagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\Pagamento.Designer.cs">
+      <DependentUpon>Pagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Emprestimo\RealizaEmp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Emprestimo\Multas.resx">
       <DependentUpon>Multas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Emprestimo\Pagamento.resx">
+      <DependentUpon>Pagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Emprestimo\RealizaEmp.resx">
       <DependentUpon>RealizaEmp.cs</DependentUpon>
