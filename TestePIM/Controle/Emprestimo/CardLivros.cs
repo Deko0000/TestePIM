@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace TestePIM.Controle.Emprestimo
 {
-    public static class CardDevolucao
+    public static class CardLivros
     {
         /// <summary>
         /// Cria um painel (card) visual para exibir informações de um livro.

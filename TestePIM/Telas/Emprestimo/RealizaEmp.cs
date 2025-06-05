@@ -18,9 +18,9 @@ namespace TestePIM.Telas.Emprestimo
     {
         // Propriedade para receber o livro selecionado de outra tela
         public Livro LivroRecebido { get; set; }
-        public TestePIM.Dados.Emprestimo EmprestimoRecebido { get; set; }
+       
 
-        
+
         // Variável para armazenar o livro selecionado na tela
         Livro livroSelecionado = null;
         // Variável para armazenar o cliente selecionado na tela
@@ -31,7 +31,7 @@ namespace TestePIM.Telas.Emprestimo
             InitializeComponent();
             txbAutor.ReadOnly = true; // Campo autor não editável
             txbRA.ReadOnly = true;    // Campo RA não editável
-            txbValorEmp.ReadOnly = true;
+            
         }
 
         // Evento disparado ao carregar a tela
@@ -49,47 +49,18 @@ namespace TestePIM.Telas.Emprestimo
                 livroSelecionado = LivroRecebido;
                 txbLivro.Text = livroSelecionado.Titulo;
                 txbAutor.Text = livroSelecionado.Autor;
-                CarregarCapaLivro(livroSelecionado.CaminhoCapa);
+                
             }
             
         }
 
         // Carrega a imagem da capa do livro, se houver
-        private void CarregarCapaLivro(string caminho)
+        private void CarregarCardLivro(Livro livro)
         {
-            if (string.IsNullOrEmpty(caminho))
-            {
-                pbxCapa.Image = null;
-                return;
-            }
-
-            try
-            {
-                if (caminho.StartsWith("http"))
-                {
-                    // Carrega imagem de uma URL
-                    using (HttpClient client = new HttpClient())
-                    using (var response = client.GetAsync(caminho).Result)
-                    using (var stream = response.Content.ReadAsStreamAsync().Result)
-                    {
-                        pbxCapa.Image = Image.FromStream(stream);
-                    }
-                }
-                else if (File.Exists(caminho))
-                {
-                    // Carrega imagem de um arquivo local
-                    pbxCapa.Image = Image.FromFile(caminho);
-                }
-                else
-                {
-                    pbxCapa.Image = null;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Erro ao carregar a capa.");
-                pbxCapa.Image = null;
-            }
+            panelLivro.Controls.Clear();
+            var card = CardLivroEmp.CriarCard(livro);
+            card.Left = (panelLivro.Width - card.Width) / 2;
+            panelLivro.Controls.Add(card);
         }
 
         // Busca um livro pelo título ou ID digitado
@@ -103,8 +74,8 @@ namespace TestePIM.Telas.Emprestimo
             if (livroSelecionado != null)
             {
                 txbLivro.Text = livroSelecionado.Titulo;
-                txbAutor.Text = livroSelecionado.Autor;                
-                CarregarCapaLivro(livroSelecionado.CaminhoCapa);
+                txbAutor.Text = livroSelecionado.Autor;
+                CarregarCardLivro(livroSelecionado);
             }
             else
             {
@@ -131,7 +102,7 @@ namespace TestePIM.Telas.Emprestimo
             }
         }
 
-        
+
 
         // Confirma e registra o empréstimo
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -139,7 +110,6 @@ namespace TestePIM.Telas.Emprestimo
             DateTime dataEmprestimo = dtpEmprestimo.Value.Date;
             dtpDevolucao.MaxDate = dataEmprestimo.AddDays(30);
             DateTime dataParaDevolucao = dtpDevolucao.Value.Date;
-
 
             string erro = VerificaRealizacaoEmp.VerificarCampos(
                 livroSelecionado,
@@ -160,38 +130,26 @@ namespace TestePIM.Telas.Emprestimo
                 return;
             }
 
-            // 🔒 Verifica se o empréstimo foi pago
-            if (EmprestimoRecebido == null || !EmprestimoRecebido.Pago)
-            {
-                MessageBox.Show("O pagamento do empréstimo ainda não foi realizado.");
-                return;
-            }
-
             if (livroSelecionado.Quantidade <= 0)
             {
                 MessageBox.Show("Livro indisponível para empréstimo.");
                 return;
             }
 
-
-            // Cria e adiciona o empréstimo
             var novoEmprestimo = new TestePIM.Dados.Emprestimo
             {
                 Cliente = clienteSelecionado,
                 Livro = livroSelecionado,
                 DataEmprestimo = dataEmprestimo,
-                DataParaDevolucao = dataParaDevolucao,                
-                Status = true
-            };      
-                
+                DataParaDevolucao = dataParaDevolucao,
+                Status = true,
+                Pago = false // ainda não foi pago
+            };
 
+            livroSelecionado.Quantidade--;
+            Listas.Emprestimos.Add(novoEmprestimo);
 
-                livroSelecionado.Quantidade--;
-                Listas.Emprestimos.Add(novoEmprestimo);
-
-                MessageBox.Show("Empréstimo registrado com sucesso!");
-                this.Close();
-            
+            MessageBox.Show("Empréstimo registrado como pendente de pagamento.");
         }
 
         // Cancela a operação e fecha a tela
@@ -236,38 +194,19 @@ namespace TestePIM.Telas.Emprestimo
         }
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            // (aqui você pode abrir a tela de pagamento)
-
-            DateTime dataEmprestimo = dtpEmprestimo.Value.Date;
-            dtpDevolucao.MaxDate = dataEmprestimo.AddDays(30);
-            DateTime dataParaDevolucao = dtpDevolucao.Value.Date;
-
-
-            string erro = VerificaRealizacaoEmp.VerificarCampos(
-                livroSelecionado,
-                clienteSelecionado,
-                dataEmprestimo,
-                dataParaDevolucao
-            );
-
-            if (erro != null)
-            {
-                MessageBox.Show(erro);
-                return;
-            }
-
             if (livroSelecionado == null || clienteSelecionado == null)
             {
-                MessageBox.Show("Selecione o cliente e o livro antes de confirmar.");
-                return;
-            }            
-
-            if (livroSelecionado.Quantidade <= 0)
-            {
-                MessageBox.Show("Livro indisponível para empréstimo.");
+                MessageBox.Show("Selecione o cliente e o livro antes de pagar.");
                 return;
             }
-            
+
+            var pagamentoForm = new Pagamento
+            {
+                clienteSelecionado = clienteSelecionado
+            };
+
+            // Abre a tela de pagamento dentro do painel da tela atual
+            abrePagarEmpForm(pagamentoForm);
         }
     }
 }

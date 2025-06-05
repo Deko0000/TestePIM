@@ -56,7 +56,6 @@
             this.txbValorMulta = new System.Windows.Forms.TextBox();
             this.lblValorMulta = new System.Windows.Forms.Label();
             this.btnPagarMulta = new System.Windows.Forms.Button();
-
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -288,7 +287,7 @@
             this.cbxBuscaLivro.Name = "cbxBuscaLivro";
             this.cbxBuscaLivro.Size = new System.Drawing.Size(213, 29);
             this.cbxBuscaLivro.TabIndex = 101;
-            this.cbxBuscaLivro.Click += new System.EventHandler(this.cbxBuscaLivro_SelectedIndexChanged);
+            this.cbxBuscaLivro.SelectedIndexChanged += new System.EventHandler(this.cbxBuscaLivro_SelectedIndexChanged);
             // 
             // panelLivro
             // 
@@ -337,7 +336,7 @@
             this.lblValorMulta.Size = new System.Drawing.Size(115, 20);
             this.lblValorMulta.TabIndex = 107;
             this.lblValorMulta.Text = "Valor da Multa:";
-            this.lblValorMulta.Visible = false;           
+            this.lblValorMulta.Visible = false;
             // 
             // btnPagarMulta
             // 

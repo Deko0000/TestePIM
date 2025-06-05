@@ -25,6 +25,8 @@ namespace TestePIM.Telas
         {
             if (panelEmpSubMenu.Visible == true)
                 panelEmpSubMenu.Visible = false;
+            if (panelPagaSubMenu.Visible == true)
+                panelPagaSubMenu.Visible = false;
         }
 
         // Exibe ou oculta o submenu passado como parâmetro
@@ -45,6 +47,7 @@ namespace TestePIM.Telas
         private void btnEmprestimos_Click(object sender, EventArgs e)
         {
             mostraSubMenu(panelEmpSubMenu);
+            
         }
 
         // Evento do botão "Realizar Empréstimo": abre tela de realizar empréstimo
@@ -70,6 +73,16 @@ namespace TestePIM.Telas
         // Evento do botão "Multas": apenas esconde submenu (pode ser expandido futuramente)
         private void btnMultas_Click(object sender, EventArgs e)
         {
+            escondeSubMenu();
+        }
+        private void btnPagamentos_Click(object sender, EventArgs e)
+        {
+            mostraSubMenu(panelPagaSubMenu);
+        }
+
+        private void btnPagamentoServico_Click(object sender, EventArgs e)
+        {
+            abreMenuEmpForm(new Pagamento());
             escondeSubMenu();
         }
 
@@ -104,5 +117,7 @@ namespace TestePIM.Telas
         {
             Application.Exit();
         }
+
+        
     }
 }

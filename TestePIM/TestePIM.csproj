@@ -49,7 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controle\Emprestimo\CardDevolucao.cs" />
+    <Compile Include="Controle\Emprestimo\CardLivroEmp.cs" />
+    <Compile Include="Controle\Emprestimo\CardLivros.cs" />
     <Compile Include="Controle\Emprestimo\VerificaRealizacaoEmp.cs" />
     <Compile Include="Controle\Emprestimo\VerificarStatus.cs" />
     <Compile Include="Controle\Livro\CardBuscaLivro.cs" />
@@ -58,7 +59,9 @@
     <Compile Include="Controle\Livro\VerificaLivroEditado.cs" />
     <Compile Include="Controle\Livro\VerificaLivroEditadoEstoque.cs" />
     <Compile Include="Dados\Emprestimo.cs" />
+    <Compile Include="Dados\LeituraLocal.cs" />
     <Compile Include="Dados\Multa.cs" />
+    <Compile Include="Dados\UsoComputador.cs" />
     <Compile Include="Telas\Emprestimo\AcompanhaEmp.cs">
       <SubType>Form</SubType>
     </Compile>

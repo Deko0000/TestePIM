@@ -23,5 +23,11 @@ namespace TestePIM
 
         // Lista estática que armazena todas as multas registradas
         public static List<Multa> Multas { get; } = new List<Multa>();
+
+        // Lista estática que armazena todos Livros para leitura local
+        public static List<LeituraLocal> LeiturasLocais = new List<LeituraLocal>();
+
+        // Lista estática que armazena todos os usos de computador
+        public static List<UsoComputador> UsosComputador = new List<UsoComputador>();
     }
 }

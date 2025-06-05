@@ -118,7 +118,7 @@ namespace TestePIM.Telas.Emprestimo
                 panelLivro.Controls.Clear();
                 if (EmprestimoParaDevolver.Livro != null)
                 {
-                    var card = CardDevolucao.CriarCard(EmprestimoParaDevolver.Livro);
+                    var card = CardLivros.CriarCard(EmprestimoParaDevolver.Livro);
                     card.Left = (panelLivro.Width - card.Width) / 2;
                     panelLivro.Controls.Add(card);
                 }
