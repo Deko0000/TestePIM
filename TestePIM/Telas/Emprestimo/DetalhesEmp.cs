@@ -37,32 +37,37 @@ namespace TestePIM.Telas.Emprestimo
                 txbEmail.Text = EmprestimoParaVisualizar.Cliente.Email;
                 txbRA.Text = EmprestimoParaVisualizar.Cliente.RA;
 
-                txbValorEmp.Text = EmprestimoParaVisualizar.ValorTotal.ToString("C2"); // Formata o valor do empréstimo como moeda
-                txbValorMulta.Text = MultaParaVisualizar.ValorMulta.ToString("C2"); // Formata o valor da multa como moeda
+                // Verifica se o empréstimo foi devolvido com atraso e se existe multa
+                bool devolvidoComAtraso = EmprestimoParaVisualizar.DataDevolvida.HasValue
+                                          && EmprestimoParaVisualizar.DataDevolvida.Value.Date > EmprestimoParaVisualizar.DataParaDevolucao.Date;
 
-                // Preenche as datas de empréstimo e devolução
-                dtpEmp.Value = EmprestimoParaVisualizar.DataEmprestimo;
-                dtpDevolu.Value = EmprestimoParaVisualizar.DataParaDevolucao;
-                if (EmprestimoParaVisualizar.DataDevolvida.HasValue)
+                if (devolvidoComAtraso && MultaParaVisualizar != null && MultaParaVisualizar.ValorMulta > 0)
                 {
-                    dtpDataDevolvida.Value = EmprestimoParaVisualizar.DataDevolvida.Value;
-                    
-                }
-                else
-                {
-                    dtpDataDevolvida.Visible = false;
-                    lblDataDevolvida.Visible = false; 
-                }
-
-                if (MultaParaVisualizar != null && MultaParaVisualizar.ValorMulta > 0)
-                {
+                    txbValorMulta.Text = MultaParaVisualizar.ValorMulta.ToString("C2");
                     txbValorMulta.Visible = true;
                     lblValorMulta.Visible = true;
                 }
                 else
                 {
+                    txbValorMulta.Text = "R$ 0,00";
                     txbValorMulta.Visible = false;
                     lblValorMulta.Visible = false;
+                }
+
+                // Preenche as datas de empréstimo e devolução
+                dtpEmp.Value = EmprestimoParaVisualizar.DataEmprestimo;
+                dtpDevolu.Value = EmprestimoParaVisualizar.DataParaDevolucao;
+
+                if (EmprestimoParaVisualizar.DataDevolvida.HasValue)
+                {
+                    dtpDataDevolvida.Value = EmprestimoParaVisualizar.DataDevolvida.Value;
+                    dtpDataDevolvida.Visible = true;
+                    lblDataDevolvida.Visible = true;
+                }
+                else
+                {
+                    dtpDataDevolvida.Visible = false;
+                    lblDataDevolvida.Visible = false;
                 }
 
                 // Determina o status do empréstimo
@@ -102,7 +107,6 @@ namespace TestePIM.Telas.Emprestimo
                 txbRA.ReadOnly = true;
                 txbStatus.ReadOnly = true;
 
-                txbValorEmp.ReadOnly = true;
                 txbValorMulta.ReadOnly = true;
 
                 dtpEmp.Enabled = false;

@@ -15,10 +15,7 @@ namespace TestePIM.Dados
         public Livro Livro { get; set; }
 
         // Funcionário responsável pelo empréstimo
-        public Funcionario Funcionario { get; set; }
-
-        //determina o valor do empréstimo
-        public decimal ValorTotal { get; set; }
+        public Funcionario Funcionario { get; set; }       
 
         // Data em que o empréstimo foi realizado
         public DateTime DataEmprestimo { get; set; }
@@ -36,10 +33,12 @@ namespace TestePIM.Dados
         public bool Pago { get; set; }        
 
         // Status do empréstimo: true = ativo, false = devolvido
-        public bool Status { get; set; }        
-    
-        
+        public bool Status { get; set; }
+
+
        
+
+
     } 
 }
 

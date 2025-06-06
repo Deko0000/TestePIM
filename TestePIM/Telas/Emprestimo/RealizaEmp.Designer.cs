@@ -32,7 +32,6 @@
             this.panelRealizaEmp = new System.Windows.Forms.Panel();
             this.panelBaixo = new System.Windows.Forms.Panel();
             this.panelLivro = new System.Windows.Forms.Panel();
-            this.btnPagar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -71,7 +70,6 @@
             // panelBaixo
             // 
             this.panelBaixo.Controls.Add(this.panelLivro);
-            this.panelBaixo.Controls.Add(this.btnPagar);
             this.panelBaixo.Controls.Add(this.btnCancelar);
             this.panelBaixo.Controls.Add(this.btnConfirmar);
             this.panelBaixo.Controls.Add(this.label1);
@@ -102,21 +100,6 @@
             this.panelLivro.Size = new System.Drawing.Size(213, 284);
             this.panelLivro.TabIndex = 149;
             // 
-            // btnPagar
-            // 
-            this.btnPagar.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnPagar.FlatAppearance.BorderSize = 0;
-            this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnPagar.Location = new System.Drawing.Point(233, 378);
-            this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(165, 38);
-            this.btnPagar.TabIndex = 148;
-            this.btnPagar.Text = "PAGAR";
-            this.btnPagar.UseVisualStyleBackColor = false;
-            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
@@ -124,7 +107,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnCancelar.Location = new System.Drawing.Point(449, 378);
+            this.btnCancelar.Location = new System.Drawing.Point(240, 378);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(163, 38);
             this.btnCancelar.TabIndex = 147;
@@ -378,7 +361,6 @@
         private System.Windows.Forms.Button btnBuscaLivro;
         private System.Windows.Forms.Label lblLivro;
         private System.Windows.Forms.TextBox txbLivro;
-        private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Panel panelLivro;
     }
 }

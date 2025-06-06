@@ -73,18 +73,13 @@ namespace TestePIM.Telas
         // Evento do botão "Multas": apenas esconde submenu (pode ser expandido futuramente)
         private void btnMultas_Click(object sender, EventArgs e)
         {
+            abreMenuEmpForm(new Multas());
             escondeSubMenu();
         }
         private void btnPagamentos_Click(object sender, EventArgs e)
         {
             mostraSubMenu(panelPagaSubMenu);
-        }
-
-        private void btnPagamentoServico_Click(object sender, EventArgs e)
-        {
-            abreMenuEmpForm(new Pagamento());
-            escondeSubMenu();
-        }
+        }        
 
         // Guarda referência ao formulário ativo dentro do painel
         public Form ativaForm = null;

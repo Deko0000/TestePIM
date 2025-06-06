@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AcompanhaEmp));
             this.panelAcomEmp = new System.Windows.Forms.Panel();
             this.panelDataGrid = new System.Windows.Forms.Panel();
@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dgvEmprestimos = new System.Windows.Forms.DataGridView();
             this.panelBusca = new System.Windows.Forms.Panel();
+            this.btnLimparPeriodo = new System.Windows.Forms.Button();
             this.btnBuscaPeriodo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFinal = new System.Windows.Forms.DateTimePicker();
@@ -49,7 +50,7 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblRE = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnLimparPeriodo = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.panelAcomEmp.SuspendLayout();
             this.panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimos)).BeginInit();
@@ -71,6 +72,7 @@
             // 
             // panelDataGrid
             // 
+            this.panelDataGrid.Controls.Add(this.btnExcluir);
             this.panelDataGrid.Controls.Add(this.btnVerDetalhes);
             this.panelDataGrid.Controls.Add(this.btnDevolver);
             this.panelDataGrid.Controls.Add(this.label3);
@@ -88,7 +90,7 @@
             this.btnVerDetalhes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerDetalhes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerDetalhes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnVerDetalhes.Location = new System.Drawing.Point(161, 352);
+            this.btnVerDetalhes.Location = new System.Drawing.Point(502, 21);
             this.btnVerDetalhes.Name = "btnVerDetalhes";
             this.btnVerDetalhes.Size = new System.Drawing.Size(109, 25);
             this.btnVerDetalhes.TabIndex = 7;
@@ -98,12 +100,12 @@
             // 
             // btnDevolver
             // 
-            this.btnDevolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.btnDevolver.BackColor = System.Drawing.Color.DarkCyan;
             this.btnDevolver.FlatAppearance.BorderSize = 0;
             this.btnDevolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevolver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnDevolver.Location = new System.Drawing.Point(23, 352);
+            this.btnDevolver.Location = new System.Drawing.Point(219, 21);
             this.btnDevolver.Name = "btnDevolver";
             this.btnDevolver.Size = new System.Drawing.Size(109, 25);
             this.btnDevolver.TabIndex = 6;
@@ -115,7 +117,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 11);
+            this.label3.Location = new System.Drawing.Point(20, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 17);
             this.label3.TabIndex = 6;
@@ -125,15 +127,15 @@
             // 
             this.dgvEmprestimos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             this.dgvEmprestimos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmprestimos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEmprestimos.Location = new System.Drawing.Point(23, 39);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmprestimos.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEmprestimos.Location = new System.Drawing.Point(23, 65);
             this.dgvEmprestimos.MultiSelect = false;
             this.dgvEmprestimos.Name = "dgvEmprestimos";
             this.dgvEmprestimos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -159,6 +161,21 @@
             this.panelBusca.Name = "panelBusca";
             this.panelBusca.Size = new System.Drawing.Size(638, 115);
             this.panelBusca.TabIndex = 3;
+            // 
+            // btnLimparPeriodo
+            // 
+            this.btnLimparPeriodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(116)))), ((int)(((byte)(116)))));
+            this.btnLimparPeriodo.FlatAppearance.BorderSize = 0;
+            this.btnLimparPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparPeriodo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimparPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.btnLimparPeriodo.Location = new System.Drawing.Point(520, 57);
+            this.btnLimparPeriodo.Name = "btnLimparPeriodo";
+            this.btnLimparPeriodo.Size = new System.Drawing.Size(90, 25);
+            this.btnLimparPeriodo.TabIndex = 9;
+            this.btnLimparPeriodo.Text = "LIMPAR";
+            this.btnLimparPeriodo.UseVisualStyleBackColor = false;
+            this.btnLimparPeriodo.Click += new System.EventHandler(this.btnLimparPeriodo_Click);
             // 
             // btnBuscaPeriodo
             // 
@@ -288,20 +305,21 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // btnLimparPeriodo
+            // btnExcluir
             // 
-            this.btnLimparPeriodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(116)))), ((int)(((byte)(116)))));
-            this.btnLimparPeriodo.FlatAppearance.BorderSize = 0;
-            this.btnLimparPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimparPeriodo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimparPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnLimparPeriodo.Location = new System.Drawing.Point(520, 57);
-            this.btnLimparPeriodo.Name = "btnLimparPeriodo";
-            this.btnLimparPeriodo.Size = new System.Drawing.Size(90, 25);
-            this.btnLimparPeriodo.TabIndex = 9;
-            this.btnLimparPeriodo.Text = "LIMPAR";
-            this.btnLimparPeriodo.UseVisualStyleBackColor = false;
-            this.btnLimparPeriodo.Click += new System.EventHandler(this.btnLimparPeriodo_Click);
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(116)))), ((int)(((byte)(116)))));
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
+            this.btnExcluir.Location = new System.Drawing.Point(362, 21);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(108, 25);
+            this.btnExcluir.TabIndex = 81;
+            this.btnExcluir.Text = "EXCLUIR";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // AcompanhaEmp
             // 
@@ -346,5 +364,6 @@
         private System.Windows.Forms.Button btnDevolver;
         private System.Windows.Forms.Button btnBuscaPeriodo;
         private System.Windows.Forms.Button btnLimparPeriodo;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

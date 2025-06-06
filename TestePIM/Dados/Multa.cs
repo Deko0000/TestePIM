@@ -10,8 +10,14 @@ namespace TestePIM.Dados
     {
 
         public Emprestimo Emprestimo { get; set; }
+
+
         public decimal ValorMulta { get; set; }
+
+
         public bool Pago { get; set; }
+
+
         public bool Status { get; set; } // ativo ou resolvido
 
     }

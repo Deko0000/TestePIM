@@ -9,10 +9,10 @@ namespace TestePIM
     public static class VerificaAdm
     {
         // Indica se o usuário logado possui privilégios de administrador
-        public static bool IsAdmin { get; private set; } = false;
+        public static bool IsAdmin { get; set; } = false;
 
         // Armazena o funcionário atualmente logado no sistema
-        public static Funcionario FuncionarioLogado { get; private set; }
+        public static Funcionario FuncionarioLogado { get; set; }
 
         // Realiza o login de um funcionário e define se ele é administrador
         public static void Logar(Funcionario funcionario, bool isAdmin)
