@@ -80,7 +80,7 @@ namespace TestePIM
                 txbNome.Clear();
                 txbEmail.Clear();
                 txbCPF.Clear();
-                dtpDataNasc.Value = DateTime.Now;
+                
                 txbEmail.Clear();
                 txbEndereco.Clear();
                 txbSenha.Clear();
@@ -95,7 +95,7 @@ namespace TestePIM
             txbNome.Clear();
             txbEmail.Clear();
             txbCPF.Clear();
-            dtpDataNasc.Value = DateTime.Now;
+            
             txbEmail.Clear();
             txbEndereco.Clear();
             txbSenha.Clear();

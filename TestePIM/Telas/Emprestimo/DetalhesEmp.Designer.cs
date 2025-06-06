@@ -56,8 +56,6 @@
             this.dtpEmp = new System.Windows.Forms.DateTimePicker();
             this.lblDataDevolvida = new System.Windows.Forms.Label();
             this.dtpDataDevolvida = new System.Windows.Forms.DateTimePicker();
-            this.txbValorEmp = new System.Windows.Forms.TextBox();
-            this.lblValorEmp = new System.Windows.Forms.Label();
             this.txbValorMulta = new System.Windows.Forms.TextBox();
             this.lblValorMulta = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
@@ -331,64 +329,40 @@
             // 
             this.lblDataDevolvida.AutoSize = true;
             this.lblDataDevolvida.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataDevolvida.Location = new System.Drawing.Point(219, 543);
+            this.lblDataDevolvida.Location = new System.Drawing.Point(10, 546);
             this.lblDataDevolvida.Name = "lblDataDevolvida";
             this.lblDataDevolvida.Size = new System.Drawing.Size(144, 20);
             this.lblDataDevolvida.TabIndex = 85;
             this.lblDataDevolvida.Text = "Data da Devolução:";
-            this.lblDataDevolvida.Visible = false;
             // 
             // dtpDataDevolvida
             // 
             this.dtpDataDevolvida.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataDevolvida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataDevolvida.Location = new System.Drawing.Point(223, 566);
+            this.dtpDataDevolvida.Location = new System.Drawing.Point(14, 569);
             this.dtpDataDevolvida.Name = "dtpDataDevolvida";
             this.dtpDataDevolvida.Size = new System.Drawing.Size(200, 29);
             this.dtpDataDevolvida.TabIndex = 84;
-            this.dtpDataDevolvida.Visible = false;
-            // 
-            // txbValorEmp
-            // 
-            this.txbValorEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
-            this.txbValorEmp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbValorEmp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbValorEmp.Location = new System.Drawing.Point(14, 566);
-            this.txbValorEmp.Name = "txbValorEmp";
-            this.txbValorEmp.Size = new System.Drawing.Size(156, 29);
-            this.txbValorEmp.TabIndex = 86;
-            // 
-            // lblValorEmp
-            // 
-            this.lblValorEmp.AutoSize = true;
-            this.lblValorEmp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorEmp.Location = new System.Drawing.Point(10, 543);
-            this.lblValorEmp.Name = "lblValorEmp";
-            this.lblValorEmp.Size = new System.Drawing.Size(160, 20);
-            this.lblValorEmp.TabIndex = 87;
-            this.lblValorEmp.Text = "Valor do Empréstimo:";
             // 
             // txbValorMulta
             // 
             this.txbValorMulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
             this.txbValorMulta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbValorMulta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbValorMulta.Location = new System.Drawing.Point(472, 566);
+            this.txbValorMulta.Location = new System.Drawing.Point(242, 569);
             this.txbValorMulta.Name = "txbValorMulta";
             this.txbValorMulta.Size = new System.Drawing.Size(156, 29);
             this.txbValorMulta.TabIndex = 88;
-            this.txbValorMulta.Visible = false;
             // 
             // lblValorMulta
             // 
             this.lblValorMulta.AutoSize = true;
             this.lblValorMulta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorMulta.Location = new System.Drawing.Point(468, 543);
+            this.lblValorMulta.Location = new System.Drawing.Point(238, 546);
             this.lblValorMulta.Name = "lblValorMulta";
             this.lblValorMulta.Size = new System.Drawing.Size(115, 20);
             this.lblValorMulta.TabIndex = 89;
             this.lblValorMulta.Text = "Valor da Multa:";
-            this.lblValorMulta.Visible = false;
             // 
             // DetalhesEmp
             // 
@@ -398,8 +372,6 @@
             this.ClientSize = new System.Drawing.Size(638, 619);
             this.Controls.Add(this.txbValorMulta);
             this.Controls.Add(this.lblValorMulta);
-            this.Controls.Add(this.txbValorEmp);
-            this.Controls.Add(this.lblValorEmp);
             this.Controls.Add(this.lblDataDevolvida);
             this.Controls.Add(this.dtpDataDevolvida);
             this.Controls.Add(this.txbStatus);
@@ -454,8 +426,6 @@
         private System.Windows.Forms.DateTimePicker dtpEmp;
         private System.Windows.Forms.Label lblDataDevolvida;
         private System.Windows.Forms.DateTimePicker dtpDataDevolvida;
-        private System.Windows.Forms.TextBox txbValorEmp;
-        private System.Windows.Forms.Label lblValorEmp;
         private System.Windows.Forms.TextBox txbValorMulta;
         private System.Windows.Forms.Label lblValorMulta;
     }

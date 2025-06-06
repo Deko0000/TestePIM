@@ -10,50 +10,49 @@ namespace TestePIM.Controle.Emprestimo
     public class VerificarStatus
     {
         /// <summary>
-        /// Verifica se o empréstimo está atrasado comparando a data prevista de devolução com a data atual.
+        /// Verifica se a data de devolução está atrasada em relação à data prevista.
         /// </summary>
-        /// <param name="dataPrevista">Data prevista para devolução do livro.</param>
-        /// <param name="dataAtual">Data atual para comparação.</param>       
-        /// <returns>Retorna true se o empréstimo está atrasado, caso contrário, false.</returns>
-        public static bool EstaAtrasado(DateTime dataPrevista, DateTime dataAtual)
+        public static bool EstaAtrasado(DateTime dataPrevista, DateTime dataDevolvida)
         {
-            return dataAtual.Date > dataPrevista.Date;
+            return dataDevolvida.Date > dataPrevista.Date;
         }
 
         /// <summary>
-        /// Aplica uma multa ao cliente do empréstimo caso haja um funcionário logado.
+        /// Aplica multa apenas para empréstimos que foram devolvidos com atraso.
         /// </summary>
-        /// <param name="emprestimo">Empréstimo referente à multa.</param>
         public static void AplicarMulta(TestePIM.Dados.Emprestimo emprestimo)
         {
             var funcionario = VerificaAdm.FuncionarioLogado;
 
-            if (funcionario != null)
+            if (funcionario == null)
+                throw new Exception("Nenhum funcionário ou administrador identificado para aplicar multa.");
+
+            // Só aplica multa se o livro já foi devolvido
+            if (!emprestimo.DataDevolvida.HasValue)
+                return;
+
+            DateTime dataDevolvida = emprestimo.DataDevolvida.Value;
+
+            if (EstaAtrasado(emprestimo.DataParaDevolucao, dataDevolvida))
             {
-                // Verifica se o empréstimo está atrasado
-                if (EstaAtrasado(emprestimo.DataParaDevolucao, DateTime.Now))
+                int diasAtraso = (dataDevolvida.Date - emprestimo.DataParaDevolucao.Date).Days;
+                decimal valorMulta = diasAtraso * 1.00m;
+
+                // Verifica se já existe multa para esse empréstimo
+                if (!Listas.Multas.Any(m => m.Emprestimo == emprestimo))
                 {
-                    // Calcula dias de atraso
-                    int diasAtraso = (DateTime.Now.Date - emprestimo.DataParaDevolucao.Date).Days;
-
-                    // Calcula valor da multa (R$1,00 por dia de atraso)
-                    decimal valorMulta = diasAtraso * 1.00m;
-
-                    // Cria e registra a multa
-                    var multa = new Multa
+                    var novaMulta = new Multa
                     {
                         Emprestimo = emprestimo,
-                        ValorMulta = valorMulta
+                        ValorMulta = valorMulta,
+                        Pago = false,
+                        Status = true
                     };
 
-
-                    Listas.Multas.Add(multa);
+                    Listas.Multas.Add(novaMulta);
                 }
-            }
-            else
-            {
-                throw new Exception("Funcionário não identificado para aplicar multa.");
             }
         }
     }
 }
+

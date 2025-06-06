@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestePIM.Controle.Emprestimo;
 
 namespace TestePIM.Telas.Emprestimo
 {
@@ -24,6 +25,8 @@ namespace TestePIM.Telas.Emprestimo
             cbxStatus.Items.Clear();
             cbxStatus.Items.AddRange(new string[] { "Todos", "Ativos", "Atrasados", "Devolvidos", "Devolvidos com atraso" });
             cbxStatus.SelectedIndex = 0;
+
+
         }
 
         private void ConfigurarDataGridView()
@@ -174,9 +177,16 @@ namespace TestePIM.Telas.Emprestimo
 
             if (emprestimo != null)
             {
+                // 🔹 Aplica a multa antes de abrir a tela de detalhes
+                VerificarStatus.AplicarMulta(emprestimo);
+
+                // 🔹 Busca a multa correspondente (se houver)
+                var multa = Listas.Multas.FirstOrDefault(m => m.Emprestimo == emprestimo);
+
                 var formDetalhes = new DetalhesEmp
                 {
-                    EmprestimoParaVisualizar = emprestimo
+                    EmprestimoParaVisualizar = emprestimo,
+                    MultaParaVisualizar = multa
                 };
 
                 abreEmpForm(formDetalhes);
@@ -216,6 +226,60 @@ namespace TestePIM.Telas.Emprestimo
             
         }
 
-        
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            var selecionados = ObterSelecionados();
+
+            if (selecionados.Count == 0)
+            {
+                MessageBox.Show("Selecione pelo menos um empréstimo para excluir.");
+                return;
+            }
+
+            // Verifica se algum dos selecionados está ativo
+            bool temAtivo = false;
+            foreach (var row in selecionados)
+            {
+                string titulo = row.Cells["colTitulo"].Value.ToString();
+                string clienteNome = row.Cells["colCliente"].Value.ToString();
+
+                var emp = Listas.Emprestimos
+                    .FirstOrDefault(empr => empr.Livro.Titulo == titulo && empr.Cliente.Nome == clienteNome);
+
+                if (emp != null && emp.Status) // Está ativo
+                {
+                    temAtivo = true;
+                    break;
+                }
+            }
+
+            if (temAtivo)
+            {
+                MessageBox.Show("Não é permitido excluir empréstimos ativos. Por favor, selecione apenas empréstimos devolvidos.");
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show("Tem certeza que deseja excluir o(s) empréstimo(s) selecionado(s)?", "Confirmar Exclusão", MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+            {
+                foreach (var row in selecionados)
+                {
+                    string titulo = row.Cells["colTitulo"].Value.ToString();
+                    string clienteNome = row.Cells["colCliente"].Value.ToString();
+
+                    var emp = Listas.Emprestimos
+                        .FirstOrDefault(empr => empr.Livro.Titulo == titulo && empr.Cliente.Nome == clienteNome);
+
+                    if (emp != null)
+                    {
+                        Listas.Emprestimos.Remove(emp);
+                    }
+                }
+
+                AtualizarTabela();
+                MessageBox.Show("Empréstimo(s) excluído(s) com sucesso!");
+            }
+        }
     }
 }

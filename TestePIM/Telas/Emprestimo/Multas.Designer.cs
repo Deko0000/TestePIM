@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Multas));
             this.panelListaMulta = new System.Windows.Forms.Panel();
             this.panelDataGrid = new System.Windows.Forms.Panel();
@@ -37,6 +37,8 @@
             this.lblLM = new System.Windows.Forms.Label();
             this.dgvMultas = new System.Windows.Forms.DataGridView();
             this.panelBusca = new System.Windows.Forms.Panel();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.cbxStatus = new System.Windows.Forms.ComboBox();
             this.btnBuscaPeriodo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFinal = new System.Windows.Forms.DateTimePicker();
@@ -47,8 +49,7 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblVM = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.cbxStatus = new System.Windows.Forms.ComboBox();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.panelListaMulta.SuspendLayout();
             this.panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMultas)).BeginInit();
@@ -69,6 +70,7 @@
             // 
             // panelDataGrid
             // 
+            this.panelDataGrid.Controls.Add(this.btnExcluir);
             this.panelDataGrid.Controls.Add(this.btnVerDetalhes);
             this.panelDataGrid.Controls.Add(this.btnDevolver);
             this.panelDataGrid.Controls.Add(this.lblLM);
@@ -86,7 +88,7 @@
             this.btnVerDetalhes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerDetalhes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerDetalhes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnVerDetalhes.Location = new System.Drawing.Point(161, 352);
+            this.btnVerDetalhes.Location = new System.Drawing.Point(509, 21);
             this.btnVerDetalhes.Name = "btnVerDetalhes";
             this.btnVerDetalhes.Size = new System.Drawing.Size(109, 25);
             this.btnVerDetalhes.TabIndex = 7;
@@ -95,23 +97,24 @@
             // 
             // btnDevolver
             // 
-            this.btnDevolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.btnDevolver.BackColor = System.Drawing.Color.DarkCyan;
             this.btnDevolver.FlatAppearance.BorderSize = 0;
             this.btnDevolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevolver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.btnDevolver.Location = new System.Drawing.Point(23, 352);
+            this.btnDevolver.Location = new System.Drawing.Point(218, 21);
             this.btnDevolver.Name = "btnDevolver";
             this.btnDevolver.Size = new System.Drawing.Size(109, 25);
             this.btnDevolver.TabIndex = 6;
             this.btnDevolver.Text = "DEVOLVER";
             this.btnDevolver.UseVisualStyleBackColor = false;
+            this.btnDevolver.Click += new System.EventHandler(this.btnMarcarPago_Click);
             // 
             // lblLM
             // 
             this.lblLM.AutoSize = true;
             this.lblLM.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLM.Location = new System.Drawing.Point(22, 11);
+            this.lblLM.Location = new System.Drawing.Point(22, 49);
             this.lblLM.Name = "lblLM";
             this.lblLM.Size = new System.Drawing.Size(122, 17);
             this.lblLM.TabIndex = 6;
@@ -121,15 +124,15 @@
             // 
             this.dgvMultas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             this.dgvMultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMultas.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMultas.Location = new System.Drawing.Point(23, 39);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMultas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMultas.Location = new System.Drawing.Point(25, 69);
             this.dgvMultas.MultiSelect = false;
             this.dgvMultas.Name = "dgvMultas";
             this.dgvMultas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -154,6 +157,24 @@
             this.panelBusca.Name = "panelBusca";
             this.panelBusca.Size = new System.Drawing.Size(638, 115);
             this.panelBusca.TabIndex = 9;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(457, 20);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(63, 17);
+            this.lblStatus.TabIndex = 10;
+            this.lblStatus.Text = "⏳ Status:";
+            // 
+            // cbxStatus
+            // 
+            this.cbxStatus.FormattingEnabled = true;
+            this.cbxStatus.Location = new System.Drawing.Point(522, 18);
+            this.cbxStatus.Name = "cbxStatus";
+            this.cbxStatus.Size = new System.Drawing.Size(103, 21);
+            this.cbxStatus.TabIndex = 9;
             // 
             // btnBuscaPeriodo
             // 
@@ -206,6 +227,7 @@
             this.txbBusca.Name = "txbBusca";
             this.txbBusca.Size = new System.Drawing.Size(296, 25);
             this.txbBusca.TabIndex = 1;
+            this.txbBusca.TextChanged += new System.EventHandler(this.txbBusca_TextChanged);
             // 
             // lblBuscar
             // 
@@ -222,7 +244,7 @@
             this.dtpInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpInicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInicio.Location = new System.Drawing.Point(121, 14);
+            this.dtpInicio.Location = new System.Drawing.Point(57, 14);
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(163, 25);
             this.dtpInicio.TabIndex = 3;
@@ -260,23 +282,21 @@
             this.btnVoltar.TabIndex = 79;
             this.btnVoltar.UseVisualStyleBackColor = true;
             // 
-            // cbxStatus
+            // btnExcluir
             // 
-            this.cbxStatus.FormattingEnabled = true;
-            this.cbxStatus.Location = new System.Drawing.Point(522, 18);
-            this.cbxStatus.Name = "cbxStatus";
-            this.cbxStatus.Size = new System.Drawing.Size(103, 21);
-            this.cbxStatus.TabIndex = 9;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(457, 20);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(63, 17);
-            this.lblStatus.TabIndex = 10;
-            this.lblStatus.Text = "⏳ Status:";
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(116)))), ((int)(((byte)(116)))));
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
+            this.btnExcluir.Location = new System.Drawing.Point(364, 21);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(108, 25);
+            this.btnExcluir.TabIndex = 82;
+            this.btnExcluir.Text = "EXCLUIR";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // Multas
             // 
@@ -319,5 +339,6 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.ComboBox cbxStatus;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

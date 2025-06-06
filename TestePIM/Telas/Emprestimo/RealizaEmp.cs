@@ -142,8 +142,7 @@ namespace TestePIM.Telas.Emprestimo
                 Livro = livroSelecionado,
                 DataEmprestimo = dataEmprestimo,
                 DataParaDevolucao = dataParaDevolucao,
-                Status = true,
-                Pago = false // ainda não foi pago
+                Status = true,                
             };
 
             livroSelecionado.Quantidade--;
@@ -162,51 +161,6 @@ namespace TestePIM.Telas.Emprestimo
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private Form ativaForm = null;
-
-        private void abrePagarEmpForm(Form form)
-        {
-            if (ativaForm != null)
-                ativaForm.Close();
-
-            ativaForm = form;
-            form.TopLevel = false;
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.Dock = DockStyle.Fill;
-
-            panelHeader.Visible = false;
-            panelBaixo.Visible = false;
-
-            panelRealizaEmp.Controls.Clear();
-            panelRealizaEmp.Controls.Add(form);
-            panelRealizaEmp.Tag = form;
-            form.BringToFront();
-            form.Show();
-
-            form.FormClosed += (s, args) =>
-            {
-                panelHeader.Visible = true;
-                panelBaixo.Visible = true;
-                
-            };
-        }
-        private void btnPagar_Click(object sender, EventArgs e)
-        {
-            if (livroSelecionado == null || clienteSelecionado == null)
-            {
-                MessageBox.Show("Selecione o cliente e o livro antes de pagar.");
-                return;
-            }
-
-            var pagamentoForm = new Pagamento
-            {
-                clienteSelecionado = clienteSelecionado
-            };
-
-            // Abre a tela de pagamento dentro do painel da tela atual
-            abrePagarEmpForm(pagamentoForm);
         }
     }
 }
