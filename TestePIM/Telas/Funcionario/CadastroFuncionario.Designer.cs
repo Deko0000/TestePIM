@@ -50,7 +50,6 @@
             this.lblIF = new System.Windows.Forms.Label();
             this.lblIdentificaFuncionario = new System.Windows.Forms.Label();
             this.cbxMostraSenha = new System.Windows.Forms.CheckBox();
-            this.cbxMostraSenha2 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // dtpDataNasc
@@ -65,6 +64,7 @@
             this.dtpDataNasc.Name = "dtpDataNasc";
             this.dtpDataNasc.Size = new System.Drawing.Size(150, 27);
             this.dtpDataNasc.TabIndex = 58;
+            this.dtpDataNasc.Value = new System.DateTime(2025, 5, 30, 0, 0, 0, 0);
             // 
             // btnCadastrar
             // 
@@ -276,6 +276,7 @@
             // 
             this.cbxMostraSenha.AutoSize = true;
             this.cbxMostraSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.cbxMostraSenha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxMostraSenha.Location = new System.Drawing.Point(616, 268);
             this.cbxMostraSenha.Name = "cbxMostraSenha";
             this.cbxMostraSenha.Size = new System.Drawing.Size(15, 14);
@@ -283,24 +284,12 @@
             this.cbxMostraSenha.UseVisualStyleBackColor = false;
             this.cbxMostraSenha.CheckedChanged += new System.EventHandler(this.cbxMostraSenha_CheckedChanged);
             // 
-            // cbxMostraSenha2
-            // 
-            this.cbxMostraSenha2.AutoSize = true;
-            this.cbxMostraSenha2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
-            this.cbxMostraSenha2.Location = new System.Drawing.Point(617, 337);
-            this.cbxMostraSenha2.Name = "cbxMostraSenha2";
-            this.cbxMostraSenha2.Size = new System.Drawing.Size(15, 14);
-            this.cbxMostraSenha2.TabIndex = 65;
-            this.cbxMostraSenha2.UseVisualStyleBackColor = false;
-            this.cbxMostraSenha2.CheckedChanged += new System.EventHandler(this.cbxMostraSenha2_CheckedChanged);
-            // 
             // CadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(638, 619);
-            this.Controls.Add(this.cbxMostraSenha2);
             this.Controls.Add(this.cbxMostraSenha);
             this.Controls.Add(this.lblIdentificaFuncionario);
             this.Controls.Add(this.lblIF);
@@ -352,6 +341,5 @@
         private System.Windows.Forms.Label lblIF;
         private System.Windows.Forms.Label lblIdentificaFuncionario;
         private System.Windows.Forms.CheckBox cbxMostraSenha;
-        private System.Windows.Forms.CheckBox cbxMostraSenha2;
     }
 }

@@ -37,10 +37,10 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.pbLupa = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txbBuscar = new System.Windows.Forms.TextBox();
-            this.pbLupa = new System.Windows.Forms.PictureBox();
             this.panelClientesCadastrados.SuspendLayout();
             this.panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -153,6 +153,16 @@
             this.panelHeader.Size = new System.Drawing.Size(638, 220);
             this.panelHeader.TabIndex = 68;
             // 
+            // pbLupa
+            // 
+            this.pbLupa.Image = ((System.Drawing.Image)(resources.GetObject("pbLupa.Image")));
+            this.pbLupa.Location = new System.Drawing.Point(129, 140);
+            this.pbLupa.Name = "pbLupa";
+            this.pbLupa.Size = new System.Drawing.Size(32, 32);
+            this.pbLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbLupa.TabIndex = 70;
+            this.pbLupa.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -166,6 +176,7 @@
             // 
             // btnVoltar
             // 
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
@@ -186,16 +197,6 @@
             this.txbBuscar.Size = new System.Drawing.Size(298, 26);
             this.txbBuscar.TabIndex = 67;
             this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
-            // 
-            // pbLupa
-            // 
-            this.pbLupa.Image = ((System.Drawing.Image)(resources.GetObject("pbLupa.Image")));
-            this.pbLupa.Location = new System.Drawing.Point(129, 140);
-            this.pbLupa.Name = "pbLupa";
-            this.pbLupa.Size = new System.Drawing.Size(32, 32);
-            this.pbLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbLupa.TabIndex = 70;
-            this.pbLupa.TabStop = false;
             // 
             // ClientesCadastrados
             // 

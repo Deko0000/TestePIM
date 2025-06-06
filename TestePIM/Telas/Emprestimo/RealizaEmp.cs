@@ -148,7 +148,7 @@ namespace TestePIM.Telas.Emprestimo
             livroSelecionado.Quantidade--;
             Listas.Emprestimos.Add(novoEmprestimo);
 
-            MessageBox.Show("Empréstimo registrado como pendente de pagamento.");
+            MessageBox.Show("Empréstimo registrado com sucesso!");
         }
 
         // Cancela a operação e fecha a tela

@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Controle\Emprestimo\CardLivroEmp.cs" />
     <Compile Include="Controle\Emprestimo\CardLivros.cs" />
+    <Compile Include="Controle\Emprestimo\CardMulta.cs" />
     <Compile Include="Controle\Emprestimo\VerificaRealizacaoEmp.cs" />
     <Compile Include="Controle\Emprestimo\VerificarStatus.cs" />
     <Compile Include="Controle\Livro\CardBuscaLivro.cs" />
@@ -58,8 +59,10 @@
     <Compile Include="Controle\Funcionario\VerificaFuncionarioEditado.cs" />
     <Compile Include="Controle\Livro\VerificaLivroEditado.cs" />
     <Compile Include="Controle\Livro\VerificaLivroEditadoEstoque.cs" />
+    <Compile Include="Controle\Relatorio\CardRelatCliente.cs" />
     <Compile Include="Dados\Emprestimo.cs" />
     <Compile Include="Dados\Multa.cs" />
+    <Compile Include="Dados\Relatorio.cs" />
     <Compile Include="Telas\Emprestimo\AcompanhaEmp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +74,12 @@
     </Compile>
     <Compile Include="Telas\Emprestimo\DetalhesEmp.Designer.cs">
       <DependentUpon>DetalhesEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\DetalhesMulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\DetalhesMulta.Designer.cs">
+      <DependentUpon>DetalhesMulta.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Emprestimo\DevoluEmp.cs">
       <SubType>Form</SubType>
@@ -223,17 +232,59 @@
     <Compile Include="Telas\Emprestimo\MenuEmprestimo.Designer.cs">
       <DependentUpon>MenuEmprestimo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Relatorio\GerenciaRelat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Relatorio\GerenciaRelat.Designer.cs">
+      <DependentUpon>GerenciaRelat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Relatorio\MenuRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Relatorio\MenuRelatorio.Designer.cs">
+      <DependentUpon>MenuRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Relatorio\RelatClienteEsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Relatorio\RelatClienteEsp.Designer.cs">
+      <DependentUpon>RelatClienteEsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Relatorio\RelatFunEsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Relatorio\RelatFunEsp.Designer.cs">
+      <DependentUpon>RelatFunEsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Relatorio\RelatLivroEsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Relatorio\RelatLivroEsp.Designer.cs">
+      <DependentUpon>RelatLivroEsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Relatorio\RelatLivroGeral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Relatorio\RelatLivroGeral.Designer.cs">
+      <DependentUpon>RelatLivroGeral.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Telas\Emprestimo\AcompanhaEmp.resx">
       <DependentUpon>AcompanhaEmp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Emprestimo\DetalhesEmp.resx">
       <DependentUpon>DetalhesEmp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Emprestimo\DetalhesMulta.resx">
+      <DependentUpon>DetalhesMulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Emprestimo\DevoluEmp.resx">
       <DependentUpon>DevoluEmp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Emprestimo\Multas.resx">
       <DependentUpon>Multas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Emprestimo\PagamentoMulta.resx">
+      <DependentUpon>PagamentoMulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Emprestimo\RealizaEmp.resx">
       <DependentUpon>RealizaEmp.cs</DependentUpon>
@@ -294,6 +345,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Telas\Cliente\VerDadosCliente.resx">
       <DependentUpon>VerDadosCliente.cs</DependentUpon>
@@ -303,6 +355,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Emprestimo\MenuEmprestimo.resx">
       <DependentUpon>MenuEmprestimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Relatorio\GerenciaRelat.resx">
+      <DependentUpon>GerenciaRelat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Relatorio\MenuRelatorio.resx">
+      <DependentUpon>MenuRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Relatorio\RelatClienteEsp.resx">
+      <DependentUpon>RelatClienteEsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Relatorio\RelatFunEsp.resx">
+      <DependentUpon>RelatFunEsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Relatorio\RelatLivroEsp.resx">
+      <DependentUpon>RelatLivroEsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Relatorio\RelatLivroGeral.resx">
+      <DependentUpon>RelatLivroGeral.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -317,6 +387,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knowledge %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

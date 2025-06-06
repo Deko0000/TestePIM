@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestePIM.Controle.Emprestimo;
 
 namespace TestePIM.Telas.Emprestimo
 {
@@ -53,19 +54,23 @@ namespace TestePIM.Telas.Emprestimo
             dgvMultas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
+        private bool aplicarFiltroDatas = false;
         private void AtualizarTabela()
         {
             MessageBox.Show("Quantidade de multas: " + Listas.Multas.Count);
 
-            string termo = txbBusca.Text.Trim().ToLower();
+            string termo = txbBusca.Text.Trim().ToLower();          
+            DateTime inicio = dtpInicio.Value.Date;
+            DateTime final = dtpFinal.Value.Date;
 
             // Filtra multas ativas (Status = true) e que correspondem ao termo
             var multasFiltradas = Listas.Multas
-                .Where(m =>
-                    m.Status == true &&
+                .Where(m =>                    
                     (string.IsNullOrEmpty(termo) ||
                      m.Emprestimo.Livro.Titulo.ToLower().Contains(termo) ||
-                     m.Emprestimo.Cliente.Nome.ToLower().Contains(termo))
+                     m.Emprestimo.Cliente.Nome.ToLower().Contains(termo)) &&
+
+                     (!aplicarFiltroDatas || (m.Emprestimo.DataEmprestimo.Date >= inicio && m.Emprestimo.DataEmprestimo.Date <= final))
                 )
                 .ToList();
 
@@ -95,6 +100,41 @@ namespace TestePIM.Telas.Emprestimo
                 .ToList();
         }
 
+        private Form ativaForm = null;
+
+        private void abreMultaForm(Form form)
+        {
+            if (ativaForm != null)
+                ativaForm.Close();
+
+            ativaForm = form;
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+
+            panelHeader.Visible = false;
+            panelBusca.Visible = false;
+
+            panelMultas.Controls.Clear();
+            panelMultas.Controls.Add(form);
+            panelMultas.Tag = form;
+            form.BringToFront();
+            form.Show();
+
+            form.FormClosed += (s, args) =>
+            {
+                panelHeader.Visible = true;
+                panelBusca.Visible = true;
+                AtualizarTabela(); // Garante atualização ao voltar
+            };
+        }
+
+        private void btnBuscaPeriodo_Click(object sender, EventArgs e)
+        {
+            aplicarFiltroDatas = true;
+            AtualizarTabela();
+        }
+
         // Exemplo: marcar multas selecionadas como pagas
         private void btnMarcarPago_Click(object sender, EventArgs e)
         {
@@ -116,8 +156,16 @@ namespace TestePIM.Telas.Emprestimo
 
                 if (multa != null)
                 {
-                    multa.Pago = true;
-                    multa.Status = false; // Marca como resolvida
+                    // Aplica novamente a multa (opcional, caso queira garantir atualização)
+                    VerificarStatus.AplicarMulta(multa.Emprestimo);
+
+                    // Cria e passa os dados para o formulário de detalhes
+                    var pagar = new PagamentoMulta
+                    {
+                        MultaParaPagar = multa
+                    };
+
+                    abreMultaForm(pagar);
                 }
             }
 
@@ -158,6 +206,37 @@ namespace TestePIM.Telas.Emprestimo
             MessageBox.Show("Multas excluídas com sucesso!");
         }
 
+
+        private void btnVerDetalhes_Click(object sender, EventArgs e)
+        {
+            var selecionados = ObterSelecionados();
+            if (selecionados.Count != 1)
+            {
+                MessageBox.Show("Selecione exatamente uma multa para visualizar.");
+                return;
+            }
+
+            string titulo = selecionados[0].Cells["colTitulo"].Value.ToString();
+            string clienteNome = selecionados[0].Cells["colCliente"].Value.ToString();
+
+            var multa = Listas.Multas
+                .FirstOrDefault(m => m.Emprestimo.Livro.Titulo == titulo && m.Emprestimo.Cliente.Nome == clienteNome);
+
+            if (multa != null)
+            {
+                // Aplica novamente a multa (opcional, caso queira garantir atualização)
+                VerificarStatus.AplicarMulta(multa.Emprestimo);
+
+                // Cria e passa os dados para o formulário de detalhes
+                var detalhes = new DetalhesMulta
+                {
+                    MultaParaVisualizar = multa
+                };
+
+                abreMultaForm(detalhes);
+            }
+        }
+
         private void txbBusca_TextChanged(object sender, EventArgs e)
         {
             AtualizarTabela();
@@ -168,5 +247,6 @@ namespace TestePIM.Telas.Emprestimo
             this.Close();
         }
 
+        
     }
 }

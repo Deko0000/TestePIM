@@ -24,10 +24,7 @@ namespace TestePIM.Dados
         public DateTime DataParaDevolucao { get; set; }
 
         //Data da Devolução de fato
-        public DateTime? DataDevolvida { get; set; }
-
-        // Forma de pagamento utilizada
-        public string FormaPagamento { get; set; }
+        public DateTime? DataDevolvida { get; set; }       
 
         //indica se foi pago ou não
         public bool Pago { get; set; }        

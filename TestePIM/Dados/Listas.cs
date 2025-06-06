@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TestePIM.Dados;
 
+
 namespace TestePIM
 {
     public class Listas
@@ -24,7 +25,8 @@ namespace TestePIM
         // Lista estática que armazena todas as multas registradas
         public static List<Multa> Multas { get; } = new List<Multa>();
 
-       
+        // Lista estática que armazena todos os relatórios registrados
+        public static List<Relatorio> Relatorios { get; } = new List<Relatorio>();
 
     }
 }
