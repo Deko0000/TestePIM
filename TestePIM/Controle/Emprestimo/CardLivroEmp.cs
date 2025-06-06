@@ -36,7 +36,7 @@ namespace TestePIM.Controle.Emprestimo
                 Left = margem,
                 Top = margem,
                 Width = largura - 2 * margem,
-                Height = 180,
+                Height = 250,
                 SizeMode = PictureBoxSizeMode.Zoom,
                 BackColor = Color.FromArgb(107, 74, 68)
             };

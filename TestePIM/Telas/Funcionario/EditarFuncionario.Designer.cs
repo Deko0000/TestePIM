@@ -57,7 +57,8 @@
             // 
             this.cbxMostraSenha.AutoSize = true;
             this.cbxMostraSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
-            this.cbxMostraSenha.Location = new System.Drawing.Point(617, 291);
+            this.cbxMostraSenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxMostraSenha.Location = new System.Drawing.Point(619, 257);
             this.cbxMostraSenha.Name = "cbxMostraSenha";
             this.cbxMostraSenha.Size = new System.Drawing.Size(15, 14);
             this.cbxMostraSenha.TabIndex = 86;
@@ -125,6 +126,7 @@
             this.dtpDataNasc.Name = "dtpDataNasc";
             this.dtpDataNasc.Size = new System.Drawing.Size(150, 27);
             this.dtpDataNasc.TabIndex = 80;
+            this.dtpDataNasc.Value = new System.DateTime(2025, 5, 30, 0, 0, 0, 0);
             // 
             // btnConfirmar
             // 

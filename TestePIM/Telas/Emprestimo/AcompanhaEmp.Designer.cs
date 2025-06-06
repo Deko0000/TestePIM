@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AcompanhaEmp));
             this.panelAcomEmp = new System.Windows.Forms.Panel();
             this.panelDataGrid = new System.Windows.Forms.Panel();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnVerDetalhes = new System.Windows.Forms.Button();
             this.btnDevolver = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblRE = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.panelAcomEmp.SuspendLayout();
             this.panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmprestimos)).BeginInit();
@@ -83,9 +83,26 @@
             this.panelDataGrid.Size = new System.Drawing.Size(638, 398);
             this.panelDataGrid.TabIndex = 4;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(116)))), ((int)(((byte)(116)))));
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
+            this.btnExcluir.Location = new System.Drawing.Point(362, 21);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(108, 25);
+            this.btnExcluir.TabIndex = 81;
+            this.btnExcluir.Text = "EXCLUIR";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // btnVerDetalhes
             // 
             this.btnVerDetalhes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
+            this.btnVerDetalhes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerDetalhes.FlatAppearance.BorderSize = 0;
             this.btnVerDetalhes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerDetalhes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,6 +118,7 @@
             // btnDevolver
             // 
             this.btnDevolver.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnDevolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDevolver.FlatAppearance.BorderSize = 0;
             this.btnDevolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevolver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,6 +183,7 @@
             // btnLimparPeriodo
             // 
             this.btnLimparPeriodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(116)))), ((int)(((byte)(116)))));
+            this.btnLimparPeriodo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimparPeriodo.FlatAppearance.BorderSize = 0;
             this.btnLimparPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparPeriodo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,6 +199,7 @@
             // btnBuscaPeriodo
             // 
             this.btnBuscaPeriodo.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnBuscaPeriodo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscaPeriodo.FlatAppearance.BorderSize = 0;
             this.btnBuscaPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscaPeriodo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -224,6 +244,7 @@
             // 
             // cbxStatus
             // 
+            this.cbxStatus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxStatus.FormattingEnabled = true;
             this.cbxStatus.Location = new System.Drawing.Point(376, 15);
@@ -295,6 +316,7 @@
             // 
             // btnVoltar
             // 
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
@@ -305,28 +327,13 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(116)))), ((int)(((byte)(116)))));
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatAppearance.BorderSize = 0;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
-            this.btnExcluir.Location = new System.Drawing.Point(362, 21);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(108, 25);
-            this.btnExcluir.TabIndex = 81;
-            this.btnExcluir.Text = "EXCLUIR";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
             // AcompanhaEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 619);
             this.Controls.Add(this.panelAcomEmp);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "AcompanhaEmp";
             this.ShowIcon = false;
             this.Load += new System.EventHandler(this.AcompanhaEmp_Load);

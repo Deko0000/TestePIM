@@ -14,6 +14,9 @@ namespace TestePIM.Dados
 
         public decimal ValorMulta { get; set; }
 
+        // Forma de pagamento utilizada
+        public string FormaPagamento { get; set; }
+
 
         public bool Pago { get; set; }
 

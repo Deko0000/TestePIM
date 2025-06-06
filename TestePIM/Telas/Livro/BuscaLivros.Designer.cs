@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscaLivros));
             this.panelBuscaLivro = new System.Windows.Forms.Panel();
-            this.panelHeader = new System.Windows.Forms.Panel();
             this.panelCardsLivros = new System.Windows.Forms.Panel();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.cbxGenero = new System.Windows.Forms.ComboBox();
             this.pbLupa = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txbBuscar = new System.Windows.Forms.TextBox();
-            this.cbxGenero = new System.Windows.Forms.ComboBox();
             this.panelBuscaLivro.SuspendLayout();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLupa)).BeginInit();
@@ -53,6 +53,15 @@
             this.panelBuscaLivro.Size = new System.Drawing.Size(638, 619);
             this.panelBuscaLivro.TabIndex = 0;
             // 
+            // panelCardsLivros
+            // 
+            this.panelCardsLivros.AutoScroll = true;
+            this.panelCardsLivros.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCardsLivros.Location = new System.Drawing.Point(0, 234);
+            this.panelCardsLivros.Name = "panelCardsLivros";
+            this.panelCardsLivros.Size = new System.Drawing.Size(638, 385);
+            this.panelCardsLivros.TabIndex = 1;
+            // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
@@ -67,14 +76,17 @@
             this.panelHeader.Size = new System.Drawing.Size(638, 234);
             this.panelHeader.TabIndex = 0;
             // 
-            // panelCardsLivros
+            // cbxGenero
             // 
-            this.panelCardsLivros.AutoScroll = true;
-            this.panelCardsLivros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCardsLivros.Location = new System.Drawing.Point(0, 234);
-            this.panelCardsLivros.Name = "panelCardsLivros";
-            this.panelCardsLivros.Size = new System.Drawing.Size(638, 385);
-            this.panelCardsLivros.TabIndex = 1;
+            this.cbxGenero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.cbxGenero.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxGenero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxGenero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxGenero.FormattingEnabled = true;
+            this.cbxGenero.Location = new System.Drawing.Point(409, 147);
+            this.cbxGenero.Name = "cbxGenero";
+            this.cbxGenero.Size = new System.Drawing.Size(183, 25);
+            this.cbxGenero.TabIndex = 82;
             // 
             // pbLupa
             // 
@@ -99,6 +111,7 @@
             // 
             // btnVoltar
             // 
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
@@ -118,18 +131,6 @@
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(298, 26);
             this.txbBuscar.TabIndex = 78;
-            // 
-            // cbxGenero
-            // 
-            this.cbxGenero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.cbxGenero.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxGenero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxGenero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxGenero.FormattingEnabled = true;
-            this.cbxGenero.Location = new System.Drawing.Point(409, 147);
-            this.cbxGenero.Name = "cbxGenero";
-            this.cbxGenero.Size = new System.Drawing.Size(183, 25);
-            this.cbxGenero.TabIndex = 82;
             // 
             // BuscaLivros
             // 

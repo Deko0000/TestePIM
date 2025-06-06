@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblLA = new System.Windows.Forms.Label();
             this.panelLoginForm = new System.Windows.Forms.Panel();
             this.cbxMostraSenha = new System.Windows.Forms.CheckBox();
@@ -40,16 +42,16 @@
             this.lblBV = new System.Windows.Forms.Label();
             this.btnLogar = new System.Windows.Forms.Button();
             this.txbNome = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panelLoginForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelLoginForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.lblLA);
@@ -59,16 +61,42 @@
             this.panel1.Size = new System.Drawing.Size(267, 539);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(64, 315);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.textBox1.Location = new System.Drawing.Point(19, 197);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(232, 133);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.Text = "Bem-vindo ao seu refúgio do conhecimento.";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // lblLA
             // 
             this.lblLA.AutoSize = true;
             this.lblLA.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.lblLA.Location = new System.Drawing.Point(8, 105);
+            this.lblLA.Location = new System.Drawing.Point(32, 82);
             this.lblLA.Name = "lblLA";
-            this.lblLA.Size = new System.Drawing.Size(246, 45);
+            this.lblLA.Size = new System.Drawing.Size(200, 45);
             this.lblLA.TabIndex = 6;
-            this.lblLA.Text = "LIVRARIA ÁGIL";
+            this.lblLA.Text = "BIBLIOTECA";
             // 
             // panelLoginForm
             // 
@@ -91,6 +119,7 @@
             // 
             this.cbxMostraSenha.AutoSize = true;
             this.cbxMostraSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(245)))));
+            this.cbxMostraSenha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxMostraSenha.Location = new System.Drawing.Point(302, 293);
             this.cbxMostraSenha.Name = "cbxMostraSenha";
             this.cbxMostraSenha.Size = new System.Drawing.Size(15, 14);
@@ -159,6 +188,7 @@
             // btnLogar
             // 
             this.btnLogar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
+            this.btnLogar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogar.FlatAppearance.BorderSize = 0;
             this.btnLogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,31 +211,16 @@
             this.txbNome.Size = new System.Drawing.Size(263, 33);
             this.txbNome.TabIndex = 1;
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
-            this.textBox1.Location = new System.Drawing.Point(12, 176);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(232, 133);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "O sistema para fazer o gerenciamento da sua Biblioteca o mais ágil possível!";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(64, 315);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.label1.Location = new System.Drawing.Point(9, 127);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(247, 32);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "MORADA DO SABER";
             // 
             // Login
             // 
@@ -214,15 +229,15 @@
             this.ClientSize = new System.Drawing.Size(594, 539);
             this.Controls.Add(this.panelLoginForm);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelLoginForm.ResumeLayout(false);
             this.panelLoginForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -242,5 +257,6 @@
         private System.Windows.Forms.CheckBox cbxMostraSenha;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

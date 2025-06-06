@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panelDownSair = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
             this.panelSideMenu = new System.Windows.Forms.Panel();
@@ -46,10 +47,16 @@
             this.btnCadastros = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelMenuForm = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelDownSair.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.panelLivrosSubMenu.SuspendLayout();
             this.panelCadastrosSubMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            this.panelMenuForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDownSair
@@ -318,6 +325,7 @@
             // 
             // panelLogo
             // 
+            this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
@@ -326,11 +334,32 @@
             // 
             // panelMenuForm
             // 
+            this.panelMenuForm.Controls.Add(this.pictureBox2);
             this.panelMenuForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenuForm.Location = new System.Drawing.Point(221, 0);
             this.panelMenuForm.Name = "panelMenuForm";
             this.panelMenuForm.Size = new System.Drawing.Size(638, 619);
             this.panelMenuForm.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TestePIM.Properties.Resources.knowledge__2_;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(193, 84);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(171, 158);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(292, 229);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // Menu
             // 
@@ -340,8 +369,8 @@
             this.Controls.Add(this.panelMenuForm);
             this.Controls.Add(this.panelSideMenu);
             this.Controls.Add(this.panelDownSair);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);
@@ -349,6 +378,10 @@
             this.panelSideMenu.ResumeLayout(false);
             this.panelLivrosSubMenu.ResumeLayout(false);
             this.panelCadastrosSubMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            this.panelMenuForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,6 +406,8 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button btnFunCadastrados;
         private System.Windows.Forms.Button btnUsuCadastrados;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

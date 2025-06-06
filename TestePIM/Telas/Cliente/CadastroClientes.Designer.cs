@@ -55,7 +55,7 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
-            this.btnLimpar.Location = new System.Drawing.Point(169, 461);
+            this.btnLimpar.Location = new System.Drawing.Point(335, 460);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(139, 40);
             this.btnLimpar.TabIndex = 34;
@@ -204,7 +204,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(220)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(335, 461);
+            this.btnCadastrar.Location = new System.Drawing.Point(168, 460);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(139, 40);
             this.btnCadastrar.TabIndex = 41;
@@ -224,6 +224,7 @@
             this.dtpDataNasc.Name = "dtpDataNasc";
             this.dtpDataNasc.Size = new System.Drawing.Size(150, 27);
             this.dtpDataNasc.TabIndex = 42;
+            this.dtpDataNasc.Value = new System.DateTime(2025, 5, 30, 0, 0, 0, 0);
             // 
             // CadastroClientes
             // 

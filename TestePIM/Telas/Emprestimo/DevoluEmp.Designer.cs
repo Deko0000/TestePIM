@@ -80,6 +80,7 @@
             // 
             // btnVoltar
             // 
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
@@ -154,6 +155,7 @@
             // btnConfirmar
             // 
             this.btnConfirmar.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirmar.FlatAppearance.BorderSize = 0;
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,6 +171,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,6 +187,7 @@
             // btnBuscaCliente
             // 
             this.btnBuscaCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(52)))), ((int)(((byte)(46)))));
+            this.btnBuscaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscaCliente.FlatAppearance.BorderSize = 0;
             this.btnBuscaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscaCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscaCliente.Image")));
@@ -278,6 +282,7 @@
             // 
             // cbxBuscaLivro
             // 
+            this.cbxBuscaLivro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxBuscaLivro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxBuscaLivro.FormattingEnabled = true;
             this.cbxBuscaLivro.Location = new System.Drawing.Point(393, 185);
@@ -305,6 +310,7 @@
             // 
             // dtpDaDevolu
             // 
+            this.dtpDaDevolu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpDaDevolu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDaDevolu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDaDevolu.Location = new System.Drawing.Point(27, 476);

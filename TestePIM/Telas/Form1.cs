@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestePIM.Telas;
+using TestePIM.Telas.Relatorio;
+using TestePIM.Telas.Emprestimo;
 
 namespace TestePIM
 {
@@ -15,8 +17,7 @@ namespace TestePIM
     {
         public Menu()
         {
-            InitializeComponent();
-            customizeDesing(); // Oculta os submenus ao iniciar
+            InitializeComponent();           
             btnCadastroFuncionario.Visible = false;
             btnFunCadastrados.Visible = false;
 
@@ -25,11 +26,7 @@ namespace TestePIM
         }
 
         // Oculta os submenus ao carregar o formulário
-        private void customizeDesing()
-        {
-            panelCadastrosSubMenu.Visible = false;
-            panelLivrosSubMenu.Visible = false;
-        }
+       
 
         // Oculta ambos os submenus, útil antes de abrir outro
         private void escondeSubMenu()
@@ -71,6 +68,7 @@ namespace TestePIM
         private void btnCadastros_Click(object sender, EventArgs e)
         {
             mostraSubMenu(panelCadastrosSubMenu);
+
         }
 
         private void btnCadastroLivros_Click(object sender, EventArgs e)
@@ -137,8 +135,9 @@ namespace TestePIM
         // Botão de relatórios (usa o mesmo form de Estoque, talvez por simplicidade ou placeholder)
         private void btnRelatorios_Click(object sender, EventArgs e)
         {
-            abreMenuForm(new Estoque());
-            escondeSubMenu();
+            MenuRelatorio menuRelatorio = new MenuRelatorio();
+            menuRelatorio.Show();
+            this.Hide(); // Oculta a tela atual
         }
 
         // Formulário atual exibido no painel central

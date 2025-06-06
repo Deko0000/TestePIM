@@ -79,7 +79,13 @@ namespace TestePIM.Telas
         private void btnPagamentos_Click(object sender, EventArgs e)
         {
             mostraSubMenu(panelPagaSubMenu);
-        }        
+        }
+
+        private void btnPagamentoMulta_Click(object sender, EventArgs e)
+        {
+            abreMenuEmpForm(new PagamentoMulta());
+            escondeSubMenu();
+        }
 
         // Guarda referência ao formulário ativo dentro do painel
         public Form ativaForm = null;
